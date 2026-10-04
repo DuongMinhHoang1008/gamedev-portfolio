@@ -1,8 +1,5 @@
 <template>
   <div id="app">
-    
-    <link rel="stylesheet" href="@/assets/projects/projects.css" type="text/css">
-
     <Header />
     <div class="main">
       <transition name="fade" mode="out-in">
@@ -17,7 +14,7 @@
 import Vue from 'vue';
 import Header from './components/Header.vue';
 import Footer from './components/Footer.vue';
-import Helpers from './helpers';
+
 
 export default Vue.extend({
   name: 'App',
@@ -26,12 +23,7 @@ export default Vue.extend({
   }
 });
 
-// Preload heavy images or gifs that are used in other pages
-Helpers.preloadImages([
-  "img/projects/project-1-icon.png",
-  "img/projects/project-2-icon.png",
-  "img/projects/project-3-icon.png"
-]);
+
 
 </script>
 
@@ -49,7 +41,7 @@ html, body {
   background-color: @contentBgColor;
   color: @textColor;
 
-  font-family: 'Karla', Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
@@ -93,7 +85,7 @@ h1 {
 
   h1 {
     margin-top: 0.67em;
-    margin-bottom: 80px;
+    margin-bottom: 60px;
     line-height: 0.7em;
   }
 

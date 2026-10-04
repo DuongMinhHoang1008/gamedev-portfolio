@@ -5,7 +5,7 @@
       </div>
       <div class="dialog" :style="{ 'background-color': color }">
         <h1 class="dialog-title">{{ title }}</h1>
-        <div @click="$emit('close')" class="dialog-close"><i class="fa fa-times fa-lg fa-fw"></i></div>
+        <button @click="$emit('close')" class="dialog-close" aria-label="Close project" title="Close"><img src="img/close.png" alt="" /></button>
         <div class="dialog-content">
           <div v-html="htmlContent"></div>
           <div class="dialog-bottom">
@@ -27,11 +27,6 @@ export default Vue.extend({
     color: String,
     title: String,
     htmlContent: String,
-  },
-  methods: {
-    getImage: function(url: string) {
-      console.log("fetching image " + url);
-    }
   }
 });
 </script>
@@ -48,6 +43,7 @@ export default Vue.extend({
 }
 
 .dialog {
+  border-radius: 12px;
   position:absolute;
   top: 0px;
   left: 0px;
@@ -71,6 +67,7 @@ h1.dialog-title {
 
 .dialog-content {
   padding: 20px;
+  font-size: 0.9em;
 }
 
 .dialog-content {
@@ -79,11 +76,21 @@ h1.dialog-title {
 }
 .dialog-close {
   position: absolute;
-  top: 20px;
+  top: 15px;
   right: 20px;
   cursor:pointer;
   font-size: 1.2em;
   font-weight: 100;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+.dialog-close img {
+  vertical-align: middle;
+  margin-right: 12px;
 }
 .dialog-close:hover {
   opacity: 0.6;
@@ -103,7 +110,7 @@ a.dialog-close-button {
 @media only screen and (min-width: 620px){
   .dialog {
     margin: 0 auto;
-    margin-top: 80px;
+    margin-top: 40px;
     margin-bottom: 40px;
     max-width: 1000px;
   }
@@ -114,6 +121,7 @@ a.dialog-close-button {
 
   .dialog-content {
     padding: 40px;
+    font-size: 1.1em;
   }
 }
 

@@ -1,191 +1,186 @@
 <template>
-  <div>
-    <h1>Resume</h1>
-
-    <div class="paragraph">
-      I'm <strong>John Matrix</strong>, a former Delta Force operative with lots of experience, lots of training and huge muscles.
-      <br />After graduating from kindergarten, I've been enrolled in the army for 25 years, where I learned to destroy things in an amazing number of ways.
-      <br />I joined the Delta Force because I thought it was Greek lessons, but I quickly adapted to this unexpected environment and became a key element.
-      <br />I love teamwork, but I can also go in solo depending on the mission requirements.
-      <br />
-      <br />Right now I'm trying to find inner peace after I've read some personal development books. I'm looking for a monk job so if you have any opportunity feel free to 
-      <router-link to="/contact">contact me</router-link>.
-      <br />
-      <br />Besides war, I'm passionate about firearms, martial arts, explosions, push-ups and flowers.
-
-      <div style="margin-top:20px; margin-bottom:20px;">
-        <a class="download-link" href="d/resume-en.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Download as PDF 🇬🇧</a>
-        <a class="download-link" href="d/cv-fr.pdf" target="_blank"><i class="fa fa-download fa-lg fa-fw"></i> Télécharger en PDF 🇫🇷</a>
-        <div style="clear:both"></div>
+  <div class="resume">
+    <h1>Hồ sơ</h1>
+    <div class="intro">
+      <div class="paragraph">
+        <h2 class="name">Dương Minh Hoàng</h2>
+        <p class="role">Lập trình viên game Unity · Hà Nội, Việt Nam</p>
+        <p>Mình phát triển gameplay cho game di động bằng Unity và C#, từ xây dựng bản mẫu, triển khai đến cải tiến và thử nghiệm với người chơi. Kinh nghiệm của mình bao gồm phát triển màn chơi, xây dựng hệ thống gameplay, sửa lỗi và tối ưu hiệu năng khi game chạy.</p>
+        <p>Mình mong muốn nâng cao chuyên môn Unity/C# và lập trình gameplay thông qua các dự án game quy mô lớn, có quy trình phát triển chuyên nghiệp. Trong vòng ba năm, mình phấn đấu trở thành Lead Game Developer, có năng lực dẫn dắt đội ngũ phát triển gameplay, định hướng kỹ thuật và xây dựng các hệ thống game chất lượng cao.</p>
+        <p class="contact-details">
+          <a href="mailto:hoangls1008@gmail.com">hoangls1008@gmail.com</a><br>
+          <a href="tel:+84394270156">0394 270 156</a> · Vĩnh Tuy, Hà Nội
+        </p>
+        <a href="d/UNITY%20GAME%20DEVELOPER.pdf" target="_blank" rel="noopener noreferrer" class="download-link">
+          <i class="fa fa-download fa-lg fa-fw" aria-hidden="true"></i> Tải CV (PDF)
+        </a>
+      </div>
+      <div class="photo">
+        <img src="img/resume-photo.png" alt="Dương Minh Hoàng">
       </div>
     </div>
-    <div class="photo">
-      <img src="img/resume-photo.png" alt="Photo of John" />
-    </div>
-
-    <div style="clear:both"></div>
 
     <div class="full-content">
-      <h2>Work experience</h2>
+      <section aria-labelledby="experience-heading">
+        <h2 id="experience-heading">Kinh nghiệm làm việc</h2>
+        <h3>Lập trình viên game Unity <span class="company-name">· RiseOn Game Studio</span></h3>
+        <p class="meta">2025–2026 · Trước đây là HB Academy</p>
+        <ul>
+          <li>Phát triển gameplay bằng Unity/C#, tham gia quá trình phát triển game di động từ xây dựng bản mẫu, triển khai đến cải tiến và thử nghiệm công khai.</li>
+          <li>Phát triển và hoàn thiện hơn 10 màn chơi cho <strong>Cookingdom</strong>, bao gồm triển khai gameplay, cân bằng độ khó và tối ưu vòng lặp gameplay của từng màn.</li>
+          <li>Trực tiếp phát triển các tính năng gameplay cho <strong>Shikaku Cat: Number Puzzle</strong> và triển khai đợt chơi thử công khai với hơn 3.000 người chơi.</li>
+          <li>Sửa lỗi và tối ưu các hệ thống gameplay trong Unity, xử lý lỗi, dữ liệu màn chơi và các vấn đề về hiệu năng trong quá trình chạy game.</li>
+          <li>Làm việc với quy trình build Android, SDK quảng cáo và plugin bên thứ ba; phối hợp với đội ngũ để triển khai và điều chỉnh gameplay theo yêu cầu sản phẩm.</li>
+        </ul>
+      </section>
 
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2018-2019</h4>
+      <section aria-labelledby="skills-heading">
+        <h2 id="skills-heading">Kỹ năng</h2>
+        <div class="skills-grid">
+          <div class="skill-set">
+            <h3>Lập trình</h3>
+            <ul class="skills">
+              <li>C#</li><li>Lập trình hướng đối tượng (OOP)</li><li>Cấu trúc dữ liệu &amp; giải thuật (DSA)</li>
+            </ul>
+          </div>
+          <div class="skill-set">
+            <h3>Phát triển game</h3>
+            <ul class="skills">
+              <li>Unity</li><li>Lập trình gameplay</li><li>Hệ thống game</li><li>Triển khai màn chơi</li>
+            </ul>
+          </div>
+          <div class="skill-set">
+            <h3>Công cụ &amp; công nghệ</h3>
+            <ul class="skills">
+              <li>Git</li><li>Build Android</li><li>SDK quảng cáo</li><li>Tích hợp plugin bên thứ ba</li>
+            </ul>
+          </div>
+          <div class="skill-set">
+            <h3>Tối ưu</h3>
+            <ul class="skills">
+              <li>Gỡ lỗi</li><li>Tối ưu hiệu năng khi game chạy</li>
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <div>It's classified so I can't speak about it.</div>
+      <section aria-labelledby="education-heading">
+        <h2 id="education-heading">Học vấn</h2>
+        <h3>Đại học Công nghệ – ĐHQGHN</h3>
+        <p class="meta">2022–2026 · Cử nhân Công nghệ thông tin</p>
+        <p>GPA: <strong>3.53/4.00</strong> · Xếp loại: Giỏi</p>
+      </section>
 
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2015-2017</h4>
-
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Even more Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h3>Operation Classified - Delta Force</h3>
-      <h4>2012-2015</h4>
-
-      <div>It's classified so I can't speak about it.</div>
-
-      <div class="tech-stack">Firearms, knives, grenades, Hummer vehicle, parachute,...</div>
-
-      <h2>Skills</h2>
-
-      <div class="skill-set">
-        <h3>Lethal</h3>
-        <SkillRate name="Handguns" :rate="5" />
-        <SkillRate name="Rifles" :rate="5" />
-        <SkillRate name="Shotguns" :rate="5" />
-        <SkillRate name="Machineguns" :rate="5" />
-        <SkillRate name="Missile launchers" :rate="5" />
-        <SkillRate name="Knives" :rate="5" />
-        <SkillRate name="Hand to hand combat" :rate="5" />
-      </div>
-
-      <div class="skill-set">
-        <h3>Non-lethal</h3>
-        <SkillRate name="Sneaking" :rate="1" />
-        <SkillRate name="Negotiation" :rate="1" />
-        <SkillRate name="Seduction" :rate="1" />
-        <SkillRate name="Sense of humor" :rate="2" />
-      </div>
-      <div style="clear:both" />
-
-      <h2>Education</h2>
-
-      <h3>Kindergarten - 1985</h3>
-      <h4>Kindergarten degree</h4>
-      <div>Specialty in bullying and fighting (58 wins, 58 K-O, 0 losses)</div>
-
-      <h2>Languages</h2>
-
-      <h3>American</h3>
-      <div>Basic knowledge but I know lots of one-liners</div>
-
-      <h3>That's it</h3>
-      <div>Who needs another language when you speak American?</div>
-
-
-      <h2>Besides...</h2>
-      <div>
-        <h3>I ❤️ Violence</h3>
-        <div>I find it really soothing to just shoot at bad guys</div>
-
-        <h3>I 🧡 Sports</h3>
-        <div>I used to be thin but then I ingested 10 kilos of steroids and proteins a day while doing 1000 push-ups.</div>
-
-        <h3>I 💛 Politics</h3>
-        <div>I hope I can have a career here someday but I might have temper issues.</div>
-
-        <h3>I 💚 Flowers</h3>
-        <div>Especially the big ones, with the trunk and leaves.</div>
-
-      </div>
+      <section aria-labelledby="awards-heading">
+        <h2 id="awards-heading">Giải thưởng &amp; chứng chỉ</h2>
+        <ul class="awards">
+          <li><strong>Giải ba — Cuộc thi Hackathon MIRO Game Contest</strong><br>GDG Hanoi &amp; Apero Technologies Group</li>
+          <li><strong>Top 4 — Pixel Sunflower Game Jam</strong><br>Eden Eldersong</li>
+          <li><strong>Chứng chỉ Lập trình game nâng cao</strong><br>HB Academy</li>
+          <li><strong>IELTS 7.5</strong></li>
+        </ul>
+      </section>
     </div>
   </div>
 </template>
 
-<script lang="ts">
-import Vue from "vue";
-import SkillRate from "@/components/SkillRate.vue";
-
-export default Vue.extend({
-  name: "Resume",
-  components: {
-    SkillRate,
-  },
-});
-</script>
-
 <style scoped>
-h2 {
-  font-weight: 100;
-  font-size: 2em;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 50px;
+.resume {
+  margin-bottom: 80px;
+  text-align: left;
 }
-h3 {
-  font-weight: 100;
-  font-size: 1.6em;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 30px;
-}
-h4 {
-  font-weight: 100;
-  font-size: 1.3em;
-  margin: 0px;
-  padding: 0px;
-  padding-top: 15px;
-  font-style: italic;
+
+.intro {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
 }
 
 .paragraph {
+  flex: 1 1 400px;
   max-width: 700px;
+  min-width: 0;
+}
+
+h2 {
+  font-weight: 100;
+  font-size: 2em;
+  line-height: 1.3;
+  margin: 0;
+  padding-top: 50px;
+}
+
+h2.name {
+  padding-top: 0;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 1.6em;
+  line-height: 1.4;
+  margin: 0;
+  padding-top: 25px;
+}
+
+.role {
+  font-size: 1.2em;
+}
+
+.company-name,
+.meta {
+  opacity: 0.7;
+}
+
+.contact-details a {
+  overflow-wrap: anywhere;
 }
 
 .download-link {
-  float:left;
-  margin-right: 50px;
-}
-
-.full-content div {
-  max-width: 800px;
-}
-
-.skill-set h3 {
-  padding-bottom: 10px;
+  display: inline-block;
+  margin-top: 10px;
 }
 
 .photo img {
-  height: 300px;
+  display: block;
   width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 
-.tech-stack {
-  font-style: italic;
+.full-content {
+  max-width: 900px;
 }
 
-.photo {
-  margin-top: 50px;
-  text-align: center;
+ul {
+  padding-left: 22px;
 }
 
-@media only screen and (min-width: 620px){
-  .paragraph {
-    float: left;
-  }
+li {
+  margin-bottom: 10px;
+}
 
-  .photo {
-    float: left;
-    padding: 30px;
-    padding-left: 80px;
-  }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0 30px;
+}
 
-  .skill-set {
-    float: left;
-    padding-right: 60px; 
-  }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills li {
+  border: 1px solid rgba(220, 220, 220, 0.44);
+  padding: 2px 10px;
+  margin: 0;
+}
+
+.awards {
+  margin-top: 25px;
 }
 </style>

@@ -73,6 +73,7 @@ export default Vue.extend({
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .project-item-image {

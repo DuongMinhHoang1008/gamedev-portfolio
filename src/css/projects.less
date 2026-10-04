@@ -12,7 +12,27 @@
 
     iframe.youtube {
         width: 100%;
-        min-height: 300px;
+        min-height: 280px;
+    }
+
+    iframe.youtube-hc {
+        width: 100%;
+        min-height: 330px;
+    }
+
+    .hc-title {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+    }
+
+    .hc-badge {
+        width: 200px;
+        text-align: center;
+    }
+
+    .phone-hc-screenshot {
+        max-width: 120px;
+        margin: 10px;
     }
 
     .phone-screenshot {
@@ -40,11 +60,50 @@
         opacity: 0.6;
     }
 
+    .notice.yellow {
+        background-color: rgba(229, 245, 11, 0.486);
+        color: #695f01;
+        padding: 6px;
+        font-size: 0.7em;
+        line-height: 20px;
+        margin-top: 10px;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .hc-right { width: 50%; }
+    }
+
+    @media only screen and (max-width: 620px) {
+        .hc-right { width: 100%; }
+    }
+
     @media only screen and (min-width: 620px){
         iframe.youtube {
             max-width: 728px;
             height: 409px;
         }
+
+        iframe.youtube-hc {
+            max-width: 240px;
+            min-height: 300px;
+        }
+
+        .hc-left {
+            float: left;
+            max-width: 300px;
+        }
+
+        .hc-right {
+            padding-top: 10px;
+            float: left;
+            max-width: 600px;
+            margin-left: 32px;
+            font-size: 0.8em;
+            line-height: 1.4em;
+            min-width: 200px;
+        }
+
+        .hc-badge { margin-left: 20px; }
 
         .phone-screenshot {
             margin: 15px;
