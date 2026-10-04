@@ -34,9 +34,14 @@ For a real world use case, check my portfolio: https://schouffy.github.io
 
 3. Deploy
 
-    - npm run build
-    - copy the content of the "dist" folder (created by "npm run build") to the publish location.
-    - Check this example if you want to deploy to GitHub pages or some other major static content host: https://cli.vuejs.org/guide/deployment.html#github-pages
+    - Follow the [Vue CLI GitHub Pages guide](https://cli.vuejs.org/guide/deployment.html#github-pages). Production builds use `/gamedev-portfolio/`; local development uses `/`.
+    - Install dependencies with `npm ci`. Use Node.js 22 and Git; on Windows, run the deploy command in Git Bash. Configure your Git name/email and authenticate with GitHub before deploying.
+    - Run `npm run deploy`. The script builds the site, adds `.nojekyll`, and force-pushes only the generated `dist` content to `gh-pages`, replacing that branch's deployment history. It enables the OpenSSL legacy provider for Vue CLI 4 on Node.js 17+.
+    - After the first deploy, open the repository's **Settings > Pages**, select **Deploy from a branch**, then choose **gh-pages** and **/ (root)** and save.
+    - Website: https://DuongMinhHoang1008.github.io/gamedev-portfolio/
+    - Vue Router uses hash routing, so links such as `/gamedev-portfolio/#/resume` work when opened directly or refreshed.
+    - If you rename the repository, update `publicPath` in `vue.config.js`, the remote URL in `deploy.sh`, and `VUE_APP_PRODUCTION_URL` in `.env.production`.
+    - To build without publishing, run `npm run build` and use the generated `dist` folder. On modern Node.js in PowerShell, first run `$env:NODE_OPTIONS = '--openssl-legacy-provider'`.
 
 
 # License
