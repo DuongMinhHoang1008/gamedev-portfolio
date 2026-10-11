@@ -1,0 +1,71 @@
+.footer[data-v-320f9b5d] {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px 20px;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 8px 20px;
+  line-height: 1.5;
+}
+.footer > .left[data-v-320f9b5d],
+.footer > .right[data-v-320f9b5d] {
+  float: none;
+  min-width: 0;
+  padding: 0;
+}
+.footer > .left[data-v-320f9b5d] { text-align: left; }
+.footer > .right[data-v-320f9b5d] {
+  text-align: right;
+  overflow-wrap: anywhere;
+}
+.footer-language {
+  justify-self: end;
+  line-height: 0;
+}
+.language-switch {
+  display: inline-flex;
+  gap: 2px;
+  margin: 0;
+  padding: 2px;
+  vertical-align: middle;
+  border: 1px solid #77777f;
+  border-radius: 6px;
+  line-height: normal;
+}
+.language-switch button {
+  min-width: 30px;
+  min-height: 26px;
+  padding: 3px 6px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: #dcdcdc;
+  font: inherit;
+  font-size: 11px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.language-switch button[aria-pressed="true"] {
+  color: #303034;
+  background: #e4e4e9;
+}
+.language-switch button:hover { box-shadow: inset 0 0 0 1px #dcdcdc; }
+.language-switch button:focus-visible { outline: 2px solid #a8d8ff; outline-offset: 3px; }
+@media (max-width: 620px) {
+  .footer[data-v-320f9b5d] {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 4px 12px;
+    padding: 8px 12px;
+  }
+  .footer > .right[data-v-320f9b5d] {
+    grid-column: 1;
+    text-align: left;
+  }
+  .footer-language {
+    grid-column: 2;
+    grid-row: 1 / 3;
+  }
+}
