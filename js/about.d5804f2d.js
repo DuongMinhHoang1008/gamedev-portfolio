@@ -28,9 +28,12 @@
                   ]),
                   n("p", [
                     t.$text(
-                      "Tôi phát triển gameplay bằng Unity/C#, triển khai cơ chế chơi và tinh chỉnh theo yêu cầu sản phẩm. Kinh nghiệm của tôi bao gồm phát triển level, cải tiến thuật toán sinh level, tái cấu trúc dữ liệu, tích hợp SDK và triển khai bản Android."
+                      "Tôi là Unity Game Developer, phát triển gameplay, cơ chế tương tác và hệ thống level/dữ liệu bằng Unity/C#."
                     ),
                   ]),
+                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
+                  n("p", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                  n("p", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
                   n("p", [t.$text("Mục tiêu ngắn hạn: Nâng cao chuyên môn Unity/C# và Gameplay Programming, đóng góp vào việc phát triển gameplay chất lượng, cải thiện quy trình triển khai và hiệu quả làm việc của đội ngũ.")]),
                   n("p", [t.$text("Mục tiêu dài hạn: Phát triển năng lực thiết kế kiến trúc và định hướng kỹ thuật, hướng tới vai trò Lead Game Developer, góp phần dẫn dắt đội ngũ phát triển các sản phẩm game chất lượng cao.")]),
                   n("p", { staticClass: "contact-details" }, [
@@ -92,9 +95,9 @@
                     ]),
                     n("ul", [
                       n("li", [t.$text("Phát triển gameplay bằng Unity/C#, triển khai cơ chế chơi và tinh chỉnh theo yêu cầu sản phẩm.")]),
-                      n("li", [t.$text("Shikaku Cat: Number Puzzle: Cải tiến thuật toán sinh level bằng DLL, sinh nhiều map theo cấu hình độ khó và chấm điểm để chọn level phù hợp. Phát triển gameplay features, cải thiện kiến trúc dữ liệu và hoàn thiện sản phẩm public playtest với gần 3.000 người chơi.")]),
-                      n("li", [t.$text("Cookingdom: Phát triển hơn 10 level, tái sử dụng logic gameplay bằng interface và inheritance, góp phần giảm thời gian triển khai mỗi level từ 2 tuần xuống 1 tuần.")]),
-                      n("li", [t.$text("Tích hợp và cấu hình SDK quảng cáo, IAP, Firebase Remote Config và AppsFlyer; triển khai build Android lên Google Play Console và sửa lỗi trong public playtest.")]),
+                      n("li", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
+                      n("li", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                      n("li", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
                     ]),
                   ]
                 ),
@@ -123,6 +126,8 @@
                           n("li", [t.$text("Lập trình gameplay")]),
                           n("li", [t.$text("Hệ thống game")]),
                           n("li", [t.$text("Triển khai màn chơi")]),
+                          n("li", [t.$text("Unity Animation")]),
+                          n("li", [t.$text("DOTween")]),
                         ]),
                       ]),
                       n("div", { staticClass: "skill-set" }, [
@@ -262,6 +267,8 @@
                         ),
                     n("span", { staticClass: "title-bar" }, [
                       t.$text(t._s(i.name)),
+                      i.role ? n("span", { staticClass: "card-role" }, [t.$text(i.role)]) : t._e(),
+                      n("span", { staticClass: "card-status" }, [t.$text(i.status)]),
                     ]),
                   ]
                 );
@@ -318,6 +325,7 @@
                         n("p", { staticClass: "highlight" }, [
                           t.$text(t._s(t.selectedProject.highlight)),
                         ]),
+                        t.selectedProject.role ? n("p", { staticClass: "project-role" }, [t.$text(t.selectedProject.role)]) : t._e(),
                         n("h3", [t.$text("Tổng quan")]),
                         n("p", [t.$text(t._s(t.selectedProject.summary))]),
                         t.selectedProject.team
@@ -605,6 +613,7 @@
         c = [
           {
             "id": "shikaku-cats",
+            "role": "Phụ trách chính gameplay và hệ thống level/dữ liệu; phối hợp với thành viên phụ trách UI.",
             "name": "Shikaku Cat: Number Puzzle",
             "image": "img/projects/shikaku-cats-cover.png",
             "screenshots": [
@@ -634,21 +643,21 @@
             "url": "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle&hl=en",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
-              "Phát triển gameplay bằng Unity/C#, bao gồm logic giải đố, tương tác bàn chơi, khởi tạo board từ dữ liệu cấu hình và quản lý trạng thái level.",
-              "Triển khai Daily Reward, Cheat và hiệu ứng hoàn thành block/level; phối hợp hoàn thiện sản phẩm cùng thành viên phụ trách UI.",
+              "Phụ trách chính gameplay và hệ thống level/dữ liệu bằng Unity/C#: logic giải đố, tương tác board, khởi tạo board từ dữ liệu cấu hình, quản lý trạng thái level và các gameplay feature.",
+              "Triển khai Daily Reward, Cheat và hiệu ứng hoàn thành block/level bằng DOTween/Unity Animation; phối hợp với thành viên phụ trách UI, không đảm nhiệm toàn bộ phần UI.",
               "Tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai bản Android và sửa lỗi trong giai đoạn public testing với gần 3.000 người chơi."
             ],
-            "status": "Đã triển khai bản Android và thử nghiệm công khai.",
+            "status": "Public testing · Android qua Google Play Console · gần 3.000 người chơi.",
             "challenges": [
               {
-                "title": "Cải tiến thuật toán sinh level",
+                "title": "Tích hợp và cải tiến pipeline sinh level",
                 "challenge": "Thuật toán có sẵn phụ thuộc môi trường Linux/WSL và chưa hỗ trợ kiểm soát độ khó theo yêu cầu.",
-                "solution": "Đóng gói thuật toán thành DLL; sinh nhiều map theo cấu hình như số lượng block và số block dễ đoán, sau đó chấm điểm để chọn map phù hợp nhất với độ khó mục tiêu."
+                "solution": "Đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline: cấu hình độ khó → sinh nhiều map → chấm điểm map → chọn map phù hợp. Đây là phần tích hợp/cải tiến quy trình; tôi không phải tác giả thuật toán gốc."
               },
               {
                 "title": "Tái cấu trúc hệ thống dữ liệu",
                 "challenge": "DataManager tập trung quá nhiều trách nhiệm, khiến code khó quản lý và mở rộng.",
-                "solution": "Tách chức năng dữ liệu thành các Service theo trách nhiệm; thu gọn DataManager để tập trung cung cấp và điều phối các Service."
+                "solution": "Trước: DataManager lớn, chứa nhiều trách nhiệm. Sau: DataManager tập trung load/save và cung cấp hoặc điều phối các Service; mỗi Service đảm nhận chức năng riêng."
               },
               {
                 "title": "Hoàn thiện phản hồi thị giác",
@@ -659,7 +668,7 @@
             "results": [
               "Hỗ trợ sinh theo lô 100 level với cấu hình độ khó tùy chỉnh.",
               "Chuyển từ một class lớn hàng trăm dòng sang DataManager chỉ còn vài chục dòng, với các Service nhỏ hơn và dễ bảo trì.",
-              "Triển khai bản Android và hoàn thiện game trong giai đoạn public testing với gần 3.000 người chơi."
+              "Triển khai bản Android qua Google Play Console để public testing với gần 3.000 người chơi."
             ]
           },
           {
@@ -756,7 +765,7 @@
               "Accuracy trung bình tăng từ 69,8% lên 91,6% trong các kịch bản ping 0–1000 ms được thử nghiệm.",
               "Tại ping 1000 ms, jerk giảm từ 431,6 xuống 107,3 đơn vị/s³ trong thử nghiệm."
             ],
-            "resultsNote": "Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
+            "resultsNote": "Demo nghiên cứu giảm tác động của độ trễ lên cảm nhận gameplay, không làm giảm độ trễ mạng thực tế. Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
             "status": "Bản demo phục vụ thực nghiệm khóa luận tốt nghiệp (2026).",
             "challenges": [
               {
@@ -1005,12 +1014,12 @@
                     t.$text(", một "),
                     n("strong", [t.$text("lập trình viên game Unity")]),
                     t.$text(
-                      " tại Hà Nội. Tôi phát triển gameplay cho game di động bằng Unity và C#, từ xây dựng bản mẫu, triển khai tính năng đến cải tiến và thử nghiệm với người chơi."
+                      " tại Hà Nội. Từ tháng 05/2025, tôi làm việc tại RiseOn Game Studio (trước đây là HB Academy), phát triển gameplay, cơ chế tương tác và hệ thống level/dữ liệu bằng Unity/C#."
                     ),
                   ]),
-                  n("p", [t.$text("Từ tháng 05/2025, tôi làm việc tại RiseOn Game Studio (trước đây là HB Academy). Với Cookingdom, tôi phát triển hơn 10 level và tái sử dụng logic bằng interface và inheritance, góp phần giảm thời gian triển khai mỗi level từ 2 tuần xuống 1 tuần.")]),
-                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi cải tiến thuật toán sinh level bằng DLL, sinh nhiều map theo cấu hình độ khó và chấm điểm để chọn level phù hợp. Tôi cũng phát triển gameplay, cải thiện kiến trúc dữ liệu và hoàn thiện sản phẩm trong public playtest với gần 3.000 người chơi.")]),
-                  n("p", [t.$text("Tôi có kinh nghiệm tích hợp và cấu hình SDK quảng cáo, IAP, Firebase Remote Config, AppsFlyer và AppLovin; triển khai build Android lên Google Play Console và sửa lỗi trong public playtest. Các kỹ năng kỹ thuật của tôi bao gồm gỡ lỗi và phân tích hiệu năng khi game chạy.")]),
+                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
+                  n("p", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                  n("p", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
                   n("p", [
                     t.$text("Tôi theo học ngành Công nghệ thông tin tại "),
                     n("strong", [t.$text("Đại học Công nghệ - ĐHQGHN")]),

@@ -63,7 +63,7 @@ server.on("error", (error) => {
   console.error(error.message);
   process.exitCode = 1;
 });
-server.listen(8080, "127.0.0.1", () => {
-  console.log("Preview: http://127.0.0.1:8080/gamedev-portfolio/");
+server.listen(Number(process.env.PORT || 8080), "127.0.0.1", () => {
+  console.log("Preview: http://127.0.0.1:" + server.address().port + "/gamedev-portfolio/");
   console.log("Press Ctrl+C to stop.");
 });
