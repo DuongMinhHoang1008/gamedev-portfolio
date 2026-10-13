@@ -28,14 +28,11 @@
                   ]),
                   n("p", [
                     t.$text(
-                      "Tôi phát triển gameplay cho game di động bằng Unity và C#, từ xây dựng bản mẫu, triển khai đến cải tiến và thử nghiệm với người chơi. Kinh nghiệm của tôi bao gồm phát triển màn chơi, xây dựng hệ thống gameplay, sửa lỗi và tối ưu hiệu năng khi game chạy."
+                      "Tôi phát triển gameplay bằng Unity/C#, triển khai cơ chế chơi và tinh chỉnh theo yêu cầu sản phẩm. Kinh nghiệm của tôi bao gồm phát triển level, cải tiến thuật toán sinh level, tái cấu trúc dữ liệu, tích hợp SDK và triển khai bản Android."
                     ),
                   ]),
-                  n("p", [
-                    t.$text(
-                      "Tôi mong muốn nâng cao chuyên môn Unity/C# và lập trình gameplay thông qua các dự án game quy mô lớn, có quy trình phát triển chuyên nghiệp. Trong 3 - 5 năm, tôi hướng tới việc phát triển toàn diện năng lực chuyên môn và kỹ năng lãnh đạo để đảm nhận vai trò Lead Game Developer, dẫn dắt đội ngũ gameplay và định hướng kỹ thuật."
-                    ),
-                  ]),
+                  n("p", [t.$text("Mục tiêu ngắn hạn: Nâng cao chuyên môn Unity/C# và Gameplay Programming, đóng góp vào việc phát triển gameplay chất lượng, cải thiện quy trình triển khai và hiệu quả làm việc của đội ngũ.")]),
+                  n("p", [t.$text("Mục tiêu dài hạn: Phát triển năng lực thiết kế kiến trúc và định hướng kỹ thuật, hướng tới vai trò Lead Game Developer, góp phần dẫn dắt đội ngũ phát triển các sản phẩm game chất lượng cao.")]),
                   n("p", { staticClass: "contact-details" }, [
                     n(
                       "a",
@@ -91,40 +88,13 @@
                       ]),
                     ]),
                     n("p", { staticClass: "meta" }, [
-                      t.$text("2025 - 2026 · Trước đây là HB Academy"),
+                      t.$text("05/2025 - Hiện tại · Trước đây là HB Academy"),
                     ]),
                     n("ul", [
-                      n("li", [
-                        t.$text(
-                          "Phát triển gameplay bằng Unity/C#, tham gia quá trình phát triển game di động từ xây dựng bản mẫu, triển khai đến cải tiến và thử nghiệm công khai."
-                        ),
-                      ]),
-                      n("li", [
-                        t.$text("Phát triển và hoàn thiện hơn 10 màn chơi cho "),
-                        n("strong", [t.$text("Cookingdom")]),
-                        t.$text(
-                          ", bao gồm triển khai gameplay, cân bằng độ khó và tối ưu vòng lặp gameplay của từng màn."
-                        ),
-                      ]),
-                      n("li", [
-                        t.$text(
-                          "Trực tiếp phát triển các tính năng gameplay cho "
-                        ),
-                        n("strong", [t.$text("Shikaku Cat: Number Puzzle")]),
-                        t.$text(
-                          " và triển khai đợt chơi thử công khai với hơn 3.000 người chơi."
-                        ),
-                      ]),
-                      n("li", [
-                        t.$text(
-                          "Sửa lỗi và tối ưu các hệ thống gameplay trong Unity, xử lý lỗi, dữ liệu màn chơi và các vấn đề về hiệu năng trong quá trình chạy game."
-                        ),
-                      ]),
-                      n("li", [
-                        t.$text(
-                          "Tham gia quy trình build Android, tích hợp SDK và công nghệ bên thứ ba, triển khai và kiểm thử trên Google Play Console; phối hợp với đội ngũ để triển khai và điều chỉnh gameplay theo yêu cầu sản phẩm."
-                        ),
-                      ]),
+                      n("li", [t.$text("Phát triển gameplay bằng Unity/C#, triển khai cơ chế chơi và tinh chỉnh theo yêu cầu sản phẩm.")]),
+                      n("li", [t.$text("Shikaku Cat: Number Puzzle: Cải tiến thuật toán sinh level bằng DLL, sinh nhiều map theo cấu hình độ khó và chấm điểm để chọn level phù hợp. Phát triển gameplay features, cải thiện kiến trúc dữ liệu và hoàn thiện sản phẩm public playtest với gần 3.000 người chơi.")]),
+                      n("li", [t.$text("Cookingdom: Phát triển hơn 10 level, tái sử dụng logic gameplay bằng interface và inheritance, góp phần giảm thời gian triển khai mỗi level từ 2 tuần xuống 1 tuần.")]),
+                      n("li", [t.$text("Tích hợp và cấu hình SDK quảng cáo, IAP, Firebase Remote Config và AppsFlyer; triển khai build Android lên Google Play Console và sửa lỗi trong public playtest.")]),
                     ]),
                   ]
                 ),
@@ -156,19 +126,21 @@
                         ]),
                       ]),
                       n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Công cụ & công nghệ")]),
+                        n("h3", [t.$text("Công cụ & tích hợp")]),
                         n("ul", { staticClass: "skills" }, [
                           n("li", [t.$text("Git")]),
                           n("li", [t.$text("Build Android")]),
-                          // n("li", [t.$text("SDK quảng cáo")]),
-                          // n("li", [t.$text("Tích hợp plugin bên thứ ba")]),
+                          n("li", [t.$text("Firebase Remote Config")]),
+                          n("li", [t.$text("AppsFlyer")]),
+                          n("li", [t.$text("AppLovin")]),
+                          n("li", [t.$text("IAP")]),
                         ]),
                       ]),
                       n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Tối ưu")]),
+                        n("h3", [t.$text("Kỹ thuật phần mềm")]),
                         n("ul", { staticClass: "skills" }, [
                           n("li", [t.$text("Gỡ lỗi")]),
-                          n("li", [t.$text("Tối ưu hiệu năng khi game chạy")]),
+                          n("li", [t.$text("Phân tích hiệu năng khi game chạy")]),
                         ]),
                       ]),
                     ]),
@@ -346,7 +318,7 @@
                         n("p", { staticClass: "highlight" }, [
                           t.$text(t._s(t.selectedProject.highlight)),
                         ]),
-                        n("h3", [t.$text("Tóm tắt")]),
+                        n("h3", [t.$text("Tổng quan")]),
                         n("p", [t.$text(t._s(t.selectedProject.summary))]),
                         t.selectedProject.team
                           ? n("p", [
@@ -358,6 +330,7 @@
                           n("strong", [t.$text("Nền tảng:")]),
                           t.$text(" " + t._s(t.selectedProject.platform)),
                         ]),
+                        n("p", [n("strong", [t.$text("Trạng thái:")]), t.$text(" " + t.selectedProject.status)]),
                         n(
                           "a",
                           {
@@ -407,7 +380,7 @@
                               ),
                             ])
                           : t._e(),
-                        n("h3", [t.$text("Tính năng nổi bật")]),
+                        n("h4", [t.$text("Tính năng nổi bật")]),
                         n(
                           "ul",
                           t._l(t.selectedProject.features, function (i) {
@@ -415,6 +388,94 @@
                           }),
                           0
                         ),
+                        n(
+                          "section",
+                          {
+                            staticClass: "contributions",
+                            attrs: { "aria-labelledby": "contributions-title" },
+                          },
+                          [
+                            n("h3", { attrs: { id: "contributions-title" } }, [
+                              t.$text("Đóng góp của tôi"),
+                            ]),
+                            t.selectedProject.contributions.length
+                              ? n(
+                                  "ul",
+                                  t._l(
+                                    t.selectedProject.contributions,
+                                    function (i) {
+                                      return n("li", { key: i }, [
+                                        t.$text(t._s(i)),
+                                      ]);
+                                    }
+                                  ),
+                                  0
+                                )
+                              : n(
+                                  "p",
+                                  { staticClass: "contribution-placeholder" },
+                                  [t.$text("Nội dung sẽ được bổ sung.")]
+                                ),
+                          ]
+                        ),
+                        t.selectedProject.challenges
+                          ? n("section", { staticClass: "technical-challenges", attrs: { "aria-labelledby": "challenges-title" } }, [
+                              n("h3", { attrs: { id: "challenges-title" } }, [t.$text("Thách thức kỹ thuật & giải pháp")]),
+                              t._l(t.selectedProject.challenges, function (item, index) {
+                                return n("article", { key: item.title, staticClass: "technical-challenge" }, [
+                                  n("h4", [t.$text(t.selectedProject.challenges.length > 1 ? (index + 1) + ". " : ""), t.$text(item.title)]),
+                                  item.challenge ? n("p", [n("strong", [t.$text("Thách thức:")]), t.$text(" " + item.challenge)]) : t._e(),
+                                  item.solution ? n("p", [n("strong", [t.$text("Giải pháp:")]), t.$text(" " + item.solution)]) : t._e(),
+                                  item.description ? n("p", [t.$text(item.description)]) : t._e(),
+                                ]);
+                              }),
+                            ], 2)
+                          : t._e(),
+                        t.selectedProject.results
+                          ? n(
+                              "section",
+                              {
+                                staticClass: "research-results",
+                                attrs: {
+                                  "aria-labelledby": "research-results-title",
+                                },
+                              },
+                              [
+                                n(
+                                  "h3",
+                                  { attrs: { id: "research-results-title" } },
+                                  [t.$text("Kết quả")]
+                                ),
+                                t.selectedProject.resultsIntro ? n("p", [t.$text(t.selectedProject.resultsIntro)]) : t._e(),
+                                n(
+                                  "ul",
+                                  t._l(t.selectedProject.results, function (i) {
+                                    return n("li", { key: i }, [t.$text(i)]);
+                                  }),
+                                  0
+                                ),
+                                t.selectedProject.resultsNote ? n("p", [t.$text(t.selectedProject.resultsNote)]) : t._e(),
+                                t.selectedProject.documentUrl ? n(
+                                  "a",
+                                  {
+                                    staticClass: "game-link",
+                                    attrs: {
+                                      href:
+                                        t.selectedProject.documentUrl +
+                                        "#page=78",
+                                      target: "_blank",
+                                      rel: "noopener noreferrer",
+                                    },
+                                  },
+                                  [
+                                    t.$text(
+                                      "Xem số liệu trong khóa luận (Bảng 4.1-4.8) ↗"
+                                    ),
+                                  ]
+                                ) : t._e(),
+                              ]
+                            )
+                          : t._e(),
                         t.selectedProject.screenshots.length
                           ? n(
                               "section",
@@ -424,7 +485,7 @@
                               },
                               [
                                 n("h3", { attrs: { id: "gallery-title" } }, [
-                                  t.$text("Hình ảnh trong game"),
+                                  t.$text("Hình ảnh & video"),
                                 ]),
                                 n("p", { staticClass: "gallery-hint" }, [
                                   t.$text("Bấm vào ảnh để xem kích thước lớn."),
@@ -496,82 +557,10 @@
                                 ]),
                               ]
                             )
-                          : t._e(),
-                        t.selectedProject.results
-                          ? n(
-                              "section",
-                              {
-                                staticClass: "research-results",
-                                attrs: {
-                                  "aria-labelledby": "research-results-title",
-                                },
-                              },
-                              [
-                                n(
-                                  "h3",
-                                  { attrs: { id: "research-results-title" } },
-                                  [t.$text("Kết quả thực nghiệm")]
-                                ),
-                                n("p", [t.$text(t.selectedProject.resultsIntro)]),
-                                n(
-                                  "ul",
-                                  t._l(t.selectedProject.results, function (i) {
-                                    return n("li", { key: i }, [t.$text(i)]);
-                                  }),
-                                  0
-                                ),
-                                n("p", [t.$text(t.selectedProject.resultsNote)]),
-                                n(
-                                  "a",
-                                  {
-                                    staticClass: "game-link",
-                                    attrs: {
-                                      href:
-                                        t.selectedProject.documentUrl +
-                                        "#page=78",
-                                      target: "_blank",
-                                      rel: "noopener noreferrer",
-                                    },
-                                  },
-                                  [
-                                    t.$text(
-                                      "Xem số liệu trong khóa luận (Bảng 4.1-4.8) ↗"
-                                    ),
-                                  ]
-                                ),
-                              ]
-                            )
-                          : t._e(),
-                        n(
-                          "section",
-                          {
-                            staticClass: "contributions",
-                            attrs: { "aria-labelledby": "contributions-title" },
-                          },
-                          [
-                            n("h3", { attrs: { id: "contributions-title" } }, [
-                              t.$text("Đóng góp của tôi"),
+                          : n("section", { staticClass: "game-gallery" }, [
+                              n("h3", [t.$text("Hình ảnh & video")]),
+                              n("a", { staticClass: "game-link", attrs: { href: t.selectedProject.introductionUrl || t.selectedProject.url, target: "_blank", rel: "noopener noreferrer" } }, [t.$text(t.selectedProject.introductionUrl ? "Xem bài giới thiệu trên Facebook ↗" : t.selectedProject.linkLabel)]),
                             ]),
-                            t.selectedProject.contributions.length
-                              ? n(
-                                  "ul",
-                                  t._l(
-                                    t.selectedProject.contributions,
-                                    function (i) {
-                                      return n("li", { key: i }, [
-                                        t.$text(t._s(i)),
-                                      ]);
-                                    }
-                                  ),
-                                  0
-                                )
-                              : n(
-                                  "p",
-                                  { staticClass: "contribution-placeholder" },
-                                  [t.$text("Nội dung sẽ được bổ sung.")]
-                                ),
-                          ]
-                        ),
                         n("div", { staticClass: "dialog-bottom" }, [
                           n(
                             "button",
@@ -615,82 +604,110 @@
         s = i("2b0e"),
         c = [
           {
+            "id": "shikaku-cats",
+            "name": "Shikaku Cat: Number Puzzle",
+            "image": "img/projects/shikaku-cats-cover.png",
+            "screenshots": [
+              {
+                "src": "img/projects/shikaku-cats-ss1.png",
+                "caption": "Hoàn thành các vùng trên bảng để hé lộ những chú mèo."
+              },
+              {
+                "src": "img/projects/shikaku-cats-ss2.png",
+                "caption": "Kéo để tạo vùng có số ô khớp với con số."
+              },
+              {
+                "src": "img/projects/shikaku-cats-ss3.png",
+                "caption": "Giải các bảng số lớn hơn với độ khó tăng dần."
+              }
+            ],
+            "category": "Giải đố · Logic",
+            "highlight": "Gần 3.000 người chơi trong public testing",
+            "summary": "Game giải đố Shikaku với những chú mèo ẩn trong bảng số. Chia bảng thành các hình chữ nhật hoặc hình vuông có diện tích khớp với con số để hoàn thành màn chơi và khám phá những chú mèo.",
+            "features": [
+              "Kéo để tạo hình chữ nhật hoặc hình vuông trên lưới.",
+              "Mỗi vùng chứa đúng một con số và số ô tương ứng.",
+              "Hé lộ các chú mèo khi hoàn thành câu đố.",
+              "Thử thách tư duy logic và khả năng hình dung không gian với độ khó tăng dần."
+            ],
+            "platform": "Android · Google Play",
+            "url": "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle&hl=en",
+            "linkLabel": "Xem trên Google Play",
+            "contributions": [
+              "Phát triển gameplay bằng Unity/C#, bao gồm logic giải đố, tương tác bàn chơi, khởi tạo board từ dữ liệu cấu hình và quản lý trạng thái level.",
+              "Triển khai Daily Reward, Cheat và hiệu ứng hoàn thành block/level; phối hợp hoàn thiện sản phẩm cùng thành viên phụ trách UI.",
+              "Tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai bản Android và sửa lỗi trong giai đoạn public testing với gần 3.000 người chơi."
+            ],
+            "status": "Đã triển khai bản Android và thử nghiệm công khai.",
+            "challenges": [
+              {
+                "title": "Cải tiến thuật toán sinh level",
+                "challenge": "Thuật toán có sẵn phụ thuộc môi trường Linux/WSL và chưa hỗ trợ kiểm soát độ khó theo yêu cầu.",
+                "solution": "Đóng gói thuật toán thành DLL; sinh nhiều map theo cấu hình như số lượng block và số block dễ đoán, sau đó chấm điểm để chọn map phù hợp nhất với độ khó mục tiêu."
+              },
+              {
+                "title": "Tái cấu trúc hệ thống dữ liệu",
+                "challenge": "DataManager tập trung quá nhiều trách nhiệm, khiến code khó quản lý và mở rộng.",
+                "solution": "Tách chức năng dữ liệu thành các Service theo trách nhiệm; thu gọn DataManager để tập trung cung cấp và điều phối các Service."
+              },
+              {
+                "title": "Hoàn thiện phản hồi thị giác",
+                "challenge": "Bản demo chủ yếu tập trung vào cơ chế kéo thả block, còn thiếu phản hồi hình ảnh khi hoàn thành thao tác.",
+                "solution": "Bổ sung hiệu ứng sticker nổi khi hoàn thành block và hiệu ứng sticker nhảy sau khi hoàn thành level bằng DOTween và Animation."
+              }
+            ],
+            "results": [
+              "Hỗ trợ sinh theo lô 100 level với cấu hình độ khó tùy chỉnh.",
+              "Chuyển từ một class lớn hàng trăm dòng sang DataManager chỉ còn vài chục dòng, với các Service nhỏ hơn và dễ bảo trì.",
+              "Triển khai bản Android và hoàn thiện game trong giai đoạn public testing với gần 3.000 người chơi."
+            ]
+          },
+          {
             "id": "cookingdom",
             "name": "Cookingdom",
             "image": "img/projects/cookingdom-cover.png",
             "screenshots": [
               {
                 "src": "img/projects/cookingdom-ss1.png",
-                "caption": "Khám phá các món ăn trong bộ sưu tập công thức.",
+                "caption": "Khám phá các món ăn trong bộ sưu tập công thức."
               },
               {
                 "src": "img/projects/cookingdom-ss2.png",
-                "caption": "Chuẩn bị nguyên liệu, cuộn và cắt sushi.",
+                "caption": "Chuẩn bị nguyên liệu, cuộn và cắt sushi."
               },
               {
                 "src": "img/projects/cookingdom-ss3.png",
-                "caption": "Thực hiện từng bước để hoàn thiện món ăn.",
-              },
+                "caption": "Thực hiện từng bước để hoàn thiện món ăn."
+              }
             ],
             "category": "Nấu ăn · Thư giãn",
             "highlight": "Tham gia phát triển hơn 10 màn chơi",
-            "summary":
-              "Game nấu ăn với nhịp độ nhẹ nhàng, đưa người chơi qua từng bước chuẩn bị và hoàn thiện món ăn. Các công thức được chia thành những minigame tương tác, kết hợp âm thanh ASMR.",
+            "summary": "Game nấu ăn với nhịp độ nhẹ nhàng, đưa người chơi qua từng bước chuẩn bị và hoàn thiện món ăn. Các công thức được chia thành những minigame tương tác, kết hợp âm thanh ASMR.",
             "features": [
               "Thao tác cắt, trộn, nấu và trang trí món ăn qua từng minigame.",
               "Khám phá nhiều công thức, nguyên liệu và dụng cụ nấu ăn.",
               "Trang trí không gian bếp và tùy chỉnh trang phục đầu bếp.",
-              "Trải nghiệm thư giãn với âm thanh ASMR và nhạc nền nhẹ nhàng.",
+              "Trải nghiệm thư giãn với âm thanh ASMR và nhạc nền nhẹ nhàng."
             ],
             "platform": "Android · Google Play",
-            "url":
-              "https://play.google.com/store/apps/details?id=com.abi.cook.chill&hl=vi",
+            "url": "https://play.google.com/store/apps/details?id=com.abi.cook.chill&hl=vi",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
-              "Trực tiếp phát triển và hoàn thiện hơn 10 màn chơi bằng Unity/C#.",
-              "Lập trình logic, cơ chế tương tác và các chức năng đặc thù theo thiết kế của từng màn.",
-              "Điều chỉnh gameplay, cân bằng độ khó và xử lý lỗi để đảm bảo các màn chơi vận hành ổn định trong hệ thống hiện có.",
+              "Trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#.",
+              "Triển khai logic gameplay, cơ chế tương tác và các chức năng đặc thù theo thiết kế từng level.",
+              "Điều chỉnh gameplay, cân bằng độ khó và xử lý lỗi để các level vận hành ổn định trong hệ thống hiện có."
             ],
-          },
-          {
-            "id": "shikaku-cats",
-            "name": "Shikaku Cats: Number Puzzle",
-            "image": "img/projects/shikaku-cats-cover.png",
-            "screenshots": [
+            "status": "Đã phát hành trên Google Play.",
+            "challenges": [
               {
-                "src": "img/projects/shikaku-cats-ss1.png",
-                "caption":
-                  "Hoàn thành các vùng trên bảng để hé lộ những chú mèo.",
-              },
-              {
-                "src": "img/projects/shikaku-cats-ss2.png",
-                "caption": "Kéo để tạo vùng có số ô khớp với con số.",
-              },
-              {
-                "src": "img/projects/shikaku-cats-ss3.png",
-                "caption": "Giải các bảng số lớn hơn với độ khó tăng dần.",
-              },
+                "title": "Tái sử dụng logic giữa các level",
+                "challenge": "Nhiều level sử dụng các bước và cơ chế tương tác lặp lại, khiến việc triển khai ban đầu tốn nhiều thời gian.",
+                "solution": "Tái sử dụng logic bằng interface và inheritance, nhóm các class có chức năng tương đồng để giảm code trùng lặp."
+              }
             ],
-            "category": "Giải đố · Logic",
-            "highlight": "Gần 3.000 lượt tải",
-            "summary":
-              "Game giải đố Shikaku với những chú mèo ẩn trong bảng số. Chia bảng thành các hình chữ nhật hoặc hình vuông có diện tích khớp với con số để hoàn thành màn chơi và khám phá những chú mèo.",
-            "features": [
-              "Kéo để tạo hình chữ nhật hoặc hình vuông trên lưới.",
-              "Mỗi vùng chứa đúng một con số và số ô tương ứng.",
-              "Hé lộ các chú mèo khi hoàn thành câu đố.",
-              "Thử thách tư duy logic và khả năng hình dung không gian với độ khó tăng dần.",
-            ],
-            "platform": "Android · Google Play",
-            "url":
-              "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle&hl=en",
-            "linkLabel": "Xem trên Google Play",
-            "contributions": [
-              "Lập trình các tính năng cốt lõi bằng Unity/C#, bao gồm logic giải đố và tương tác trên bàn chơi.",
-              "Triển khai khởi tạo bàn chơi theo dữ liệu cấu hình, quản lý dữ liệu và trạng thái màn chơi.",
-              "Tích hợp Firebase, AppLovin và AppsFlyer; triển khai Firebase Remote Config và In-App Purchase (IAP).",
-              "Triển khai bản Android lên Google Play Console, sửa lỗi và hoàn thiện game trong giai đoạn public testing với hơn 3.000 người chơi.",
-            ],
+            "results": [
+              "Góp phần rút ngắn thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần."
+            ]
           },
           {
             "id": "missile-rally",
@@ -701,52 +718,62 @@
             "screenshots": [
               {
                 "src": "img/projects/missile-rally-menu.png",
-                "caption":
-                  "Menu Host/Join và thiết lập Ping, Jitter - Hình 4.1.",
+                "caption": "Menu Host/Join và thiết lập Ping, Jitter - Hình 4.1."
               },
               {
                 "src": "img/projects/missile-rally-lobby.png",
-                "caption":
-                  "Phòng chờ, chọn màu xe và xác nhận Ready - Hình 4.2.",
+                "caption": "Phòng chờ, chọn màu xe và xác nhận Ready - Hình 4.2."
               },
               {
                 "src": "img/projects/missile-rally-gameplay.png",
-                "caption":
-                  "Gameplay và giao diện bật/tắt kỹ thuật đồng bộ, theo dõi chỉ số - Hình 4.3.",
-              },
+                "caption": "Gameplay và giao diện bật/tắt kỹ thuật đồng bộ, theo dõi chỉ số - Hình 4.3."
+              }
             ],
             "category": "Đua xe nhiều người chơi · Khóa luận tốt nghiệp",
             "highlight": "Nghiên cứu cải tiến Dead Reckoning",
-            "summary":
-              "Khóa luận tốt nghiệp ngành Công nghệ thông tin tại Đại học Công nghệ - ĐHQGHN (2026): “Phương pháp nội suy hỗ trợ giảm độ trễ trong game trực tuyến”. Phát triển hệ thống thực nghiệm trên nền game đua xe RocketRally (bản demo MissileRally), nghiên cứu dự đoán và nội suy để giảm ảnh hưởng của độ trễ mạng đến chuyển động và tương tác giữa người chơi.",
+            "summary": "Khóa luận tốt nghiệp ngành Công nghệ thông tin tại Đại học Công nghệ - ĐHQGHN (2026): “Phương pháp nội suy hỗ trợ giảm độ trễ trong game trực tuyến”. Phát triển hệ thống thực nghiệm trên nền game đua xe RocketRally (bản demo MissileRally), nghiên cứu dự đoán và nội suy để giảm ảnh hưởng của độ trễ mạng đến chuyển động và tương tác giữa người chơi.",
             "features": [
               "Đua xe nhiều người chơi qua Host/Join, phòng chờ, chọn màu xe, Ready, bắn làm choáng đối thủ và Respawn.",
               "Cải tiến Dead Reckoning bằng dự đoán bậc hai, Time Stamping, Adaptive Threshold và SmoothDamp.",
               "Quản lý tick với NetworkTimer và lưu input, trạng thái trong CircularBuffer.",
               "Tích hợp Client-side Prediction và Server Reconciliation cho xe người chơi; Lag Compensation để kiểm tra tương tác trong quá khứ.",
-              "Giao diện chuyển đổi thuật toán, tùy chỉnh Ping/Jitter và tham số; theo dõi Accuracy, Jerk và số lần bắn trúng.",
+              "Giao diện chuyển đổi thuật toán, tùy chỉnh Ping/Jitter và tham số; theo dõi Accuracy, Jerk và số lần bắn trúng."
             ],
-            "platform":
-              "PC (Windows)",
-            "url":
-              "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity",
+            "platform": "PC (Windows)",
+            "url": "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity",
             "linkLabel": "Xem mã nguồn & hướng dẫn chạy",
             "contributions": [
-              "Phân tích hạn chế của Dead Reckoning và triển khai hệ thống cải tiến, bổ trợ trên nền game có sẵn.",
-              "Xây dựng bot chạy theo waypoint, tự điều chỉnh tốc độ khi vào cua và chế độ bắn laser tự động để giữ các kịch bản kiểm thử nhất quán.",
-              "Thiết kế thực nghiệm so sánh thuật toán dưới nhiều mức Ping/Jitter; đo độ chính xác, độ giật chuyển động và chi phí CPU/RAM.",
-              "Phân tích sự đánh đổi giữa độ mượt, độ chính xác và tài nguyên để đề xuất cấu hình phù hợp.",
+              "Phân tích hạn chế của Dead Reckoning và triển khai các cải tiến dự đoán, đồng bộ thời gian, nội suy và hiệu chỉnh trạng thái trên nền game Unity có sẵn.",
+              "Xây dựng bot chạy theo waypoint, tự điều chỉnh tốc độ khi vào cua và tự động bắn laser để duy trì tính nhất quán của các kịch bản thử nghiệm.",
+              "Thiết kế thực nghiệm với nhiều mức ping/jitter; đo độ chính xác dự đoán, độ giật chuyển động và chi phí CPU/RAM.",
+              "Phân tích sự đánh đổi giữa độ chính xác, độ mượt và tài nguyên để đề xuất cấu hình phù hợp theo từng trường hợp sử dụng."
             ],
             "documentUrl": "d/22021218_Duong_Minh_Hoang.pdf",
             "gallerySourceUrl": "d/22021218_Duong_Minh_Hoang.pdf#page=69",
             "gallerySourceLabel": "khóa luận, Chương 4 (trang 56-58)",
             "resultsIntro": "Trong các kịch bản thử nghiệm của khóa luận:",
             "results": [
-              "Accuracy trung bình tăng từ 69,8% lên 91,6% với dự đoán bậc hai và Time Stamping.",
-              "SmoothDamp và Adaptive Threshold giúp chuyển động mượt hơn; Lag Compensation cải thiện độ chính xác khi bắn ở ping cao.",
+              "Accuracy trung bình tăng từ 69,8% lên 91,6% trong các kịch bản ping 0–1000 ms được thử nghiệm.",
+              "Tại ping 1000 ms, jerk giảm từ 431,6 xuống 107,3 đơn vị/s³ trong thử nghiệm."
             ],
-            "resultsNote":
-              "Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
+            "resultsNote": "Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
+            "status": "Bản demo phục vụ thực nghiệm khóa luận tốt nghiệp (2026).",
+            "challenges": [
+              {
+                "title": "Cải thiện độ chính xác dự đoán",
+                "challenge": "Dead Reckoning sử dụng mô hình dự đoán bậc một có thể kém chính xác khi xe tăng tốc, giảm tốc hoặc đổi hướng; sai lệch thời gian cũng ảnh hưởng đến dự đoán.",
+                "solution": "Bổ sung thành phần gia tốc trong mô hình dự đoán bậc hai và sử dụng Time Stamping để tính khoảng thời gian dự đoán chính xác hơn."
+              },
+              {
+                "title": "Giảm độ giật chuyển động",
+                "challenge": "Hiệu chỉnh trạng thái trực tiếp có thể gây chuyển động giật, đặc biệt khi độ trễ mạng cao.",
+                "solution": "Kết hợp SmoothDamp với Adaptive Threshold để làm mượt chuyển động và điều chỉnh thời điểm hiệu chỉnh theo mức sai lệch."
+              },
+              {
+                "title": "Kiểm chứng các cơ chế hỗ trợ",
+                "description": "Sử dụng Client-side Prediction và Server Reconciliation cho đối tượng người chơi; thử nghiệm Lag Compensation cho các tương tác phụ thuộc thời điểm như bắn laser."
+              }
+            ]
           },
           {
             "id": "the-forest-doctor",
@@ -755,26 +782,25 @@
             "screenshots": [
               {
                 "src": "img/projects/forest-doctor-ss1.png",
-                "caption": "Xếp nguyên liệu và phối màu để chế thuốc.",
+                "caption": "Xếp nguyên liệu và phối màu để chế thuốc."
               },
               {
                 "src": "img/projects/forest-doctor-ss2.png",
-                "caption": "Mua nguyên liệu trong cửa hàng.",
+                "caption": "Mua nguyên liệu trong cửa hàng."
               },
               {
                 "src": "img/projects/forest-doctor-ss3.png",
-                "caption": "Chọn thuốc từ kho để chữa bệnh.",
-              },
+                "caption": "Chọn thuốc từ kho để chữa bệnh."
+              }
             ],
             "category": "Giải đố · Game Jam",
             "highlight": "Top 4 Pixel Sunflower Game Jam",
-            "summary":
-              "Vào vai thầy thuốc chữa bệnh cho các con vật trong rừng. Kết hợp nguyên liệu theo quy luật màu sắc để pha đúng loại thuốc cho từng bệnh nhân.",
+            "summary": "Vào vai thầy thuốc chữa bệnh cho các con vật trong rừng. Kết hợp nguyên liệu theo quy luật màu sắc để pha đúng loại thuốc cho từng bệnh nhân.",
             "features": [
               "Xếp các mảnh nguyên liệu để tạo thuốc có lượng màu phù hợp với bệnh.",
               "Các màu bổ trợ hoặc triệt tiêu nhau dựa trên vòng tròn màu sắc.",
               "Mua nguyên liệu, bán thuốc và nâng cấp tại cửa hàng.",
-              "Kết hợp giải đố với lối chơi endless.",
+              "Kết hợp giải đố với lối chơi endless."
             ],
             "platform": "Trình duyệt web (HTML5) · Unity",
             "url": "https://dmhoang.itch.io/the-forest-doctor",
@@ -782,8 +808,9 @@
             "contributions": [
               "Trực tiếp đảm nhiệm toàn bộ phần lập trình game bằng Unity/C#.",
               "Xây dựng và triển khai logic gameplay, các hệ thống chức năng và cơ chế tương tác trong game.",
-              "Tích hợp các thành phần gameplay để hoàn thiện trải nghiệm chơi.",
+              "Tích hợp các thành phần gameplay để hoàn thiện trải nghiệm chơi."
             ],
+            "status": "Bản game Game Jam có thể chơi trên itch.io."
           },
           {
             "id": "tohe",
@@ -793,25 +820,24 @@
             "category": "Endless Runner · Game Contest",
             "highlight": "Giải ba Hackathon MIRO Game Contest",
             "team": "TheDreamer",
-            "summary":
-              "Một người đam mê tò he ước mơ đưa nét văn hóa này ra thế giới bằng game. Khi hiện thực không như mong đợi, anh ngủ thiếp đi và mơ thấy những con tò he của mình thật sự bay đến muôn nơi.",
+            "summary": "Một người đam mê tò he ước mơ đưa nét văn hóa này ra thế giới bằng game. Khi hiện thực không như mong đợi, anh ngủ thiếp đi và mơ thấy những con tò he của mình thật sự bay đến muôn nơi.",
             "features": [
               "Điều khiển tò he né chướng ngại vật, thu thập xu và đi xa nhất có thể.",
               "Dùng xu mở khóa tính năng và các tò he mới, mỗi tò he có kỹ năng riêng.",
               "Chướng ngại vật và màu sắc gợi lên những trở ngại, cảm xúc trong hành trình theo đuổi ước mơ.",
-              "Các tò he lấy cảm hứng từ Việt Nam, Mỹ, Anh và Úc: rồng, trâu, đại bàng, tượng Nữ thần Tự do, sư tử, Big Ben, kangaroo và koala.",
+              "Các tò he lấy cảm hứng từ Việt Nam, Mỹ, Anh và Úc: rồng, trâu, đại bàng, tượng Nữ thần Tự do, sư tử, Big Ben, kangaroo và koala."
             ],
             "platform": "Android",
-            "url":
-              "https://drive.google.com/file/d/1IDB5urWXncc20g0mhZFFY0uKO9mh0Imw/view?usp=drive_link",
+            "url": "https://drive.google.com/file/d/1IDB5urWXncc20g0mhZFFY0uKO9mh0Imw/view?usp=drive_link",
             "linkLabel": "Xem trên Google Drive",
             "introductionUrl": "https://www.facebook.com/share/v/14ysxWn6E5S/",
             "contributions": [
               "Trực tiếp đảm nhiệm toàn bộ phần lập trình game bằng Godot.",
               "Xây dựng logic gameplay, các hệ thống chức năng và cơ chế tương tác cốt lõi.",
-              "Tích hợp và hoàn thiện các tính năng để đảm bảo trải nghiệm chơi nhất quán.",
+              "Tích hợp và hoàn thiện các tính năng để đảm bảo trải nghiệm chơi nhất quán."
             ],
-          },
+            "status": "Bản game tham gia Hackathon MIRO Game Contest."
+          }
         ],
         h = c,
         o = s["a"].extend({
@@ -982,26 +1008,9 @@
                       " tại Hà Nội. Tôi phát triển gameplay cho game di động bằng Unity và C#, từ xây dựng bản mẫu, triển khai tính năng đến cải tiến và thử nghiệm với người chơi."
                     ),
                   ]),
-                  n("p", [
-                    t.$text("Tại "),
-                    n("strong", [t.$text("RiseOn Game Studio")]),
-                    t.$text(
-                      " (trước đây là HB Academy), tôi đã phát triển và hoàn thiện "
-                    ),
-                    n("strong", [t.$text("hơn 10 màn chơi cho Cookingdom")]),
-                    t.$text(
-                      ", bao gồm triển khai gameplay, cân bằng độ khó và tối ưu vòng lặp gameplay của từng màn. Tôi cũng trực tiếp phát triển các tính năng gameplay cho "
-                    ),
-                    n("strong", [t.$text("Shikaku Cat: Number Puzzle")]),
-                    t.$text(" và tham gia triển khai đợt chơi thử công khai với "),
-                    n("strong", [t.$text("hơn 3.000 người chơi")]),
-                    t.$text("."),
-                  ]),
-                  n("p", [
-                    t.$text(
-                      "Công việc của tôi bao gồm xây dựng hệ thống gameplay, triển khai màn chơi, sửa lỗi và tối ưu hiệu năng khi game chạy. Tôi cũng có kinh nghiệm với quy trình build Android, SDK quảng cáo, tích hợp plugin bên thứ ba, triển khai và kiểm thử trên Google Play Console."
-                    ),
-                  ]),
+                  n("p", [t.$text("Từ tháng 05/2025, tôi làm việc tại RiseOn Game Studio (trước đây là HB Academy). Với Cookingdom, tôi phát triển hơn 10 level và tái sử dụng logic bằng interface và inheritance, góp phần giảm thời gian triển khai mỗi level từ 2 tuần xuống 1 tuần.")]),
+                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi cải tiến thuật toán sinh level bằng DLL, sinh nhiều map theo cấu hình độ khó và chấm điểm để chọn level phù hợp. Tôi cũng phát triển gameplay, cải thiện kiến trúc dữ liệu và hoàn thiện sản phẩm trong public playtest với gần 3.000 người chơi.")]),
+                  n("p", [t.$text("Tôi có kinh nghiệm tích hợp và cấu hình SDK quảng cáo, IAP, Firebase Remote Config, AppsFlyer và AppLovin; triển khai build Android lên Google Play Console và sửa lỗi trong public playtest. Các kỹ năng kỹ thuật của tôi bao gồm gỡ lỗi và phân tích hiệu năng khi game chạy.")]),
                   n("p", [
                     t.$text("Tôi theo học ngành Công nghệ thông tin tại "),
                     n("strong", [t.$text("Đại học Công nghệ - ĐHQGHN")]),
@@ -1013,11 +1022,8 @@
                     n("strong", [t.$text("IELTS 7.5")]),
                     t.$text("."),
                   ]),
-                  n("p", [
-                    t.$text(
-                      "Tôi mong muốn nâng cao chuyên môn Unity/C# và lập trình gameplay thông qua các dự án game quy mô lớn, có quy trình phát triển chuyên nghiệp. Trong 3 - 5 năm, tôi hướng tới việc phát triển toàn diện năng lực chuyên môn và kỹ năng lãnh đạo để đảm nhận vai trò Lead Game Developer, dẫn dắt đội ngũ gameplay và định hướng kỹ thuật."
-                    ),
-                  ]),
+                  n("p", [t.$text("Mục tiêu ngắn hạn: Nâng cao chuyên môn Unity/C# và Gameplay Programming, đóng góp vào việc phát triển gameplay chất lượng, cải thiện quy trình triển khai và hiệu quả làm việc của đội ngũ.")]),
+                  n("p", [t.$text("Mục tiêu dài hạn: Phát triển năng lực thiết kế kiến trúc và định hướng kỹ thuật, hướng tới vai trò Lead Game Developer, góp phần dẫn dắt đội ngũ phát triển các sản phẩm game chất lượng cao.")]),
                 ]),
                 n("div", { staticClass: "photo" }, [
                   n("img", {
