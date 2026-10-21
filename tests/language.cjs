@@ -33,9 +33,21 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
   const instance = new Vue(exports.default);
   instance.$setLanguage('vi');
   const original = text(instance._render());
+  assert(!original.includes('Vĩnh Tuy'), id + ': outdated address');
+  if (id === '1ba2') {
+    for (const value of ['SuperHot - 3D Mobile Action', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Hit Accuracy 0% → 100%']) {
+      assert(original.includes(value), id + ': missing CV content: ' + value);
+    }
+  }
   instance.$setLanguage('en');
   assert(text(instance._render()).includes(expected), id);
   assert.equal(context.document.documentElement.lang, 'en');
+  const english = text(instance._render());
+  if (id === '1ba2' || id === 'b8fa') assert(english.includes('Hai Bà Trưng, Hanoi'), id + ': contact translation');
+  if (id === '1ba2') {
+    for (const value of ['SuperHot - 3D Mobile Action', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Hit Accuracy 0% → 100%']) assert(english.includes(value), id + ': CV translation: ' + value);
+    assert(!english.includes('Với SuperHot') && !english.includes('Trong khóa luận'), id + ': untranslated CV');
+  }
   if (instance.projects) {
     for (const project of instance.projects) {
       instance.selectedProject = project;
@@ -61,4 +73,4 @@ vm.runInContext(fs.readFileSync('js/i18n.js', 'utf8'), context);
 context.window.installPortfolioLanguage(Vue);
 new Vue().$setLanguage('en');
 assert.equal(context.document.documentElement.lang, 'en');
-console.log('PASS: all four pages, five project dialogs, VI/EN round trips, accessibility labels, persistence, and blocked storage.');
+console.log('PASS: all four pages, all project dialogs, updated CV content, VI/EN round trips, accessibility labels, persistence, and blocked storage.');

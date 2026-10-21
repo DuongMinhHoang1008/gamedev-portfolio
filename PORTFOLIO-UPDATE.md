@@ -1,3 +1,27 @@
+# Cập nhật theo CV mới — 21/10/2026
+
+- Nguồn: file người dùng cung cấp tại `D:/Downloads/UNITY GAME DEVELOPER (10).pdf`, 1 trang. Đã trích xuất văn bản và render PNG để đọc/đối chiếu.
+- Thay `d/UNITY GAME DEVELOPER.pdf` bằng đúng file mới; giữ URL tải hiện có. SHA-256: `1581284D92D1E3D3E22B8F212C86D8C13DDA545937D973F8C3C08DAB9620C7A0`.
+- Đồng bộ trang giới thiệu, hồ sơ, kinh nghiệm, dự án cá nhân, kỹ năng, trang liên hệ và bản dịch tiếng Anh. Địa chỉ mới: Hai Bà Trưng, Hà Nội. Mục tiêu ngắn hạn nhấn mạnh gameplay mượt mà, tối ưu hiệu năng và tiến độ dự án.
+- Shikaku: logic giải đố, board, Daily Reward/Cheat, DLL mở rộng thuật toán có sẵn, hàng trăm level với độ khó tùy chỉnh, DataManager/Service và public testing gần 3.000 người chơi.
+- Cookingdom: hơn 10 level, logic gameplay, cân bằng độ khó, sửa lỗi và tái sử dụng qua kế thừa; giữ diễn đạt “góp phần” giảm thời gian khoảng 2 tuần xuống 1 tuần.
+- SuperHot - 3D Mobile Action: bổ sung Unity Profiler xác định bottleneck animation/rendering, VAT Baking và Indirect Rendering. Theo chỉnh sửa cuối: nền tảng Android, bỏ các câu ghi nhận Codex, bỏ thách thức Frenzy và hoán đổi chú thích ảnh 1–2; không thêm benchmark FPS.
+- MissileRally: bổ sung Netcode for GameObjects và kết quả Lag Compensation tăng Hit Accuracy 0% → 100% tại các mức ping 500 ms và 1.000 ms. Giữ accuracy 69,8% → 91,6% và jerk 431,6 → 107,3 đơn vị/s³ tại ping 1.000 ms. Các số liệu là kết quả thực nghiệm, không phải cam kết cho mọi điều kiện mạng.
+- Cấu hình SDK diễn đạt theo CV mới là cấu hình các SDK có sẵn. Cập nhật metadata mô tả website/Open Graph.
+- Giữ các thông tin cũ còn phù hợp: vai trò phối hợp UI, DOTween/Unity Animation và chi tiết kỹ thuật dự án. Học vấn, GPA, giải thưởng và chứng chỉ khớp CV mới.
+- Rút gọn trang giới thiệu thành 6 đoạn. Trong Hồ sơ, bỏ phần giới thiệu dài, đưa học vấn và giải thưởng lên trước kinh nghiệm; kinh nghiệm theo 4 mục trong CV mới.
+- Shikaku: bỏ câu giải thích quyền tác giả thuật toán theo yêu cầu, giữ mô tả thuật toán có sẵn; sửa giải pháp DataManager thành tách các chức năng ra Service.
+- Thay favicon bằng ảnh mèo pixel người dùng cung cấp, giữ PNG gốc và bổ sung ICO tương ứng.
+- Giữ các chỉnh sửa SuperHot và ảnh dự án đã tồn tại trước phiên làm việc. Người dùng đã duyệt và yêu cầu triển khai toàn bộ bản cập nhật lên GitHub Pages từ nhánh `gh-pages`.
+
+Kiểm tra: `node build.cjs`, `node tests/project-popups.cjs`, `node tests/language.cjs`, `node tests/site-assets.cjs`. Kiểm tra 4 trang, 6 popup, chuyển VI/EN, nội dung CV mới và 37 tài nguyên HTTP khớp bản đóng gói. File CV nguồn, file phục vụ và bản dist khớp byte.
+
+Đã kiểm tra trực tiếp trang hồ sơ VI/EN và bố cục desktop bằng trình duyệt. Các liên kết ngoài chưa được kiểm tra lại trong lần cập nhật này. Repository vẫn là website Vue đã biên dịch sẵn; build đóng gói website tĩnh vào `dist/`.
+
+Phần dưới là lịch sử ngày 14/10/2026, mô tả phiên bản CV cũ; các lưu ý thiếu thông tin Unity Profiler và nội dung địa chỉ/file CV tại đó đã được thay thế bởi cập nhật bên trên.
+
+---
+
 ﻿# Báo cáo cập nhật portfolio — 14/10/2026
 
 ## 1. Thay đổi đã thực hiện

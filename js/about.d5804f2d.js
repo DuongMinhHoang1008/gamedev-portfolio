@@ -26,16 +26,6 @@
                   n("p", { staticClass: "role" }, [
                     t.$text("Lập trình viên game Unity · Hà Nội, Việt Nam"),
                   ]),
-                  n("p", [
-                    t.$text(
-                      "Tôi là Unity Game Developer, phát triển gameplay, cơ chế tương tác và hệ thống level/dữ liệu bằng Unity/C#."
-                    ),
-                  ]),
-                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
-                  n("p", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
-                  n("p", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
-                  n("p", [t.$text("Mục tiêu ngắn hạn: Nâng cao chuyên môn Unity/C# và Gameplay Programming, đóng góp vào việc phát triển gameplay chất lượng, cải thiện quy trình triển khai và hiệu quả làm việc của đội ngũ.")]),
-                  n("p", [t.$text("Mục tiêu dài hạn: Phát triển năng lực thiết kế kiến trúc và định hướng kỹ thuật, hướng tới vai trò Lead Game Developer, góp phần dẫn dắt đội ngũ phát triển các sản phẩm game chất lượng cao.")]),
                   n("p", { staticClass: "contact-details" }, [
                     n(
                       "a",
@@ -46,7 +36,7 @@
                     n("a", { attrs: { href: "tel:+84394270156" } }, [
                       t.$text("0394 270 156"),
                     ]),
-                    t.$text(" · Vĩnh Tuy, Hà Nội "),
+                    t.$text(" · Hai Bà Trưng, Hà Nội "),
                   ]),
                   n(
                     "a",
@@ -77,80 +67,6 @@
                 ]),
               ]),
               n("div", { staticClass: "full-content" }, [
-                n(
-                  "section",
-                  { attrs: { "aria-labelledby": "experience-heading" } },
-                  [
-                    n("h2", { attrs: { id: "experience-heading" } }, [
-                      t.$text("Kinh nghiệm làm việc"),
-                    ]),
-                    n("h3", [
-                      t.$text("Lập trình viên game Unity "),
-                      n("span", { staticClass: "company-name" }, [
-                        t.$text("· RiseOn Game Studio"),
-                      ]),
-                    ]),
-                    n("p", { staticClass: "meta" }, [
-                      t.$text("05/2025 - Hiện tại · Trước đây là HB Academy"),
-                    ]),
-                    n("ul", [
-                      n("li", [t.$text("Phát triển gameplay bằng Unity/C#, triển khai cơ chế chơi và tinh chỉnh theo yêu cầu sản phẩm.")]),
-                      n("li", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
-                      n("li", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
-                      n("li", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
-                    ]),
-                  ]
-                ),
-                n(
-                  "section",
-                  { attrs: { "aria-labelledby": "skills-heading" } },
-                  [
-                    n("h2", { attrs: { id: "skills-heading" } }, [
-                      t.$text("Kỹ năng"),
-                    ]),
-                    n("div", { staticClass: "skills-grid" }, [
-                      n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Lập trình")]),
-                        n("ul", { staticClass: "skills" }, [
-                          n("li", [t.$text("C#")]),
-                          n("li", [t.$text("Lập trình hướng đối tượng (OOP)")]),
-                          n("li", [
-                            t.$text("Cấu trúc dữ liệu & giải thuật (DSA)"),
-                          ]),
-                        ]),
-                      ]),
-                      n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Phát triển game")]),
-                        n("ul", { staticClass: "skills" }, [
-                          n("li", [t.$text("Unity")]),
-                          n("li", [t.$text("Lập trình gameplay")]),
-                          n("li", [t.$text("Hệ thống game")]),
-                          n("li", [t.$text("Triển khai màn chơi")]),
-                          n("li", [t.$text("Unity Animation")]),
-                          n("li", [t.$text("DOTween")]),
-                        ]),
-                      ]),
-                      n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Công cụ & tích hợp")]),
-                        n("ul", { staticClass: "skills" }, [
-                          n("li", [t.$text("Git")]),
-                          n("li", [t.$text("Build Android")]),
-                          n("li", [t.$text("Firebase Remote Config")]),
-                          n("li", [t.$text("AppsFlyer")]),
-                          n("li", [t.$text("AppLovin")]),
-                          n("li", [t.$text("IAP")]),
-                        ]),
-                      ]),
-                      n("div", { staticClass: "skill-set" }, [
-                        n("h3", [t.$text("Kỹ thuật phần mềm")]),
-                        n("ul", { staticClass: "skills" }, [
-                          n("li", [t.$text("Gỡ lỗi")]),
-                          n("li", [t.$text("Phân tích hiệu năng khi game chạy")]),
-                        ]),
-                      ]),
-                    ]),
-                  ]
-                ),
                 n(
                   "section",
                   { attrs: { "aria-labelledby": "education-heading" } },
@@ -199,6 +115,94 @@
                         t.$text("HB Academy"),
                       ]),
                       n("li", [n("strong", [t.$text("IELTS 7.5")])]),
+                    ]),
+                  ]
+                ),
+                n(
+                  "section",
+                  { attrs: { "aria-labelledby": "experience-heading" } },
+                  [
+                    n("h2", { attrs: { id: "experience-heading" } }, [
+                      t.$text("Kinh nghiệm làm việc"),
+                    ]),
+                    n("h3", [
+                      t.$text("Lập trình viên game Unity "),
+                      n("span", { staticClass: "company-name" }, [
+                        t.$text("· RiseOn Game Studio"),
+                      ]),
+                    ]),
+                    n("p", { staticClass: "meta" }, [
+                      t.$text("05/2025 - Hiện tại · Trước đây là HB Academy"),
+                    ]),
+                    n("ul", [
+                      n("li", [t.$text("Shikaku Cat: Number Puzzle: Phát triển gameplay, hệ thống level/dữ liệu, logic giải đố, tương tác board và các tính năng Daily Reward/Cheat; mở rộng thuật toán sinh level có sẵn bằng DLL, hỗ trợ tạo hàng trăm level với độ khó tùy chỉnh. Đưa bản Android lên Google Play Console public testing với gần 3.000 người chơi. Tái cấu trúc DataManager, tách trách nhiệm thành các Service riêng biệt.")]),
+                      n("li", [t.$text("Cookingdom: Phát triển và hoàn thiện hơn 10 level, bao gồm logic gameplay, cân bằng độ khó và sửa lỗi. Tái sử dụng logic qua kế thừa, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                      n("li", [t.$text("SuperHot - 3D Mobile Action: Phát triển gameplay chiến đấu 3D và cơ chế Combo/Frenzy; sử dụng Unity Profiler xác định bottleneck animation/rendering khi mật độ địch tăng. Nghiên cứu và lựa chọn VAT Baking kết hợp Indirect Rendering để cải thiện FPS.")]),
+                      n("li", [t.$text("Integration & Release: Cấu hình SDK có sẵn gồm AppLovin, IAP, Firebase Remote Config và AppsFlyer; triển khai Android build và xử lý lỗi trong public testing.")]),
+                    ]),
+                  ]
+                ),
+                n("section", { attrs: { "aria-labelledby": "personal-projects-heading" } }, [
+                  n("h2", { attrs: { id: "personal-projects-heading" } }, [t.$text("Dự án cá nhân")]),
+                  n("h3", [t.$text("MissileRally - Khóa luận tốt nghiệp")]),
+                  n("p", [t.$text("Trong khóa luận MissileRally, tôi mở rộng game đua xe multiplayer bằng Unity/Netcode for GameObjects thành môi trường thực nghiệm, cải tiến Dead Reckoning và triển khai Client-side Prediction, Server Reconciliation, Lag Compensation. Kết quả thử nghiệm: accuracy trung bình 69,8% → 91,6%; jerk 431,6 → 107,3 đơn vị/s³ tại ping 1.000 ms; Hit Accuracy 0% → 100% tại ping 500 ms và 1.000 ms.")]),
+                ]),
+                n(
+                  "section",
+                  { attrs: { "aria-labelledby": "skills-heading" } },
+                  [
+                    n("h2", { attrs: { id: "skills-heading" } }, [
+                      t.$text("Kỹ năng"),
+                    ]),
+                    n("div", { staticClass: "skills-grid" }, [
+                      n("div", { staticClass: "skill-set" }, [
+                        n("h3", [t.$text("Lập trình")]),
+                        n("ul", { staticClass: "skills" }, [
+                          n("li", [t.$text("C#")]),
+                          n("li", [t.$text("Lập trình hướng đối tượng (OOP)")]),
+                          n("li", [
+                            t.$text("Cấu trúc dữ liệu & giải thuật (DSA)"),
+                          ]),
+                        ]),
+                      ]),
+                      n("div", { staticClass: "skill-set" }, [
+                        n("h3", [t.$text("Phát triển game")]),
+                        n("ul", { staticClass: "skills" }, [
+                          n("li", [t.$text("Unity")]),
+                          n("li", [t.$text("Lập trình gameplay")]),
+                          n("li", [t.$text("Hệ thống game")]),
+                          n("li", [t.$text("Triển khai màn chơi")]),
+                          n("li", [t.$text("Unity Animation")]),
+                          n("li", [t.$text("DOTween")]),
+                        ]),
+                      ]),
+                      n("div", { staticClass: "skill-set" }, [
+                        n("h3", [t.$text("Công cụ & tích hợp")]),
+                        n("ul", { staticClass: "skills" }, [
+                          n("li", [t.$text("Git")]),
+                          n("li", [t.$text("Build Android")]),
+                          n("li", [t.$text("Firebase Remote Config")]),
+                          n("li", [t.$text("AppsFlyer")]),
+                          n("li", [t.$text("AppLovin")]),
+                          n("li", [t.$text("IAP")]),
+                        ]),
+                      ]),
+                      n("div", { staticClass: "skill-set" }, [
+                        n("h3", [t.$text("Kỹ thuật phần mềm")]),
+                        n("ul", { staticClass: "skills" }, [
+                          n("li", [t.$text("Gỡ lỗi")]),
+                          n("li", [t.$text("Phân tích hiệu năng khi game chạy")]),
+                          n("li", [t.$text("Unity Profiler")]),
+                          n("li", [t.$text("VAT Baking / Indirect Rendering")]),
+                        ]),
+                      ]),
+                      n("div", { staticClass: "skill-set" }, [
+                        n("h3", [t.$text("Game nhiều người chơi")]),
+                        n("ul", { staticClass: "skills" }, [
+                          n("li", [t.$text("Netcode for GameObjects")]),
+                          n("li", [t.$text("Dead Reckoning")]),
+                        ]),
+                      ]),
                     ]),
                   ]
                 ),
@@ -339,23 +343,25 @@
                           t.$text(" " + t._s(t.selectedProject.platform)),
                         ]),
                         n("p", [n("strong", [t.$text("Trạng thái:")]), t.$text(" " + t.selectedProject.status)]),
-                        n(
-                          "a",
-                          {
-                            staticClass: "game-link",
-                            attrs: {
-                              href: t.selectedProject.url,
-                              target: "_blank",
-                              rel: "noopener noreferrer",
-                            },
-                          },
-                          [
-                            t.$text(" " + t._s(t.selectedProject.linkLabel) + " "),
-                            n("span", { attrs: { "aria-hidden": "true" } }, [
-                              t.$text("↗"),
-                            ]),
-                          ]
-                        ),
+                        t.selectedProject.url
+                          ? n(
+                              "a",
+                              {
+                                staticClass: "game-link",
+                                attrs: {
+                                  href: t.selectedProject.url,
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                },
+                              },
+                              [
+                                t.$text(" " + t._s(t.selectedProject.linkLabel) + " "),
+                                n("span", { attrs: { "aria-hidden": "true" } }, [
+                                  t.$text("↗"),
+                                ]),
+                              ]
+                            )
+                          : t._e(),
                         t.selectedProject.introductionUrl
                           ? n("p", [
                               n(
@@ -540,29 +546,33 @@
                                   ),
                                   0
                                 ),
-                                n("p", { staticClass: "gallery-source" }, [
-                                  t.$text("Ảnh từ "),
-                                  n(
-                                    "a",
-                                    {
-                                      attrs: {
-                                        href:
-                                          t.selectedProject.gallerySourceUrl ||
-                                          t.selectedProject.url,
-                                        target: "_blank",
-                                        rel: "noopener noreferrer",
-                                      },
-                                    },
-                                    [
-                                      t.$text(
-                                        t.selectedProject.gallerySourceLabel ||
-                                          t.$translate("trang giới thiệu ") +
-                                            t.$translate(t.selectedProject.name)
+                                t.selectedProject.gallerySourceUrl || t.selectedProject.url
+                                  ? n("p", { staticClass: "gallery-source" }, [
+                                      t.$text("Ảnh từ "),
+                                      n(
+                                        "a",
+                                        {
+                                          attrs: {
+                                            href:
+                                              t.selectedProject.gallerySourceUrl ||
+                                              t.selectedProject.url,
+                                            target: "_blank",
+                                            rel: "noopener noreferrer",
+                                          },
+                                        },
+                                        [
+                                          t.$text(
+                                            t.selectedProject.gallerySourceLabel ||
+                                              t.$translate("trang giới thiệu ") +
+                                                t.$translate(t.selectedProject.name)
+                                          ),
+                                        ]
                                       ),
-                                    ]
-                                  ),
-                                  t.$text("."),
-                                ]),
+                                      t.$text("."),
+                                    ])
+                                  : n("p", { staticClass: "gallery-source" }, [
+                                      t.$text("Ảnh gameplay do tôi cung cấp."),
+                                    ]),
                               ]
                             )
                           : n("section", { staticClass: "game-gallery" }, [
@@ -652,12 +662,12 @@
               {
                 "title": "Tích hợp và cải tiến pipeline sinh level",
                 "challenge": "Thuật toán có sẵn phụ thuộc môi trường Linux/WSL và chưa hỗ trợ kiểm soát độ khó theo yêu cầu.",
-                "solution": "Đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline: cấu hình độ khó → sinh nhiều map → chấm điểm map → chọn map phù hợp. Đây là phần tích hợp/cải tiến quy trình; tôi không phải tác giả thuật toán gốc."
+                "solution": "Đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline: cấu hình độ khó → sinh nhiều map → chấm điểm map → chọn map phù hợp."
               },
               {
                 "title": "Tái cấu trúc hệ thống dữ liệu",
                 "challenge": "DataManager tập trung quá nhiều trách nhiệm, khiến code khó quản lý và mở rộng.",
-                "solution": "Trước: DataManager lớn, chứa nhiều trách nhiệm. Sau: DataManager tập trung load/save và cung cấp hoặc điều phối các Service; mỗi Service đảm nhận chức năng riêng."
+                "solution": "Tách các chức năng từ DataManager thành các Service. DataManager tập trung load/save và cung cấp hoặc điều phối các Service; mỗi Service đảm nhận chức năng riêng."
               },
               {
                 "title": "Hoàn thiện phản hồi thị giác",
@@ -666,7 +676,7 @@
               }
             ],
             "results": [
-              "Hỗ trợ sinh theo lô 100 level với cấu hình độ khó tùy chỉnh.",
+              "Hỗ trợ tạo hàng trăm level với cấu hình độ khó tùy chỉnh.",
               "Chuyển từ một class lớn hàng trăm dòng sang DataManager chỉ còn vài chục dòng, với các Service nhỏ hơn và dễ bảo trì.",
               "Triển khai bản Android qua Google Play Console để public testing với gần 3.000 người chơi."
             ]
@@ -711,12 +721,61 @@
               {
                 "title": "Tái sử dụng logic giữa các level",
                 "challenge": "Nhiều level sử dụng các bước và cơ chế tương tác lặp lại, khiến việc triển khai ban đầu tốn nhiều thời gian.",
-                "solution": "Tái sử dụng logic bằng interface và inheritance, nhóm các class có chức năng tương đồng để giảm code trùng lặp."
+                "solution": "Tái sử dụng logic qua kế thừa, nhóm các class có chức năng tương đồng để giảm code trùng lặp."
               }
             ],
             "results": [
               "Góp phần rút ngắn thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần."
             ]
+          },
+          {
+            "id": "superhot",
+            "name": "SuperHot - 3D Mobile Action",
+            "role": "Phụ trách toàn bộ gameplay chính.",
+            "image": "img/projects/superhot-cover.png",
+            "screenshots": [
+              {
+                "src": "img/projects/superhot-ss1.png",
+                "caption": "Đối đầu với nhiều kẻ địch trong một màn chơi."
+              },
+              {
+                "src": "img/projects/superhot-ss2.png",
+                "caption": "Di chuyển tay trên màn hình để tạo vũ khí bay vào tiêu diệt kẻ địch."
+              },
+              {
+                "src": "img/projects/superhot-ss3.png",
+                "caption": "Chọn các loại vũ khí đã mở khóa."
+              }
+            ],
+            "category": "Hành động · 3D",
+            "highlight": "Gameplay 3D · Combo/Frenzy · Unity Profiler · VAT Baking",
+            "summary": "Game hành động 3D lấy cảm hứng từ Slow Mo Strike: Knives in Time. Người chơi di chuyển tay trên màn hình để tạo vũ khí bay vào kẻ địch; tiêu diệt hết địch để qua màn và mở khóa vũ khí mới. Trò chơi tập trung vào nhịp hành động liên tục, số lượng kẻ địch đông và cảm giác kết liễu thỏa mãn.",
+            "features": [
+              "Di chuyển tay trên màn hình để spawn vũ khí bay về phía kẻ địch.",
+              "Tiêu diệt toàn bộ kẻ địch để hoàn thành màn và tiếp tục qua các màn mới.",
+              "Mở khóa và lựa chọn nhiều loại vũ khí khác nhau.",
+              "Thanh Combo đầy sẽ kích hoạt Frenzy: nhịp game nhanh hơn và người chơi ném ra nhiều vũ khí hơn."
+            ],
+            "platform": "Android",
+            "contributions": [
+              "Phụ trách toàn bộ gameplay chính: tạo đợt kẻ địch, điều khiển bằng thao tác tay để spawn vũ khí, xử lý tiêu diệt và điều kiện qua màn.",
+              "Xây dựng tiến trình mở khóa vũ khí và thanh Combo; khi kích hoạt Frenzy, tăng nhịp độ game và số lượng vũ khí được ném ra.",
+              "Tập trung thiết kế cảm giác hành động liên tục và kết liễu, với lượng kẻ địch dày đặc hơn và ít phụ thuộc vào bẫy môi trường.",
+              "Sử dụng Unity Profiler xác định bottleneck animation/rendering khi mật độ địch tăng; nghiên cứu và lựa chọn VAT Baking kết hợp Indirect Rendering để cải thiện FPS."
+            ],
+            "challenges": [
+              {
+                "title": "Duy trì hiệu năng khi có nhiều model 3D hoạt động",
+                "challenge": "Mật độ kẻ địch cao làm tăng khối lượng animation và rendering cần xử lý.",
+                "solution": "Dùng Unity Profiler để xác định bottleneck animation/rendering, sau đó nghiên cứu và lựa chọn VAT Baking kết hợp Indirect Rendering để giảm tải xử lý model 3D và cải thiện FPS."
+              }
+            ],
+            "results": [
+              "VAT Baking kết hợp Indirect Rendering giúp giảm tải animation/rendering và cải thiện FPS cho game.",
+              "Combo và Frenzy tạo nhịp combat dồn dập hơn bằng cách tăng tốc độ game và số vũ khí được ném ra.",
+              "Tiến trình qua màn và mở khóa vũ khí duy trì mục tiêu chơi tiếp sau mỗi đợt kẻ địch."
+            ],
+            "status": "Game 3D · Gameplay chính do tôi phát triển."
           },
           {
             "id": "missile-rally",
@@ -752,7 +811,7 @@
             "url": "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity",
             "linkLabel": "Xem mã nguồn & hướng dẫn chạy",
             "contributions": [
-              "Phân tích hạn chế của Dead Reckoning và triển khai các cải tiến dự đoán, đồng bộ thời gian, nội suy và hiệu chỉnh trạng thái trên nền game Unity có sẵn.",
+              "Mở rộng game đua xe multiplayer có sẵn bằng Unity/Netcode for GameObjects thành môi trường thực nghiệm; cải tiến Dead Reckoning bằng dự đoán bậc hai, Time Stamping, SmoothDamp và Adaptive Threshold.",
               "Xây dựng bot chạy theo waypoint, tự điều chỉnh tốc độ khi vào cua và tự động bắn laser để duy trì tính nhất quán của các kịch bản thử nghiệm.",
               "Thiết kế thực nghiệm với nhiều mức ping/jitter; đo độ chính xác dự đoán, độ giật chuyển động và chi phí CPU/RAM.",
               "Phân tích sự đánh đổi giữa độ chính xác, độ mượt và tài nguyên để đề xuất cấu hình phù hợp theo từng trường hợp sử dụng."
@@ -763,7 +822,8 @@
             "resultsIntro": "Trong các kịch bản thử nghiệm của khóa luận:",
             "results": [
               "Accuracy trung bình tăng từ 69,8% lên 91,6% trong các kịch bản ping 0–1000 ms được thử nghiệm.",
-              "Tại ping 1000 ms, jerk giảm từ 431,6 xuống 107,3 đơn vị/s³ trong thử nghiệm."
+              "Tại ping 1000 ms, jerk giảm từ 431,6 xuống 107,3 đơn vị/s³ trong thử nghiệm.",
+              "Lag Compensation nâng Hit Accuracy từ 0% lên 100% tại ping 500 ms và 1.000 ms trong thử nghiệm."
             ],
             "resultsNote": "Demo nghiên cứu giảm tác động của độ trễ lên cảm nhận gameplay, không làm giảm độ trễ mạng thực tế. Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
             "status": "Bản demo phục vụ thực nghiệm khóa luận tốt nghiệp (2026).",
@@ -972,7 +1032,7 @@
                 ]),
                 n("li", [
                   n("i", { staticClass: "fa fa-map-marker fa-lg fa-fw" }),
-                  t.$text("Vĩnh Tuy, Hà Nội"),
+                  t.$text("Hai Bà Trưng, Hà Nội"),
                 ]),
               ]),
             ]);
@@ -1008,31 +1068,12 @@
             return n("div", { staticClass: "about" }, [
               n("div", { staticClass: "intro" }, [
                 n("div", { staticClass: "paragraph" }, [
-                  n("p", [
-                    t.$text("Tôi là "),
-                    n("strong", [t.$text("Dương Minh Hoàng")]),
-                    t.$text(", một "),
-                    n("strong", [t.$text("lập trình viên game Unity")]),
-                    t.$text(
-                      " tại Hà Nội. Từ tháng 05/2025, tôi làm việc tại RiseOn Game Studio (trước đây là HB Academy), phát triển gameplay, cơ chế tương tác và hệ thống level/dữ liệu bằng Unity/C#."
-                    ),
-                  ]),
-                  n("p", [t.$text("Với Shikaku Cat: Number Puzzle, tôi phụ trách chính gameplay và hệ thống level/dữ liệu, phối hợp với thành viên phụ trách UI. Tôi đóng gói thuật toán sinh level có sẵn thành DLL và bổ sung pipeline sinh nhiều map theo cấu hình độ khó, chấm điểm và chọn map phù hợp. Bản Android được triển khai qua Google Play Console để public testing với gần 3.000 người chơi.")]),
-                  n("p", [t.$text("Với Cookingdom, tôi trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#, triển khai logic gameplay và tương tác theo thiết kế từng level. Tôi tái sử dụng logic bằng interface và inheritance; việc cải thiện quy trình góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
-                  n("p", [t.$text("Tôi tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai build Android qua Google Play Console và xử lý lỗi trong public testing.")]),
-                  n("p", [
-                    t.$text("Tôi theo học ngành Công nghệ thông tin tại "),
-                    n("strong", [t.$text("Đại học Công nghệ - ĐHQGHN")]),
-                    t.$text(" (2022 - 2026), với GPA "),
-                    n("strong", [t.$text("3.53/4.00")]),
-                    t.$text(
-                      ", xếp loại Giỏi. Một số thành tích của tôi gồm giải ba cuộc thi Hackathon MIRO Game Contest, top 4 Pixel Sunflower Game Jam và "
-                    ),
-                    n("strong", [t.$text("IELTS 7.5")]),
-                    t.$text("."),
-                  ]),
-                  n("p", [t.$text("Mục tiêu ngắn hạn: Nâng cao chuyên môn Unity/C# và Gameplay Programming, đóng góp vào việc phát triển gameplay chất lượng, cải thiện quy trình triển khai và hiệu quả làm việc của đội ngũ.")]),
-                  n("p", [t.$text("Mục tiêu dài hạn: Phát triển năng lực thiết kế kiến trúc và định hướng kỹ thuật, hướng tới vai trò Lead Game Developer, góp phần dẫn dắt đội ngũ phát triển các sản phẩm game chất lượng cao.")]),
+                  n("p", [t.$text("Tôi là Dương Minh Hoàng, lập trình viên game Unity tại Hà Nội, tập trung phát triển gameplay bằng Unity/C#.")]),
+                  n("p", [t.$text("Tôi theo học ngành Công nghệ thông tin tại Đại học Công nghệ - ĐHQGHN (2022 - 2026), GPA 3.53/4.00, xếp loại Giỏi.")]),
+                  n("p", [t.$text("Thành tích nổi bật: giải ba Hackathon MIRO Game Contest, top 4 Pixel Sunflower Game Jam và IELTS 7.5.")]),
+                  n("p", [t.$text("Từ 05/2025, tôi làm việc tại HB Academy (nay là RiseOn Game Studio). Tôi phát triển gameplay và hệ thống level cho Shikaku Cat: Number Puzzle, đạt gần 3.000 người chơi trong public testing; hoàn thiện hơn 10 level Cookingdom, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần; phát triển gameplay chiến đấu 3D cho SuperHot và áp dụng giải pháp tối ưu để cải thiện FPS.")]),
+                  n("p", [t.$text("Khóa luận MissileRally nghiên cứu cải tiến Dead Reckoning cho game đua xe multiplayer, nâng độ chính xác dự đoán trung bình từ 69,8% lên 91,6% trong thử nghiệm.")]),
+                  n("p", [t.$text("Mục tiêu của tôi là nâng cao chuyên môn Unity/C#, xây dựng gameplay mượt mà và tối ưu hiệu năng, đồng thời phát triển năng lực thiết kế kiến trúc để hướng tới vai trò Lead Game Developer.")]),
                 ]),
                 n("div", { staticClass: "photo" }, [
                   n("img", {

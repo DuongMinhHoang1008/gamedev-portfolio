@@ -64,4 +64,4 @@ for (const language of ['vi', 'en']) {
     }
   }
 }
-console.log('PASS: all five project popups render valid VNodes and every technical challenge in VI/EN.');
+console.log(`PASS: all ${instance.projects.length} project popups render valid VNodes and every technical challenge in VI/EN.`);
