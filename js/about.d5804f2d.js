@@ -43,7 +43,7 @@
                     {
                       staticClass: "download-link",
                       attrs: {
-                        href: "d/UNITY%20GAME%20DEVELOPER.pdf",
+                        href: "d/UNITY%20GAME%20DEVELOPER.pdf?v=20261022",
                         target: "_blank",
                         rel: "noopener noreferrer",
                       },
@@ -135,8 +135,8 @@
                       t.$text("05/2025 - Hiện tại · Trước đây là HB Academy"),
                     ]),
                     n("ul", [
-                      n("li", [t.$text("Shikaku Cat: Number Puzzle: Phát triển gameplay, hệ thống level/dữ liệu, logic giải đố, tương tác board và các tính năng Daily Reward/Cheat; mở rộng thuật toán sinh level có sẵn bằng DLL, hỗ trợ tạo hàng trăm level với độ khó tùy chỉnh. Đưa bản Android lên Google Play Console public testing với gần 3.000 người chơi. Tái cấu trúc DataManager, tách trách nhiệm thành các Service riêng biệt.")]),
-                      n("li", [t.$text("Cookingdom: Phát triển và hoàn thiện hơn 10 level, bao gồm logic gameplay, cân bằng độ khó và sửa lỗi. Tái sử dụng logic qua kế thừa, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                      n("li", [t.$text("Shikaku Cat: Number Puzzle: Phát triển gameplay, hệ thống level/dữ liệu, logic giải đố, tương tác board và các tính năng Daily Reward/Cheat; mở rộng thuật toán sinh level có sẵn bằng DLL, hỗ trợ tạo hàng trăm level với độ khó tùy chỉnh. Tái cấu trúc DataManager, tách trách nhiệm thành các Service riêng biệt. Đưa bản Android lên Google Play Console public testing với gần 3.000 người chơi.")]),
+                      n("li", [t.$text("Cookingdom: Phát triển và hoàn thiện 10+ level, bao gồm logic gameplay, cân bằng độ khó và sửa lỗi. Tái sử dụng logic qua kế thừa, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
                       n("li", [t.$text("SuperHot - 3D Mobile Action: Phát triển gameplay chiến đấu 3D và cơ chế Combo/Frenzy; sử dụng Unity Profiler xác định bottleneck animation/rendering khi mật độ địch tăng. Nghiên cứu và lựa chọn VAT Baking kết hợp Indirect Rendering để cải thiện FPS.")]),
                       n("li", [t.$text("Integration & Release: Cấu hình SDK có sẵn gồm AppLovin, IAP, Firebase Remote Config và AppsFlyer; triển khai Android build và xử lý lỗi trong public testing.")]),
                     ]),
@@ -700,7 +700,7 @@
               }
             ],
             "category": "Nấu ăn · Thư giãn",
-            "highlight": "Tham gia phát triển hơn 10 màn chơi",
+            "highlight": "Tham gia phát triển 10+ màn chơi",
             "summary": "Game nấu ăn với nhịp độ nhẹ nhàng, đưa người chơi qua từng bước chuẩn bị và hoàn thiện món ăn. Các công thức được chia thành những minigame tương tác, kết hợp âm thanh ASMR.",
             "features": [
               "Thao tác cắt, trộn, nấu và trang trí món ăn qua từng minigame.",
@@ -712,7 +712,7 @@
             "url": "https://play.google.com/store/apps/details?id=com.abi.cook.chill&hl=vi",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
-              "Trực tiếp phát triển và hoàn thiện hơn 10 level bằng Unity/C#.",
+              "Trực tiếp phát triển và hoàn thiện 10+ level bằng Unity/C#.",
               "Triển khai logic gameplay, cơ chế tương tác và các chức năng đặc thù theo thiết kế từng level.",
               "Điều chỉnh gameplay, cân bằng độ khó và xử lý lỗi để các level vận hành ổn định trong hệ thống hiện có."
             ],
@@ -1071,7 +1071,7 @@
                   n("p", [t.$text("Tôi là Dương Minh Hoàng, lập trình viên game Unity tại Hà Nội, tập trung phát triển gameplay bằng Unity/C#.")]),
                   n("p", [t.$text("Tôi theo học ngành Công nghệ thông tin tại Đại học Công nghệ - ĐHQGHN (2022 - 2026), GPA 3.53/4.00, xếp loại Giỏi.")]),
                   n("p", [t.$text("Thành tích nổi bật: giải ba Hackathon MIRO Game Contest, top 4 Pixel Sunflower Game Jam và IELTS 7.5.")]),
-                  n("p", [t.$text("Từ 05/2025, tôi làm việc tại HB Academy (nay là RiseOn Game Studio). Tôi phát triển gameplay và hệ thống level cho Shikaku Cat: Number Puzzle, đạt gần 3.000 người chơi trong public testing; hoàn thiện hơn 10 level Cookingdom, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần; phát triển gameplay chiến đấu 3D cho SuperHot và áp dụng giải pháp tối ưu để cải thiện FPS.")]),
+                  n("p", [t.$text("Từ 05/2025, tôi làm việc tại HB Academy (nay là RiseOn Game Studio). Tôi phát triển gameplay và hệ thống level cho Shikaku Cat: Number Puzzle, đạt gần 3.000 người chơi trong public testing; hoàn thiện 10+ level Cookingdom, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần; phát triển gameplay chiến đấu 3D cho SuperHot và áp dụng giải pháp tối ưu để cải thiện FPS.")]),
                   n("p", [t.$text("Khóa luận MissileRally nghiên cứu cải tiến Dead Reckoning cho game đua xe multiplayer, nâng độ chính xác dự đoán trung bình từ 69,8% lên 91,6% trong thử nghiệm.")]),
                   n("p", [t.$text("Mục tiêu của tôi là nâng cao chuyên môn Unity/C#, xây dựng gameplay mượt mà và tối ưu hiệu năng, đồng thời phát triển năng lực thiết kế kiến trúc để hướng tới vai trò Lead Game Developer.")]),
                 ]),

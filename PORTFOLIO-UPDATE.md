@@ -1,3 +1,16 @@
+# Cập nhật theo CV mới — 22/10/2026
+
+- Nguồn: `D:/Downloads/DuongMinhHoang_UnityGameDeveloper_CV.pdf` (1 trang), đã đọc văn bản và kiểm tra ảnh render.
+- Thay đúng file CV mới tại URL hiện có `d/UNITY GAME DEVELOPER.pdf`; thêm phiên bản `?v=20261022` vào nút tải CV để tránh dùng bản PDF cũ trong cache.
+- CV mới đổi link portfolio thành `https://shorturl.at/y7X2B` và đưa nội dung tái cấu trúc DataManager lên trước kết quả public testing của Shikaku. Đồng bộ thứ tự này trong hồ sơ tiếng Việt và tiếng Anh.
+- Đồng bộ Cookingdom thành “10+ level” trên giới thiệu, hồ sơ và chi tiết dự án ở cả hai ngôn ngữ theo đúng CV.
+- Các thông tin liên hệ, học vấn, giải thưởng, SuperHot, kỹ năng và kết quả MissileRally đã khớp CV; giữ nguyên.
+- SHA-256 của CV mới: `9ace7a828dce49a0c05d668559c18557d889946b85dc32f5a1b319c25df225ff`.
+
+Kiểm tra: `node build.cjs`, `node tests/project-popups.cjs`, `node tests/language.cjs`, `node tests/site-assets.cjs` và `git diff --check` đều đạt. Đã kiểm tra giao diện hồ sơ VI/EN bằng trình duyệt, đường dẫn tải CV có phiên bản mới; SHA-256 file nguồn, file phục vụ và bản dist trùng nhau.
+
+---
+
 # Cập nhật theo CV mới — 21/10/2026
 
 - Nguồn: file người dùng cung cấp tại `D:/Downloads/UNITY GAME DEVELOPER (10).pdf`, 1 trang. Đã trích xuất văn bản và render PNG để đọc/đối chiếu.
