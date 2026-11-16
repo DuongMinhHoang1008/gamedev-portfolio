@@ -35,28 +35,29 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
   const original = text(instance._render());
   assert(!original.includes('Vĩnh Tuy'), id + ': outdated address');
   if (id === '1ba2') {
-    for (const value of ['SuperHot - 3D Mobile Action', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Hit Accuracy 0% → 100%']) {
+    for (const value of ['05/2025 - 11/2026', 'Shuriken Rush', 'khoảng 30 lên 60', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Dog Simulator', 'Photon Fusion 2 Shared Mode']) {
       assert(original.includes(value), id + ': missing CV content: ' + value);
     }
+    assert(attrs(instance._render()).some(a => a.href === 'd/UNITY%20GAME%20DEVELOPER.pdf?v=20261115'));
   }
   instance.$setLanguage('en');
   assert(text(instance._render()).includes(expected), id);
   assert.equal(context.document.documentElement.lang, 'en');
   const english = text(instance._render());
-  if (id === '1ba2' || id === 'b8fa') assert(english.includes('Hai Bà Trưng, Hanoi'), id + ': contact translation');
+  if (id === 'b8fa') assert(english.includes('Hai Bà Trưng, Hanoi'), id + ': contact translation');
   if (id === '1ba2') {
-    for (const value of ['SuperHot - 3D Mobile Action', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Hit Accuracy 0% → 100%']) assert(english.includes(value), id + ': CV translation: ' + value);
-    assert(!english.includes('Với SuperHot') && !english.includes('Trong khóa luận'), id + ': untranslated CV');
+    for (const value of ['· Hanoi', 'Shuriken Rush', 'about 30 to 60', 'Dog Simulator', 'private rooms by code', '69.8% to 91.6%']) {
+      assert(english.includes(value), id + ': CV translation: ' + value);
+    }
   }
   if (instance.projects) {
     for (const project of instance.projects) {
-      instance.selectedProject = project;
-      const rendered = instance._render();
+      const detail = new Vue({ ...exports.default, propsData: { projectId: project.id } });
+      const rendered = detail._render();
       assert(text(rendered).includes('My contributions'), project.id);
-      assert(attrs(rendered).some(a => a['aria-label'] === 'Close project details'));
+      assert(text(rendered).includes('Back to game projects'), project.id);
       assert(!text(rendered).includes(project.summary), project.id + ' summary untranslated');
     }
-    instance.selectedProject = null;
   }
   instance.$setLanguage('vi');
   assert.equal(text(instance._render()), original, id + ' round trip');
@@ -73,4 +74,4 @@ vm.runInContext(fs.readFileSync('js/i18n.js', 'utf8'), context);
 context.window.installPortfolioLanguage(Vue);
 new Vue().$setLanguage('en');
 assert.equal(context.document.documentElement.lang, 'en');
-console.log('PASS: all four pages, all project dialogs, updated CV content, VI/EN round trips, accessibility labels, persistence, and blocked storage.');
+console.log('PASS: all four pages, all project details, updated CV content, VI/EN round trips, persistence, and blocked storage.');

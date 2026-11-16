@@ -37,20 +37,23 @@ function nodeText(node) {
 }
 for (const language of ['vi', 'en']) {
   instance.$setLanguage(language);
-  instance.selectedProject = null;
+  const translate = value => language === 'vi' ? value : context.window.portfolioEnglish[value];
   const cards = flatten(instance._render()).filter(node => node.data?.staticClass === 'project-item');
   assert.equal(cards.length, instance.projects.length);
   cards.forEach((card, index) => {
     const project = instance.projects[index];
-    const translate = value => language === 'vi' ? value : context.window.portfolioEnglish[value];
+    assert.equal(card.tag, 'router-link');
+    assert.equal(card.data.attrs.to, '/game-projects/' + project.id);
     assert(nodeText(card).includes(translate(project.status)), project.id + ': card status');
     if (project.role) assert(nodeText(card).includes(translate(project.role)), project.id + ': card role');
   });
   for (const project of instance.projects) {
-    instance.selectedProject = project;
-    const tree = instance._render();
+    const detail = new Vue({ ...exportsObject.default, propsData: { projectId: project.id } });
+    const tree = detail._render();
     const nodes = flatten(tree);
     const rendered = nodeText(tree);
+    assert.equal(nodeText(nodes.find(node => node.tag === 'h1')), translate(project.name) || project.name);
+    assert(nodes.some(node => node.tag === 'router-link' && node.data.attrs.to === '/game-projects'));
     if (project.role) assert(rendered.includes(language === 'vi' ? project.role : context.window.portfolioEnglish[project.role]));
     assert(!rendered.includes('undefined'), project.id + ': undefined text');
     const articles = nodes.filter(node => node.data?.staticClass === 'technical-challenge');
@@ -63,5 +66,8 @@ for (const language of ['vi', 'en']) {
       }
     }
   }
+  const missing = new Vue({ ...exportsObject.default, propsData: { projectId: 'unknown-project' } });
+  const missingPage = nodeText(missing._render());
+  assert(missingPage.includes(language === 'vi' ? 'Không tìm thấy dự án game' : 'Game project not found'));
 }
-console.log(`PASS: all ${instance.projects.length} project popups render valid VNodes and every technical challenge in VI/EN.`);
+console.log(`PASS: all ${instance.projects.length} project links and detail pages, technical challenges and unknown IDs in VI/EN.`);

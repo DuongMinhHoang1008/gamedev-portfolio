@@ -334,6 +334,9 @@
       w = j.exports,
       x = n("8c4f");
     r["a"].use(x["a"]);
+    function loadGameProjects() {
+      return n.e("about").then(n.bind(null, "4d97"));
+    }
     var k = [
         {
           path: "/",
@@ -352,9 +355,13 @@
         {
           path: "/game-projects",
           name: "Game Projects",
-          component: function () {
-            return n.e("about").then(n.bind(null, "4d97"));
-          },
+          component: loadGameProjects,
+        },
+        {
+          path: "/game-projects/:projectId",
+          name: "Game Project",
+          component: loadGameProjects,
+          props: true,
         },
         {
           path: "/contact",
@@ -372,7 +379,14 @@
         },
         { path: "*", redirect: "/404" },
       ],
-      P = new x["a"]({ routes: k }),
+      P = new x["a"]({
+        routes: k,
+        scrollBehavior: function (to, from, savedPosition) {
+          if (to.name === "Game Project" || from.name === "Game Project") {
+            return savedPosition || { x: 0, y: 0 };
+          }
+        },
+      }),
       C = P;
     (r["a"].config.productionTip = !1),
       new r["a"]({

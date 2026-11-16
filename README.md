@@ -14,7 +14,7 @@ Run `node preview.cjs` for the local site at
 With the existing `vue` dependency available, run:
 
 ```sh
-node tests/project-popups.cjs
+node tests/project-pages.cjs
 node tests/language.cjs
 node tests/site-assets.cjs
 ```
