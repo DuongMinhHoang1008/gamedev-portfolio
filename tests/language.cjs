@@ -35,10 +35,14 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
   const original = text(instance._render());
   assert(!original.includes('Vĩnh Tuy'), id + ': outdated address');
   if (id === '1ba2') {
-    for (const value of ['05/2025 - 11/2026', 'Shuriken Rush', 'khoảng 30 lên 60', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Dog Simulator', 'Photon Fusion 2 Shared Mode']) {
+    for (const value of ['05/2025 - 11/2026', 'Shikaku Cats', 'công cụ kiểm thử', 'Shuriken Rush', 'khoảng 20 lên 57 với 1.000 kẻ địch trong Unity Editor', 'Unity Profiler', 'VAT Baking', 'Netcode for GameObjects', 'Dog Simulator', 'Photon Fusion 2 Shared Mode', 'Trợ lý AI']) {
       assert(original.includes(value), id + ': missing CV content: ' + value);
     }
-    assert(attrs(instance._render()).some(a => a.href === 'd/UNITY%20GAME%20DEVELOPER.pdf?v=20261115'));
+    const links = attrs(instance._render());
+    assert(links.some(a => a.href === 'd/UNITY%20GAME%20DEVELOPER.pdf?v=20261116'));
+    for (const slug of ['shikaku-cats', 'cookingdom', 'shuriken-rush', 'missile-rally', 'dog-simulator']) {
+      assert(links.some(a => a.to === '/game-projects/' + slug), id + ': missing demo link: ' + slug);
+    }
   }
   instance.$setLanguage('en');
   assert(text(instance._render()).includes(expected), id);
@@ -46,7 +50,7 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
   const english = text(instance._render());
   if (id === 'b8fa') assert(english.includes('Hai Bà Trưng, Hanoi'), id + ': contact translation');
   if (id === '1ba2') {
-    for (const value of ['· Hanoi', 'Shuriken Rush', 'about 30 to 60', 'Dog Simulator', 'private rooms by code', '69.8% to 91.6%']) {
+    for (const value of ['· Hanoi', 'Shikaku Cats', 'testing tools', 'Shuriken Rush', 'about 20 to 57 with 1,000 enemies in the Unity Editor', 'Dog Simulator', 'private rooms by code', 'average prediction accuracy across four ping levels increased from 69.8% to 91.6%', 'AI assistants']) {
       assert(english.includes(value), id + ': CV translation: ' + value);
     }
   }

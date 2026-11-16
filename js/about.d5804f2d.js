@@ -43,7 +43,7 @@
                     {
                       staticClass: "download-link",
                       attrs: {
-                        href: "d/UNITY%20GAME%20DEVELOPER.pdf?v=20261115",
+                        href: "d/UNITY%20GAME%20DEVELOPER.pdf?v=20261116",
                         target: "_blank",
                         rel: "noopener noreferrer",
                       },
@@ -68,7 +68,7 @@
               ]),
               n("div", { staticClass: "full-content" }, [
                 n("p", [t.$text("Tôi là Dương Minh Hoàng, lập trình viên game Unity tại Hà Nội với 1,5 năm kinh nghiệm phát triển game Puzzle, Casual và Action, gồm game 2D, 3D và multiplayer.")]),
-                n("p", [t.$text("Tôi triển khai gameplay và hệ thống level, phân tích và tối ưu hiệu năng, tích hợp SDK, build Android và phát hành game.")]),
+                n("p", [t.$text("Tôi xây dựng gameplay, hệ thống game và level, bảo trì mã nguồn, dùng Unity Profiler để phân tích và tối ưu hiệu năng, tích hợp SDK, build và phát hành game Android.")]),
                 n(
                   "section",
                   { attrs: { "aria-labelledby": "education-heading" } },
@@ -138,23 +138,29 @@
                     ]),
                     n("ul", [
                       n("li", [
-                        n("strong", [n("a", { attrs: { href: "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Shikaku Cat: Number Puzzle")])]),
+                        n("strong", [n("a", { attrs: { href: "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Shikaku Cats: Number Puzzle")])]),
+                        t.$text(" · "),
+                        n("router-link", { attrs: { to: "/game-projects/shikaku-cats" } }, [t.$text("Demo")]),
                         n("ul", [
-                          n("li", [t.$text("Xây dựng tương tác trên bảng, logic gameplay và hệ thống level trong đội hai người. Tích hợp và mở rộng công cụ sinh level để tạo hàng trăm màn với độ khó tùy chỉnh.")]),
-                          n("li", [t.$text("Tách DataManager thành các service chuyên trách, cấu hình SDK và đưa game lên Google Play để public testing với gần 3.000 người chơi.")]),
+                          n("li", [t.$text("Tiếp nhận và hoàn thiện gameplay từ bản thử nghiệm. Tái cấu trúc DataManager thành các thành phần quản lý dữ liệu riêng để dễ bảo trì và mở rộng.")]),
+                          n("li", [t.$text("Cấu hình SDK và đưa game lên Google Play Public Testing, đạt gần 3.000 người chơi. Triển khai công cụ kiểm thử và mở rộng bộ tạo level để sinh hàng trăm màn với độ khó tùy chỉnh.")]),
                         ]),
                       ]),
                       n("li", [
                         n("strong", [n("a", { attrs: { href: "https://play.google.com/store/apps/details?id=com.abi.cook.chill", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Cookingdom (ABI Games)")])]),
+                        t.$text(" · "),
+                        n("router-link", { attrs: { to: "/game-projects/cookingdom" } }, [t.$text("Demo")]),
                         n("ul", [
-                          n("li", [t.$text("Tự triển khai 10+ level từ gameplay có sẵn, cân bằng độ khó và sửa lỗi. Tái sử dụng logic qua kế thừa, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                          n("li", [t.$text("Tự triển khai hơn 10 level từ gameplay có sẵn, cân bằng độ khó và sửa lỗi. Tái sử dụng logic qua kế thừa, góp phần giảm thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
                         ]),
                       ]),
                       n("li", [
                         n("strong", [n("a", { attrs: { href: "https://play.google.com/store/apps/details?id=com.riseon.superhot", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Shuriken Rush")])]),
+                        t.$text(" · "),
+                        n("router-link", { attrs: { to: "/game-projects/shuriken-rush" } }, [t.$text("Demo")]),
                         n("ul", [
-                          n("li", [t.$text("Độc lập phát triển game để phát hành trên Android, gồm combat, sinh kẻ địch và cơ chế Combo/Frenzy.")]),
-                          n("li", [t.$text("Dùng Unity Profiler để xác định điểm nghẽn trong animation và rendering. Áp dụng VAT Baking và Indirect Rendering để cải thiện FPS từ khoảng 30 lên 60.")]),
+                          n("li", [t.$text("Độc lập phát triển game 3D để phát hành trên Android, gồm hệ thống chiến đấu, sinh kẻ địch và hệ thống vũ khí.")]),
+                          n("li", [t.$text("Dùng Unity Profiler để phân tích hoạt ảnh và hiển thị. Áp dụng VAT Baking và Indirect Rendering để tăng FPS từ khoảng 20 lên 57 với 1.000 kẻ địch trong Unity Editor.")]),
                         ]),
                       ]),
                       n("li", [t.$text("Tích hợp & phát hành: Cấu hình AppLovin, IAP, Firebase Remote Config và AppsFlyer, build Android và xử lý lỗi trong giai đoạn public testing.")]),
@@ -163,11 +169,11 @@
                 ),
                 n("section", { attrs: { "aria-labelledby": "personal-projects-heading" } }, [
                   n("h2", { attrs: { id: "personal-projects-heading" } }, [t.$text("Dự án cá nhân")]),
-                  n("h3", [n("a", { attrs: { href: "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("MissileRally - Khóa luận tốt nghiệp")])]),
-                  n("p", [t.$text("Cải tiến Dead Reckoning trong game đua xe dùng Netcode for GameObjects (NGO) bằng timestamp, dự đoán bậc hai, SmoothDamp và Adaptive Threshold. Triển khai Client-side Prediction, Server Reconciliation và Lag Compensation.")]),
-                  n("p", [t.$text("Trong thử nghiệm khóa luận, độ chính xác dự đoán tăng từ 69,8% lên 91,6%. Ở ping 1.000 ms, độ giật giảm từ 431,6 xuống 107,3 đơn vị/s³.")]),
-                  n("h3", [n("a", { attrs: { href: "https://dmhoang.itch.io/dog-simulator", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Dog Simulator")])]),
-                  n("p", [t.$text("Phát triển multiplayer với Photon Fusion 2 Shared Mode, gồm tạo và tham gia phòng riêng bằng mã, đồng bộ avatar và xử lý vòng đời phiên chơi.")]),
+                  n("h3", [n("a", { attrs: { href: "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("MissileRally - Khóa luận tốt nghiệp")]), t.$text(" · "), n("router-link", { attrs: { to: "/game-projects/missile-rally" } }, [t.$text("Demo")])]),
+                  n("p", [t.$text("Cải tiến Dead Reckoning trong game đua xe dùng Netcode for GameObjects (NGO) bằng timestamp, dự đoán bậc hai và Adaptive Threshold để chuyển động mượt và chính xác hơn. Triển khai Client-side Prediction và Server Reconciliation để giảm sai lệch chuyển động.")]),
+                  n("p", [t.$text("Trong thử nghiệm khóa luận, độ chính xác dự đoán trung bình qua bốn mức ping tăng từ 69,8% lên 91,6%. Ở ping 1.000 ms, độ giật giảm từ 431,6 xuống 107,3 đơn vị/s³.")]),
+                  n("h3", [n("a", { attrs: { href: "https://dmhoang.itch.io/dog-simulator", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("Dog Simulator")]), t.$text(" · "), n("router-link", { attrs: { to: "/game-projects/dog-simulator" } }, [t.$text("Demo")])]),
+                  n("p", [t.$text("Phát triển multiplayer với Photon Fusion 2 Shared Mode, gồm tạo và tham gia phòng riêng bằng mã, đồng bộ nhân vật và xử lý khi người chơi vào hoặc rời phòng.")]),
                 ]),
                 n(
                   "section",
@@ -205,7 +211,7 @@
                           n("li", [t.$text("AppsFlyer")]),
                           n("li", [t.$text("AppLovin")]),
                           n("li", [t.$text("IAP")]),
-                          n("li", [t.$text("OpenAI Codex")]),
+                          n("li", [t.$text("Trợ lý AI")]),
                         ]),
                       ]),
                       n("div", { staticClass: "skill-set" }, [
@@ -611,8 +617,8 @@
           {
             "id": "shikaku-cats",
             "youtubeVideoId": "CZL4IkIqYas",
-            "role": "Phụ trách gameplay, level và dữ liệu trong đội hai người.",
-            "name": "Shikaku Cat: Number Puzzle",
+            "role": "Hoàn thiện gameplay từ bản thử nghiệm và phụ trách hệ thống level, dữ liệu trong đội hai người.",
+            "name": "Shikaku Cats: Number Puzzle",
             "image": "img/projects/shikaku-cats-cover.png",
             "screenshots": [
               {
@@ -641,8 +647,8 @@
             "url": "https://play.google.com/store/apps/details?id=com.shikaku.cat.puzzle",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
-              "Phụ trách chính gameplay và hệ thống level/dữ liệu bằng Unity/C#: logic giải đố, tương tác board, khởi tạo board từ dữ liệu cấu hình, quản lý trạng thái level và các gameplay feature.",
-              "Triển khai Daily Reward, Cheat và hiệu ứng hoàn thành block/level bằng DOTween/Unity Animation; phối hợp với thành viên phụ trách UI, không đảm nhiệm toàn bộ phần UI.",
+              "Tiếp nhận bản thử nghiệm và hoàn thiện gameplay bằng Unity/C#, gồm logic giải đố, tương tác bảng, khởi tạo bảng từ dữ liệu cấu hình và quản lý trạng thái level.",
+              "Triển khai công cụ kiểm thử và Daily Reward. Dùng DOTween và Unity Animation cho hiệu ứng hoàn thành block và level, đồng thời phối hợp với thành viên phụ trách UI.",
               "Tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai bản Android và sửa lỗi trong giai đoạn public testing với gần 3.000 người chơi."
             ],
             "status": "Public testing · Android qua Google Play Console · gần 3.000 người chơi.",
@@ -689,7 +695,7 @@
               }
             ],
             "category": "Nấu ăn · Thư giãn",
-            "highlight": "Tự triển khai 10+ màn từ gameplay có sẵn",
+            "highlight": "Tự triển khai hơn 10 màn từ gameplay có sẵn",
             "summary": "Game nấu ăn với nhịp độ nhẹ nhàng, đưa người chơi qua từng bước chuẩn bị và hoàn thiện món ăn. Các công thức được chia thành những minigame tương tác, kết hợp âm thanh ASMR.",
             "features": [
               "Thao tác cắt, trộn, nấu và trang trí món ăn qua từng minigame.",
@@ -701,7 +707,7 @@
             "url": "https://play.google.com/store/apps/details?id=com.abi.cook.chill",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
-              "Tự triển khai 10+ level bằng Unity/C# từ gameplay có sẵn.",
+              "Tự triển khai hơn 10 level bằng Unity/C# từ gameplay có sẵn.",
               "Triển khai logic gameplay, cơ chế tương tác và các chức năng đặc thù theo thiết kế từng level.",
               "Điều chỉnh gameplay, cân bằng độ khó và xử lý lỗi để các level vận hành ổn định trong hệ thống hiện có."
             ],
@@ -738,7 +744,7 @@
               }
             ],
             "category": "Hành động · 3D",
-            "highlight": "Gameplay 3D · Combo/Frenzy · FPS khoảng 30 → 60",
+            "highlight": "Khoảng 20 → 57 FPS với 1.000 kẻ địch (Unity Editor)",
             "summary": "Game hành động 3D lấy cảm hứng từ Slow Mo Strike: Knives in Time. Người chơi di chuyển tay trên màn hình để tạo vũ khí bay vào kẻ địch; tiêu diệt hết địch để qua màn và mở khóa vũ khí mới. Trò chơi tập trung vào nhịp hành động liên tục, số lượng kẻ địch đông và cảm giác kết liễu thỏa mãn.",
             "features": [
               "Di chuyển tay trên màn hình để spawn vũ khí bay về phía kẻ địch.",
@@ -763,7 +769,7 @@
               }
             ],
             "results": [
-              "Tốc độ khung hình tăng từ khoảng 30 lên 60 FPS sau khi áp dụng VAT Baking và Indirect Rendering.",
+              "Với 1.000 kẻ địch trong Unity Editor, tốc độ khung hình tăng từ khoảng 20 lên 57 FPS sau khi áp dụng VAT Baking và Indirect Rendering.",
               "Combo và Frenzy tạo nhịp combat dồn dập hơn bằng cách tăng tốc độ game và số vũ khí được ném ra.",
               "Tiến trình qua màn và mở khóa vũ khí duy trì mục tiêu chơi tiếp sau mỗi đợt kẻ địch."
             ],
@@ -814,8 +820,8 @@
             "gallerySourceLabel": "khóa luận, Chương 4 (trang 56-58)",
             "resultsIntro": "Trong các kịch bản thử nghiệm của khóa luận:",
             "results": [
-              "Accuracy trung bình tăng từ 69,8% lên 91,6% trong các kịch bản ping 0–1000 ms được thử nghiệm.",
-              "Tại ping 1000 ms, jerk giảm từ 431,6 xuống 107,3 đơn vị/s³ trong thử nghiệm.",
+              "Độ chính xác dự đoán trung bình qua bốn mức ping tăng từ 69,8% lên 91,6%.",
+              "Tại ping 1.000 ms, độ chính xác dự đoán tăng từ 57,8% lên 81,7% và độ giật giảm từ 431,6 xuống 107,3 đơn vị/s³.",
               "Lag Compensation nâng Hit Accuracy từ 0% lên 100% tại ping 500 ms và 1.000 ms trong thử nghiệm."
             ],
             "resultsNote": "Demo nghiên cứu giảm tác động của độ trễ lên cảm nhận gameplay, không làm giảm độ trễ mạng thực tế. Cần cân bằng độ mượt, độ chính xác và chi phí tài nguyên.",
@@ -870,7 +876,7 @@
             "url": "https://dmhoang.itch.io/dog-simulator",
             "linkLabel": "Chơi demo hoặc tải bản Windows trên itch.io",
             "contributions": [
-              "Phát triển multiplayer với Photon Fusion 2 Shared Mode, gồm tạo và tham gia phòng riêng bằng mã, đồng bộ avatar và xử lý vòng đời phiên chơi."
+              "Phát triển multiplayer với Photon Fusion 2 Shared Mode, gồm tạo và tham gia phòng riêng bằng mã, đồng bộ nhân vật và xử lý khi người chơi vào hoặc rời phòng."
             ],
             "status": "Đã phát hành trên itch.io."
           },
@@ -1077,8 +1083,8 @@
               n("div", { staticClass: "intro" }, [
                 n("div", { staticClass: "paragraph" }, [
                   n("p", [t.$text("Tôi là Dương Minh Hoàng, lập trình viên game Unity tại Hà Nội với 1,5 năm kinh nghiệm phát triển game Puzzle, Casual và Action, gồm game 2D, 3D và multiplayer.")]),
-                  n("p", [t.$text("Tôi triển khai gameplay và hệ thống level, phân tích và tối ưu hiệu năng, tích hợp SDK, build Android và phát hành game.")]),
-                  n("p", [t.$text("Tại RiseOn Game Studio (05/2025 - 11/2026), tôi phụ trách gameplay và hệ thống level cho Shikaku Cat trong đội hai người, tự triển khai 10+ level Cookingdom và độc lập phát triển Shuriken Rush. Với Shuriken Rush, tôi dùng Unity Profiler để xác định điểm nghẽn và cải thiện FPS từ khoảng 30 lên 60 bằng VAT Baking và Indirect Rendering.")]),
+                  n("p", [t.$text("Tôi xây dựng gameplay, hệ thống game và level, bảo trì mã nguồn, dùng Unity Profiler để phân tích và tối ưu hiệu năng, tích hợp SDK, build và phát hành game Android.")]),
+                  n("p", [t.$text("Tại RiseOn Game Studio (05/2025 - 11/2026), tôi hoàn thiện gameplay Shikaku Cats từ bản thử nghiệm, tự triển khai hơn 10 level Cookingdom và độc lập phát triển Shuriken Rush. Với Shuriken Rush, tôi dùng Unity Profiler để phân tích hoạt ảnh và hiển thị, rồi áp dụng VAT Baking và Indirect Rendering để tăng FPS từ khoảng 20 lên 57 với 1.000 kẻ địch trong Unity Editor.")]),
                   n("p", [t.$text("Trong các dự án cá nhân, tôi phát triển multiplayer cho Dog Simulator bằng Photon Fusion 2 và nghiên cứu cải tiến Dead Reckoning cho game đua xe trong khóa luận MissileRally.")]),
                 ]),
                 n("div", { staticClass: "photo" }, [
