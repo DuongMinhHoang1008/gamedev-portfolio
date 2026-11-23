@@ -769,7 +769,6 @@
             "id": "shikaku-cats",
             "miniGdd": {
               "title": "GDD",
-              "subtitle": "Tài liệu thiết kế game hồi cứu",
               "sections": [
                 {
                   "title": "Tổng quan game",
@@ -795,15 +794,15 @@
                     { "label": "Đầu vào", "value": "Drag & Drop." },
                     { "label": "Luật chơi", "value": "Chia bàn lưới thành các hình chữ nhật không chồng lấn. Mỗi hình chứa đúng một ô số và có diện tích bằng giá trị số đó." },
                     { "label": "Điều kiện thắng", "value": "Phủ kín bàn lưới bằng các hình chữ nhật hợp lệ, không chồng lấn hoặc bỏ trống ô." },
-                    { "label": "Điều kiện thua", "value": "Không có; người chơi có thể thử lại và điều chỉnh lời giải." }
+                    { "label": "Điều kiện thua", "value": "Không có. Người chơi có thể thử lại và điều chỉnh lời giải." }
                   ]
                 },
                 {
                   "title": "Tiến trình Level & độ khó",
                   "entries": [
                     { "label": "Cấu trúc Level", "value": "Mỗi Level có một bàn lưới chứa các ô số và một lời giải duy nhất. Độ khó phụ thuộc vào cách bố trí số, số phương án và mức độ phức tạp suy luận." },
-                    { "label": "Nhịp độ", "value": "Không giới hạn thời gian; xen kẽ các Level khó và dễ để cân bằng thử thách với khoảng nghỉ." },
-                    { "label": "Difficulty Curve", "value": "Bắt đầu bằng Tutorial và các Level đơn giản, dần mở rộng quy mô và độ phức tạp; phân bổ độ khó theo chu kỳ Easy → Medium → Hard → Recovery." }
+                    { "label": "Nhịp độ", "value": "Không giới hạn thời gian. Xen kẽ các Level khó và dễ để cân bằng thử thách với khoảng nghỉ." },
+                    { "label": "Difficulty Curve", "value": "Bắt đầu bằng Tutorial và các Level đơn giản, dần mở rộng quy mô và độ phức tạp. Phân bổ độ khó theo chu kỳ Easy → Medium → Hard → Recovery." }
                   ]
                 },
                 {
@@ -815,8 +814,8 @@
                 {
                   "title": "Phản hồi & UX",
                   "entries": [
-                    { "label": "Phản hồi hình ảnh/âm thanh", "value": "Kéo thả có Animation và SFX; hình chữ nhật hợp lệ hiển thị mèo, hoàn thành Level kích hoạt Animation ăn mừng." },
-                    { "label": "Hướng dẫn", "value": "Tutorial giới thiệu luật chơi; Hint có thể mở khóa bằng mua hoặc xem quảng cáo để hiển thị một hình chữ nhật đúng." },
+                    { "label": "Phản hồi hình ảnh/âm thanh", "value": "Kéo thả có Animation và SFX. Hình chữ nhật hợp lệ hiển thị mèo, hoàn thành Level kích hoạt Animation ăn mừng." },
+                    { "label": "Hướng dẫn", "value": "Tutorial giới thiệu luật chơi. Hint có thể mở khóa bằng mua hoặc xem quảng cáo để hiển thị một hình chữ nhật đúng." },
                     { "label": "Trải nghiệm người chơi", "value": "Thao tác trực quan, phản hồi tức thời, giải đố logic không áp lực thời gian." }
                   ]
                 },
@@ -824,7 +823,7 @@
                   "title": "Phạm vi thiết kế & đóng góp",
                   "entries": [
                     { "label": "Thiết kế hiện có", "value": "Core Mechanics dựa trên trò chơi Rectangles thuộc bộ sưu tập puzzle của Simon Tatham." },
-                    { "label": "Đóng góp của tôi", "value": "Thiết kế Difficulty Curve; mở rộng công cụ sinh Level có thể tùy chỉnh độ khó để tạo khoảng 100 Level. Kết hợp đánh giá tự động, Internal Playtesting và chỉnh sửa thủ công để cân bằng Level. Triển khai gameplay, hiệu ứng và tham gia Public Testing với gần 3.000 người chơi." },
+                    { "label": "Đóng góp của tôi", "value": "Thiết kế Difficulty Curve. Mở rộng công cụ sinh Level có thể tùy chỉnh độ khó để tạo khoảng 100 Level. Kết hợp đánh giá tự động, Internal Playtesting và chỉnh sửa thủ công để cân bằng Level. Triển khai gameplay, hiệu ứng và tham gia Public Testing với gần 3.000 người chơi." },
                     { "label": "Ràng buộc", "value": "Giữ Core Mechanics cố định, đảm bảo trải nghiệm thư giãn và hạn chế cảm giác lặp lại giữa các Level." }
                   ]
                 }
