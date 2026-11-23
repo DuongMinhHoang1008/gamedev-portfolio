@@ -304,9 +304,42 @@
           ]);
         },
         renderProjectPage = function (t, n, project) {
-          var gallerySourceUrl = project && (
-            project.gallerySourceUrl === undefined ? project.url : project.gallerySourceUrl
-          );
+          var defaultMiniGddSections = [
+              {
+                title: "Tổng quan game",
+                description: "Thể loại, nền tảng, người chơi mục tiêu, mục tiêu thiết kế",
+              },
+              {
+                title: "Vòng lặp gameplay cốt lõi",
+                description: "Vòng lặp cốt lõi, hành động người chơi, động lực chơi",
+              },
+              {
+                title: "Cơ chế & luật chơi",
+                description: "Đầu vào, luật chơi, điều kiện thắng/thua",
+              },
+              {
+                title: "Tiến trình level & độ khó",
+                description: "Cấu trúc level, nhịp độ, đường cong độ khó",
+              },
+              {
+                title: "Thiết kế đặc thù",
+                description: "Điểm thiết kế riêng của từng game",
+              },
+              {
+                title: "Phản hồi & UX",
+                description: "Phản hồi hình ảnh/âm thanh, hướng dẫn, trải nghiệm người chơi",
+              },
+              {
+                title: "Phạm vi thiết kế",
+                description: "Thiết kế hiện có, đóng góp cá nhân, các ràng buộc",
+              },
+            ],
+            miniGddSections = project && typeof project.miniGdd === "object"
+              ? project.miniGdd.sections
+              : defaultMiniGddSections,
+            gallerySourceUrl = project && (
+              project.gallerySourceUrl === undefined ? project.url : project.gallerySourceUrl
+            );
           return n("div", { staticClass: "game-projects" }, [
             n("router-link", { staticClass: "project-back-link", attrs: { to: "/game-projects" } }, [
               t.$text("← Về danh sách game"),
@@ -316,6 +349,124 @@
                   n("header", { staticClass: "project-detail-header", class: project.id }, [
                     n("h1", [t.$text(project.name)]),
                   ]),
+                  project.miniGdd
+                    ? n(
+                        "section",
+                        {
+                          staticClass: "mini-gdd",
+                          attrs: {
+                            "aria-labelledby": "mini-gdd-title-" + project.id,
+                          },
+                        },
+                        [
+                          n(
+                            "h2",
+                            {
+                              staticClass: "mini-gdd-title",
+                              attrs: { id: "mini-gdd-title-" + project.id },
+                            },
+                            [t.$text(project.miniGdd.title || "Mini GDD")]
+                          ),
+                          typeof project.miniGdd === "object" && project.miniGdd.subtitle
+                            ? n("p", { staticClass: "mini-gdd-subtitle" }, [
+                                t.$text(project.miniGdd.subtitle),
+                              ])
+                            : t._e(),
+                          n(
+                            "div",
+                            { staticClass: "mini-gdd-grid" },
+                            t._l(miniGddSections, function (section, index) {
+                              return n(
+                                "article",
+                                { key: section.title, staticClass: "mini-gdd-item" },
+                                [
+                                  n("span", { staticClass: "mini-gdd-number" }, [
+                                    t.$text((index < 9 ? "0" : "") + (index + 1)),
+                                  ]),
+                                  n("h3", [t.$text(section.title)]),
+                                  section.description
+                                    ? n("p", { staticClass: "mini-gdd-description" }, [
+                                        t.$text(section.description),
+                                      ])
+                                    : t._e(),
+                                  section.entries
+                                    ? n(
+                                        "div",
+                                        { staticClass: "mini-gdd-entries" },
+                                        t._l(section.entries, function (entry) {
+                                          if (entry.flow) {
+                                            return n(
+                                              "section",
+                                              { key: entry.label, staticClass: "mini-gdd-flow-block" },
+                                              [
+                                                n("h4", [t.$text(entry.label)]),
+                                                n(
+                                                  "div",
+                                                  {
+                                                    staticClass: "mini-gdd-flow-wrap",
+                                                    class: {
+                                                      "is-loop": entry.loop,
+                                                      "is-grid-2x2": entry.flow.length === 4,
+                                                      "has-optional": entry.optional,
+                                                    },
+                                                  },
+                                                  [
+                                                    entry.optional
+                                                      ? n("div", { staticClass: "mini-gdd-optional" }, [
+                                                          n("span", { staticClass: "mini-gdd-optional-node" }, [
+                                                            t.$text(entry.optional.label),
+                                                          ]),
+                                                          n("span", { staticClass: "mini-gdd-optional-note" }, [
+                                                            t.$text(entry.optional.note),
+                                                          ]),
+                                                        ])
+                                                      : t._e(),
+                                                    n(
+                                                      "ol",
+                                                      {
+                                                        staticClass: "mini-gdd-flow",
+                                                        attrs: { "aria-label": t.$translate(entry.label) },
+                                                      },
+                                                      t._l(entry.flow, function (step) {
+                                                        return n("li", { key: step }, [t.$text(step)]);
+                                                      }),
+                                                      0
+                                                    ),
+                                                    entry.loop
+                                                      ? n("span", {
+                                                          staticClass: "mini-gdd-loop-return",
+                                                          attrs: { "aria-hidden": "true" },
+                                                        })
+                                                      : t._e(),
+                                                  ]
+                                                ),
+                                              ]
+                                            );
+                                          }
+                                          return n(
+                                            "div",
+                                            {
+                                              key: entry.label,
+                                              staticClass: "mini-gdd-entry",
+                                              class: entry.value.length <= 60 ? "is-compact" : "is-long",
+                                            },
+                                            [
+                                              n("p", { staticClass: "mini-gdd-entry-label" }, [t.$text(entry.label)]),
+                                              n("p", { staticClass: "mini-gdd-entry-value" }, [t.$text(entry.value)]),
+                                            ]
+                                          );
+                                        }),
+                                        0
+                                      )
+                                    : t._e(),
+                                ]
+                              );
+                            }),
+                            0
+                          ),
+                        ]
+                      )
+                    : t._e(),
                   project.youtubeVideoId
                     ? n("iframe", {
                         key: project.id,
@@ -616,6 +767,7 @@
         c = [
           {
             "id": "shikaku-cats",
+            "miniGdd": true,
             "youtubeVideoId": "CZL4IkIqYas",
             "role": "Hoàn thiện gameplay từ bản thử nghiệm và phụ trách hệ thống level, dữ liệu trong đội hai người.",
             "name": "Shikaku Cats: Number Puzzle",
@@ -677,6 +829,70 @@
           },
           {
             "id": "cookingdom",
+            "miniGdd": {
+              "title": "GDD",
+              "sections": [
+                {
+                  "title": "Tổng quan game",
+                  "entries": [
+                    { "label": "Thể loại", "value": "Simulation, Casual Cooking." },
+                    { "label": "Nền tảng", "value": "Mobile (Android, iOS)." },
+                    { "label": "Người chơi mục tiêu", "value": "Người chơi casual yêu thích chủ đề nấu ăn, nhân vật dễ thương và các tương tác trực quan. Tìm kiếm trải nghiệm thư giãn, dễ tiếp cận, có thử thách nhẹ và cảm giác hoàn thành." },
+                    { "label": "Mục tiêu thiết kế", "value": "Mang đến trải nghiệm nấu ăn thư giãn, kết hợp thử thách nhẹ nhàng và những khoảnh khắc cao trào. Nội dung xoay quanh Capybara và các món ăn đa dạng từ nhiều nền ẩm thực." }
+                  ]
+                },
+                {
+                  "title": "Core Gameplay",
+                  "entries": [
+                    { "label": "Meta Loop", "flow": ["Chọn món ăn", "Nấu ăn", "Hoàn thành", "Mở khóa món mới"], "loop": true },
+                    { "label": "Interaction Loop", "flow": ["Quan sát", "Suy luận", "Tương tác", "Nhận phản hồi"], "loop": true },
+                    { "label": "Hành động người chơi", "value": "Sơ chế, nấu ăn, trang trí thông qua tương tác trực tiếp." },
+                    { "label": "Động lực", "value": "Vượt qua thử thách, tận hưởng thành quả và khám phá món ăn mới." }
+                  ]
+                },
+                {
+                  "title": "Cơ chế & luật chơi",
+                  "entries": [
+                    { "label": "Đầu vào", "value": "Tap, Drag & Drop, Hold, Swipe." },
+                    { "label": "Luật chơi", "value": "Người chơi tự khám phá thao tác hợp lệ dựa trên bối cảnh, trạng thái và bố cục vật phẩm. Hành động cần logic, dễ suy luận." },
+                    { "label": "Điều kiện thắng", "value": "Hoàn thành các Step trong thời gian cho phép." },
+                    { "label": "Điều kiện thua", "value": "Hết thời gian khi chưa hoàn thành Level và không tiếp tục bằng cơ chế gia hạn." }
+                  ]
+                },
+                {
+                  "title": "Tiến trình level & độ khó",
+                  "entries": [
+                    { "label": "Cấu trúc level", "flow": ["Preparation", "Cooking", "Presentation"], "optional": { "label": "Minigame (tùy chọn)", "note": "Có thể xen kẽ giữa các Step" } },
+                    { "label": "Nhịp độ trong level", "value": "Mở đầu bằng thao tác đơn giản, tăng dần độ phức tạp và nhịp độ ở các Step giữa, kết thúc bằng Step trình bày nhẹ nhàng." },
+                    { "label": "Độ khó giữa các level", "value": "Các Level tăng dần số lượng thao tác, độ phức tạp và thử thách Minigame. Xen kẽ Level đơn giản để tạo nhịp nghỉ." },
+                    { "label": "Gia hạn thời gian", "value": "Rewarded Ads cho phép người chơi nhận thêm thời gian khi gặp khó khăn." }
+                  ]
+                },
+                {
+                  "title": "Thiết kế đặc thù",
+                  "entries": [
+                    { "label": "Step-Based Interaction Design", "value": "Độ khó được tạo từ số lượng, thứ tự, sự đa dạng thao tác và trạng thái vật phẩm. Các Step cần duy trì tính logic, hạn chế lặp lại và đảm bảo người chơi có thể vận dụng kinh nghiệm từ những tương tác trước." }
+                  ]
+                },
+                {
+                  "title": "Phản hồi & UX",
+                  "entries": [
+                    { "label": "Phản hồi hình ảnh/âm thanh", "value": "Mỗi tương tác cần có phản hồi tức thời thông qua Animation, VFX và Sound Effects." },
+                    { "label": "Hướng dẫn", "value": "Ưu tiên hướng dẫn gián tiếp bằng bố cục và trạng thái vật phẩm. Sử dụng chỉ dẫn trực tiếp khi thao tác khó suy luận." },
+                    { "label": "Hệ thống gợi ý", "value": "Có thể mở khóa gợi ý trực tiếp thông qua mua hoặc xem quảng cáo." },
+                    { "label": "Trải nghiệm người chơi", "value": "Duy trì gameplay mượt mà, trực quan, có thử thách nhưng không gây khó chịu bởi thao tác thiếu logic." }
+                  ]
+                },
+                {
+                  "title": "Phạm vi thiết kế & đóng góp",
+                  "entries": [
+                    { "label": "Thiết kế hiện có", "value": "Gameplay, hệ thống tương tác và bản vẽ các Step kèm hướng dẫn đã được cung cấp." },
+                    { "label": "Đóng góp của tôi", "value": "Triển khai hơn 10 Level. Chủ động thêm, bớt và điều chỉnh Step, thao tác để cải thiện tính logic, trải nghiệm và khả năng triển khai. Kiểm thử, sửa lỗi gameplay và tái sử dụng logic Level." },
+                    { "label": "Ràng buộc", "value": "Hạn chế sự lặp lại giữa các Step/Level trong phạm vi mechanics có sẵn, đồng thời duy trì chủ đề món ăn và nhịp độ trải nghiệm." }
+                  ]
+                }
+              ]
+            },
             "youtubeVideoId": "XiBkFug2SVE",
             "name": "Cookingdom (ABI Games)",
             "image": "img/projects/cookingdom-cover.png",
@@ -725,6 +941,7 @@
           },
           {
             "id": "shuriken-rush",
+            "miniGdd": true,
             "youtubeVideoId": "PDFpkacKMn0",
             "name": "Shuriken Rush",
             "role": "Độc lập phát triển toàn bộ game.",

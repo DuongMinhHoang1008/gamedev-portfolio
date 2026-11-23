@@ -28,6 +28,16 @@ const exportsObject = {};
 context.window.webpackJsonp[0][1]['4d97']({}, exportsObject, requireModule);
 const instance = new Vue(exportsObject.default);
 assert.equal(instance.projects[0].id, 'shikaku-cats');
+const miniGddProjectIds = new Set(['shikaku-cats', 'cookingdom', 'shuriken-rush']);
+const miniGddSectionTitles = [
+  'Tổng quan game',
+  'Vòng lặp gameplay cốt lõi',
+  'Cơ chế & luật chơi',
+  'Tiến trình level & độ khó',
+  'Thiết kế đặc thù',
+  'Phản hồi & UX',
+  'Phạm vi thiết kế',
+];
 function flatten(node) {
   assert(!Array.isArray(node), 'Render output must contain VNodes, not nested arrays');
   return [node, ...(node.children || []).flatMap(flatten)];
@@ -56,6 +66,51 @@ for (const language of ['vi', 'en']) {
     assert(nodes.some(node => node.tag === 'router-link' && node.data.attrs.to === '/game-projects'));
     if (project.role) assert(rendered.includes(language === 'vi' ? project.role : context.window.portfolioEnglish[project.role]));
     assert(!rendered.includes('undefined'), project.id + ': undefined text');
+    const miniGddSections = nodes.filter(node => node.data?.staticClass === 'mini-gdd');
+    assert.equal(miniGddSections.length, miniGddProjectIds.has(project.id) ? 1 : 0, project.id + ': Mini GDD visibility');
+    if (miniGddProjectIds.has(project.id)) {
+      const miniGdd = miniGddSections[0];
+      const miniGddNodes = flatten(miniGdd);
+      const customMiniGdd = typeof project.miniGdd === 'object' ? project.miniGdd : null;
+      const sectionTitles = customMiniGdd ? customMiniGdd.sections.map(section => section.title) : miniGddSectionTitles;
+      const entryCount = customMiniGdd
+        ? customMiniGdd.sections.reduce((total, section) => total + (section.entries || []).filter(entry => !entry.flow).length, 0)
+        : 0;
+      const flowEntries = customMiniGdd
+        ? customMiniGdd.sections.flatMap(section => (section.entries || []).filter(entry => entry.flow))
+        : [];
+      const loopEntries = flowEntries.filter(entry => entry.loop);
+      const optionalEntries = flowEntries.filter(entry => entry.optional);
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-item').length, sectionTitles.length, project.id + ': Mini GDD sections');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-number').length, sectionTitles.length, project.id + ': Mini GDD numbering');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-description').length, customMiniGdd ? 0 : 7, project.id + ': Mini GDD descriptions');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-entry').length, entryCount, project.id + ': Mini GDD entries');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-flow').length, flowEntries.length, project.id + ': Mini GDD flow diagrams');
+      assert.equal(miniGddNodes.filter(node => node.tag === 'li').length, flowEntries.reduce((total, entry) => total + entry.flow.length, 0), project.id + ': Mini GDD flow nodes');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-loop-return').length, loopEntries.length, project.id + ': Mini GDD loop returns');
+      assert.equal(miniGddNodes.filter(node => node.data?.staticClass === 'mini-gdd-optional').length, optionalEntries.length, project.id + ': Mini GDD optional stages');
+      for (const title of sectionTitles) {
+        assert(nodeText(miniGdd).includes(translate(title)), project.id + ': translated Mini GDD section ' + title);
+      }
+      if (customMiniGdd) {
+        const translatedValues = [customMiniGdd.title];
+        if (customMiniGdd.subtitle) translatedValues.push(customMiniGdd.subtitle);
+        for (const section of customMiniGdd.sections) {
+          for (const entry of section.entries || []) {
+            translatedValues.push(entry.label);
+            if (entry.flow) translatedValues.push(...entry.flow);
+            else translatedValues.push(entry.value);
+            if (entry.optional) translatedValues.push(entry.optional.label, entry.optional.note);
+          }
+        }
+        for (const value of translatedValues) {
+          assert(context.window.portfolioEnglish[value], project.id + ': missing Mini GDD translation for ' + value);
+          assert(nodeText(miniGdd).includes(translate(value)), project.id + ': missing translated Mini GDD value ' + value);
+        }
+      }
+      const detailChildren = tree.children.find(node => node.data?.staticClass === 'project-detail').children;
+      assert.equal(detailChildren[1].data.staticClass, 'mini-gdd', project.id + ': Mini GDD must be first after the title');
+    }
     const articles = nodes.filter(node => node.data?.staticClass === 'technical-challenge');
     assert.equal(articles.length, (project.challenges || []).length, project.id);
     for (const [index, challenge] of (project.challenges || []).entries()) {
