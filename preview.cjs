@@ -34,11 +34,16 @@ const server = http.createServer((req, res) => {
     res.writeHead(404).end();
     return;
   }
-  const relative = pathname.slice(prefix.length) || "index.html";
+  let relative = pathname.slice(prefix.length) || "index.html";
+  if (relative === "gamedesigner") {
+    res.writeHead(302, { Location: prefix + "gamedesigner/" }).end();
+    return;
+  }
+  if (relative === "gamedesigner/") relative = "gamedesigner/index.html";
   const file = path.resolve(root, relative);
   if (
     !file.startsWith(root + path.sep) ||
-    !/^(index\.html|favicon\.ico|(?:css|js|img|d)\/[^\\]+)$/.test(relative) ||
+    !/^(index\.html|favicon\.ico|gamedesigner\/index\.html|(?:css|js|img|d)\/[^\\]+)$/.test(relative) ||
     relative.split("/").some((part) => part.startsWith("."))
   ) {
     res.writeHead(404).end();

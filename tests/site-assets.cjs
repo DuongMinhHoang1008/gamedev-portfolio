@@ -39,6 +39,19 @@ const ready = new Promise((resolve, reject) => {
         assert(dimensions.width > 0 && dimensions.height > 0, file);
       }
     }
+    const gameDesignerPage = fs.readFileSync(path.join(root, 'gamedesigner', 'index.html'));
+    assert.deepEqual(
+      fs.readFileSync(path.join(root, 'dist', 'gamedesigner', 'index.html')),
+      gameDesignerPage,
+      'Packaged game designer entry point differs'
+    );
+    const gameDesignerResponse = await fetch(base + 'gamedesigner/');
+    assert.equal(gameDesignerResponse.status, 200, 'gamedesigner entry point');
+    assert.deepEqual(
+      Buffer.from(await gameDesignerResponse.arrayBuffer()),
+      gameDesignerPage,
+      'Game designer entry point differs over HTTP'
+    );
     assert(references.has('d/UNITY GAME DEVELOPER.pdf'));
     assert(references.has('d/22021218_Duong_Minh_Hoang.pdf'));
     console.log(`PASS: ${references.size} referenced local files served over HTTP and match dist; PDF MIME/content and image dimensions verified.`);

@@ -10,6 +10,8 @@ Run `node build.cjs` to validate JavaScript syntax and package the maintained
 static files into `dist/`. This does not recompile the missing Vue sources.
 Run `node preview.cjs` for the local site at
 `http://127.0.0.1:8080/gamedev-portfolio/`.
+The mirrored game designer entry point is available at
+`http://127.0.0.1:8080/gamedev-portfolio/gamedesigner/`.
 
 With the existing `vue` dependency available, run:
 

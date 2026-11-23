@@ -9,7 +9,7 @@ for (const name of fs.readdirSync(path.join(root, 'js'))) {
   if (name.endsWith('.js')) new vm.Script(fs.readFileSync(path.join(root, 'js', name), 'utf8'), { filename: name });
 }
 fs.mkdirSync(output, { recursive: true });
-for (const name of ['index.html', 'favicon.ico', '.nojekyll', 'js', 'css', 'img', 'd']) {
+for (const name of ['index.html', 'favicon.ico', '.nojekyll', 'js', 'css', 'img', 'd', 'gamedesigner']) {
   fs.cpSync(path.join(root, name), path.join(output, name), { recursive: true });
 }
 // Remove only the confirmed unused sample PDFs from older packaging runs.
