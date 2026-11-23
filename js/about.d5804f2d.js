@@ -767,7 +767,69 @@
         c = [
           {
             "id": "shikaku-cats",
-            "miniGdd": true,
+            "miniGdd": {
+              "title": "GDD",
+              "subtitle": "Tài liệu thiết kế game hồi cứu",
+              "sections": [
+                {
+                  "title": "Tổng quan game",
+                  "entries": [
+                    { "label": "Thể loại", "value": "Logic Puzzle, Casual." },
+                    { "label": "Nền tảng", "value": "Mobile (Android, iOS)." },
+                    { "label": "Người chơi mục tiêu", "value": "Người chơi yêu thích giải đố logic, chủ đề mèo dễ thương và trải nghiệm thư giãn có thử thách tư duy." },
+                    { "label": "Mục tiêu thiết kế", "value": "Mang đến trải nghiệm giải đố nhẹ nhàng, dễ tiếp cận với độ khó được cân bằng hợp lý, kết hợp chủ đề mèo thân thiện." }
+                  ]
+                },
+                {
+                  "title": "Core Gameplay",
+                  "entries": [
+                    { "label": "Meta Loop", "flow": ["Vào Level", "Giải Puzzle", "Hoàn thành", "Mở khóa Level mới"], "loop": true },
+                    { "label": "Interaction Loop", "flow": ["Quan sát", "Suy luận", "Tương tác", "Nhận phản hồi"], "loop": true },
+                    { "label": "Hành động người chơi", "value": "Kéo thả để tạo các hình chữ nhật trên bàn lưới." },
+                    { "label": "Động lực", "value": "Chinh phục thử thách suy luận, tận hưởng cảm giác giải đố và mở khóa Level mới." }
+                  ]
+                },
+                {
+                  "title": "Cơ chế & luật chơi",
+                  "entries": [
+                    { "label": "Đầu vào", "value": "Drag & Drop." },
+                    { "label": "Luật chơi", "value": "Chia bàn lưới thành các hình chữ nhật không chồng lấn. Mỗi hình chứa đúng một ô số và có diện tích bằng giá trị số đó." },
+                    { "label": "Điều kiện thắng", "value": "Phủ kín bàn lưới bằng các hình chữ nhật hợp lệ, không chồng lấn hoặc bỏ trống ô." },
+                    { "label": "Điều kiện thua", "value": "Không có; người chơi có thể thử lại và điều chỉnh lời giải." }
+                  ]
+                },
+                {
+                  "title": "Tiến trình Level & độ khó",
+                  "entries": [
+                    { "label": "Cấu trúc Level", "value": "Mỗi Level có một bàn lưới chứa các ô số và một lời giải duy nhất. Độ khó phụ thuộc vào cách bố trí số, số phương án và mức độ phức tạp suy luận." },
+                    { "label": "Nhịp độ", "value": "Không giới hạn thời gian; xen kẽ các Level khó và dễ để cân bằng thử thách với khoảng nghỉ." },
+                    { "label": "Difficulty Curve", "value": "Bắt đầu bằng Tutorial và các Level đơn giản, dần mở rộng quy mô và độ phức tạp; phân bổ độ khó theo chu kỳ Easy → Medium → Hard → Recovery." }
+                  ]
+                },
+                {
+                  "title": "Thiết kế đặc thù",
+                  "entries": [
+                    { "label": "Logic-Based Puzzle Design", "value": "Độ khó không chỉ đến từ kích thước bàn mà còn từ số phương án cần cân nhắc và khả năng loại trừ lựa chọn. Level khó yêu cầu suy luận và quay lui để tìm ra lời giải." }
+                  ]
+                },
+                {
+                  "title": "Phản hồi & UX",
+                  "entries": [
+                    { "label": "Phản hồi hình ảnh/âm thanh", "value": "Kéo thả có Animation và SFX; hình chữ nhật hợp lệ hiển thị mèo, hoàn thành Level kích hoạt Animation ăn mừng." },
+                    { "label": "Hướng dẫn", "value": "Tutorial giới thiệu luật chơi; Hint có thể mở khóa bằng mua hoặc xem quảng cáo để hiển thị một hình chữ nhật đúng." },
+                    { "label": "Trải nghiệm người chơi", "value": "Thao tác trực quan, phản hồi tức thời, giải đố logic không áp lực thời gian." }
+                  ]
+                },
+                {
+                  "title": "Phạm vi thiết kế & đóng góp",
+                  "entries": [
+                    { "label": "Thiết kế hiện có", "value": "Core Mechanics dựa trên trò chơi Rectangles thuộc bộ sưu tập puzzle của Simon Tatham." },
+                    { "label": "Đóng góp của tôi", "value": "Thiết kế Difficulty Curve; mở rộng công cụ sinh Level có thể tùy chỉnh độ khó để tạo khoảng 100 Level. Kết hợp đánh giá tự động, Internal Playtesting và chỉnh sửa thủ công để cân bằng Level. Triển khai gameplay, hiệu ứng và tham gia Public Testing với gần 3.000 người chơi." },
+                    { "label": "Ràng buộc", "value": "Giữ Core Mechanics cố định, đảm bảo trải nghiệm thư giãn và hạn chế cảm giác lặp lại giữa các Level." }
+                  ]
+                }
+              ]
+            },
             "youtubeVideoId": "CZL4IkIqYas",
             "role": "Hoàn thiện gameplay từ bản thử nghiệm và phụ trách hệ thống level, dữ liệu trong đội hai người.",
             "name": "Shikaku Cats: Number Puzzle",
