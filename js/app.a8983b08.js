@@ -361,22 +361,11 @@
           path: "/game-projects/:projectId",
           name: "Game Project",
           component: loadGameProjects,
-          props: true,
-        },
-        {
-          path: "/game-projects/:projectId/gdd",
-          name: "Game GDD",
-          component: loadGameProjects,
           props: function (route) {
-            return { projectId: route.params.projectId, gddOnly: true };
-          },
-        },
-        {
-          path: "/game-projects/:projectId/case-study",
-          name: "Game Case Study",
-          component: loadGameProjects,
-          props: function (route) {
-            return { projectId: route.params.projectId, caseStudyOnly: true };
+            return {
+              projectId: route.params.projectId,
+              gameDesignerMode: window.location.pathname.indexOf("/gamedesigner/") !== -1,
+            };
           },
         },
         {
@@ -394,8 +383,28 @@
           },
         },
         { path: "*", redirect: "/404" },
-      ],
-      P = new x["a"]({
+      ];
+    if (window.location.pathname.indexOf("/gamedesigner/") !== -1) {
+      k.splice(4, 0,
+        {
+          path: "/game-projects/:projectId/gdd",
+          name: "Game GDD",
+          component: loadGameProjects,
+          props: function (route) {
+            return { projectId: route.params.projectId, gameDesignerMode: true, gddOnly: true };
+          },
+        },
+        {
+          path: "/game-projects/:projectId/case-study",
+          name: "Game Case Study",
+          component: loadGameProjects,
+          props: function (route) {
+            return { projectId: route.params.projectId, gameDesignerMode: true, caseStudyOnly: true };
+          },
+        }
+      );
+    }
+    var P = new x["a"]({
         routes: k,
         scrollBehavior: function (to, from, savedPosition) {
           if (

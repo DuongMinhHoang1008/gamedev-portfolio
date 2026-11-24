@@ -58,16 +58,21 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
     for (const project of instance.projects) {
       const detail = new Vue({ ...exports.default, propsData: { projectId: project.id } });
       const rendered = detail._render();
+      assert(text(rendered).includes('My contributions'), project.id + ': main page contributions');
+      assert(!text(rendered).includes('View GDD'), project.id + ': main page GDD link');
+      assert(!text(rendered).includes('View Case Study'), project.id + ': main page Case Study link');
       if (project.caseStudy) {
-        assert(text(rendered).includes('View Case Study'), project.id + ': Case Study link');
-        assert(!text(rendered).includes('My contributions'), project.id + ': contributions moved from game page');
+        const designerDetail = new Vue({
+          ...exports.default,
+          propsData: { projectId: project.id, gameDesignerMode: true },
+        });
+        assert(text(designerDetail._render()).includes('View Case Study'), project.id + ': designer Case Study link');
+        assert(!text(designerDetail._render()).includes('My contributions'), project.id + ': designer contributions moved from game page');
         const caseStudy = new Vue({
           ...exports.default,
-          propsData: { projectId: project.id, caseStudyOnly: true },
+          propsData: { projectId: project.id, gameDesignerMode: true, caseStudyOnly: true },
         });
         assert(text(caseStudy._render()).includes('My contributions'), project.id + ': Case Study translation');
-      } else {
-        assert(text(rendered).includes('My contributions'), project.id);
       }
       assert(text(rendered).includes('Back to game projects'), project.id);
       assert(!text(rendered).includes(project.summary), project.id + ' summary untranslated');

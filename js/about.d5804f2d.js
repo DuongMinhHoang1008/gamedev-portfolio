@@ -565,7 +565,7 @@
                       t.$text(t._s(project.highlight)),
                     ]),
                     project.role ? n("p", { staticClass: "project-role" }, [t.$text(project.role)]) : t._e(),
-                    project.miniGdd
+                    t.gameDesignerMode && project.miniGdd
                       ? n("a", {
                           staticClass: "game-link gdd-link",
                           attrs: {
@@ -573,7 +573,7 @@
                           },
                         }, [t.$text("Xem GDD")])
                       : t._e(),
-                    project.caseStudy
+                    t.gameDesignerMode && project.caseStudy
                       ? n("a", {
                           staticClass: "game-link case-study-link",
                           attrs: {
@@ -653,7 +653,7 @@
                       }),
                       0
                     ),
-                    !project.caseStudy ? n(
+                    !t.gameDesignerMode || !project.caseStudy ? n(
                       "section",
                       {
                         staticClass: "contributions",
@@ -683,7 +683,7 @@
                             ),
                       ]
                     ) : t._e(),
-                    !project.caseStudy && project.challenges
+                    (!t.gameDesignerMode || !project.caseStudy) && project.challenges
                       ? n("section", { staticClass: "technical-challenges", attrs: { "aria-labelledby": "challenges-title" } }, [
                           n("h2", { attrs: { id: "challenges-title" } }, [t.$text("Thách thức kỹ thuật & giải pháp")]),
                           t._l(project.challenges, function (item, index) {
@@ -696,7 +696,7 @@
                           }),
                         ], 2)
                       : t._e(),
-                    !project.caseStudy && project.results
+                    (!t.gameDesignerMode || !project.caseStudy) && project.results
                       ? n(
                           "section",
                           {
@@ -1320,7 +1320,12 @@
         ],
         o = s["a"].extend({
           name: "GameProjects",
-          props: { projectId: String, gddOnly: Boolean, caseStudyOnly: Boolean },
+          props: {
+            projectId: String,
+            gameDesignerMode: Boolean,
+            gddOnly: Boolean,
+            caseStudyOnly: Boolean,
+          },
           data: function () {
             return { projects: c };
           },

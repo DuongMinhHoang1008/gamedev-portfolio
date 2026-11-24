@@ -45,10 +45,12 @@ const ready = new Promise((resolve, reject) => {
     ]);
     assert(gameDesigner.includes('<title>Dương Minh Hoàng - Unity Game Developer</title>'));
     assert(gameDesigner.includes('<base href="/gamedev-portfolio/">'));
+    assert(!original.includes('<base href="/gamedev-portfolio/">'));
     assert(gameDesigner.includes('/gamedev-portfolio/js/app.a8983b08.js'));
     assert(gameDesigner.includes('https://DuongMinhHoang1008.github.io/gamedev-portfolio/gamedesigner/'));
     assert.equal(
       gameDesigner
+        .replace('  <base href="/gamedev-portfolio/">\n', '')
         .replace('/gamedev-portfolio/gamedesigner/', '/gamedev-portfolio')
         .trimEnd(),
       original.trimEnd(),
