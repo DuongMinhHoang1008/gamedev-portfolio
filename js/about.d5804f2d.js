@@ -303,6 +303,45 @@
             t.$static(0),
           ]);
         },
+        renderTechnicalChallenge = function (t, n, challenges, item, index) {
+          return n("article", { key: item.title, staticClass: "technical-challenge" }, [
+            n("h3", [
+              t.$text(challenges.length > 1 ? (index + 1) + ". " : ""),
+              t.$text(item.title),
+            ]),
+            item.challenge
+              ? n("p", [
+                  n("strong", [t.$text("Thách thức:")]),
+                  t.$text(" " + item.challenge),
+                ])
+              : t._e(),
+            item.solutionHeading ? n("h4", [t.$text(item.solutionHeading)]) : t._e(),
+            item.solution
+              ? n("p", [
+                  item.solutionHeading ? t._e() : n("strong", [t.$text("Giải pháp:")]),
+                  t.$text((item.solutionHeading ? "" : " ") + item.solution),
+                ])
+              : t._e(),
+            item.solutionPoints
+              ? n(
+                  "ul",
+                  { staticClass: "design-decisions" },
+                  t._l(item.solutionPoints, function (point) {
+                    return typeof point === "string"
+                      ? n("li", { key: point }, [t.$text(point)])
+                      : n("li", { key: point.label }, [
+                          n("strong", [t.$text(point.label), t.$text(":")]),
+                          t.$text(" " + point.text),
+                        ]);
+                  }),
+                  0
+                )
+              : t._e(),
+            item.outcomeHeading ? n("h4", [t.$text(item.outcomeHeading)]) : t._e(),
+            item.outcome ? n("p", [t.$text(item.outcome)]) : t._e(),
+            item.description ? n("p", [t.$text(item.description)]) : t._e(),
+          ]);
+        },
         renderCaseStudy = function (t, n, project) {
           return n("div", { staticClass: "project-detail-content case-study-content" }, [
             n("h2", { staticClass: "case-study-title" }, [t.$text("Case Study")]),
@@ -334,25 +373,7 @@
                     t.$text("Thách thức kỹ thuật & giải pháp"),
                   ]),
                   t._l(project.challenges, function (item, index) {
-                    return n("article", { key: item.title, staticClass: "technical-challenge" }, [
-                      n("h3", [
-                        t.$text(project.challenges.length > 1 ? (index + 1) + ". " : ""),
-                        t.$text(item.title),
-                      ]),
-                      item.challenge
-                        ? n("p", [
-                            n("strong", [t.$text("Thách thức:")]),
-                            t.$text(" " + item.challenge),
-                          ])
-                        : t._e(),
-                      item.solution
-                        ? n("p", [
-                            n("strong", [t.$text("Giải pháp:")]),
-                            t.$text(" " + item.solution),
-                          ])
-                        : t._e(),
-                      item.description ? n("p", [t.$text(item.description)]) : t._e(),
-                    ]);
+                    return renderTechnicalChallenge(t, n, project.challenges, item, index);
                   }),
                 ], 2)
               : t._e(),
@@ -565,21 +586,35 @@
                       t.$text(t._s(project.highlight)),
                     ]),
                     project.role ? n("p", { staticClass: "project-role" }, [t.$text(project.role)]) : t._e(),
-                    t.gameDesignerMode && project.miniGdd
-                      ? n("a", {
-                          staticClass: "game-link gdd-link",
-                          attrs: {
-                            href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/gdd",
-                          },
-                        }, [t.$text("Xem GDD")])
-                      : t._e(),
-                    t.gameDesignerMode && project.caseStudy
-                      ? n("a", {
-                          staticClass: "game-link case-study-link",
-                          attrs: {
-                            href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/case-study",
-                          },
-                        }, [t.$text("Xem Case Study")])
+                    t.gameDesignerMode && (project.miniGdd || project.caseStudy || project.levelSheetUrl)
+                      ? n("div", { staticClass: "project-subpage-links" }, [
+                          project.miniGdd
+                            ? n("a", {
+                                staticClass: "game-link gdd-link",
+                                attrs: {
+                                  href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/gdd",
+                                },
+                              }, [t.$text("Xem GDD")])
+                            : t._e(),
+                          project.caseStudy
+                            ? n("a", {
+                                staticClass: "game-link case-study-link",
+                                attrs: {
+                                  href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/case-study",
+                                },
+                              }, [t.$text("Xem Case Study")])
+                            : t._e(),
+                          project.levelSheetUrl
+                            ? n("a", {
+                                staticClass: "game-link level-sheet-link",
+                                attrs: {
+                                  href: project.levelSheetUrl,
+                                  target: "_blank",
+                                  rel: "noopener noreferrer",
+                                },
+                              }, [t.$text("Xem Level Sheet")])
+                            : t._e(),
+                        ])
                       : t._e(),
                     n("h2", [t.$text("Tổng quan")]),
                     n("p", [t.$text(t._s(project.summary))]),
@@ -687,12 +722,7 @@
                       ? n("section", { staticClass: "technical-challenges", attrs: { "aria-labelledby": "challenges-title" } }, [
                           n("h2", { attrs: { id: "challenges-title" } }, [t.$text("Thách thức kỹ thuật & giải pháp")]),
                           t._l(project.challenges, function (item, index) {
-                            return n("article", { key: item.title, staticClass: "technical-challenge" }, [
-                              n("h3", [t.$text(project.challenges.length > 1 ? (index + 1) + ". " : ""), t.$text(item.title)]),
-                              item.challenge ? n("p", [n("strong", [t.$text("Thách thức:")]), t.$text(" " + item.challenge)]) : t._e(),
-                              item.solution ? n("p", [n("strong", [t.$text("Giải pháp:")]), t.$text(" " + item.solution)]) : t._e(),
-                              item.description ? n("p", [t.$text(item.description)]) : t._e(),
-                            ]);
+                            return renderTechnicalChallenge(t, n, project.challenges, item, index);
                           }),
                         ], 2)
                       : t._e(),
@@ -1077,6 +1107,7 @@
             ],
             "platform": "Android · Google Play",
             "url": "https://play.google.com/store/apps/details?id=com.abi.cook.chill",
+            "levelSheetUrl": "https://docs.google.com/spreadsheets/d/1DS746XaZU-YuXU9fYOGNVOfr-LyaV7qy-X6INFW0nls/edit?gid=472458446#gid=472458446",
             "linkLabel": "Xem trên Google Play",
             "contributions": [
               "Tự triển khai hơn 10 level bằng Unity/C# từ gameplay có sẵn.",
@@ -1089,10 +1120,21 @@
                 "title": "Tái sử dụng logic giữa các level",
                 "challenge": "Nhiều level sử dụng các bước và cơ chế tương tác lặp lại, khiến việc triển khai ban đầu tốn nhiều thời gian.",
                 "solution": "Tái sử dụng logic qua kế thừa, nhóm các class có chức năng tương đồng để giảm code trùng lặp."
+              },
+              {
+                "title": "Cân bằng độ khó level",
+                "challenge": "Cân bằng độ khó và tính trực quan của các Level, đảm bảo thao tác dễ hiểu, dễ thực hiện nhưng vẫn bám sát quy trình chế biến món ăn thực tế.",
+                "solutionHeading": "Giải pháp",
+                "solutionPoints": [
+                  "Thêm, bớt hoặc điều chỉnh thao tác nhằm hạn chế tương tác phức tạp, ưu tiên điều khiển bằng một ngón tay.",
+                  "Tận dụng những quy luật tương tác quen thuộc trong đời sống để người chơi dễ dàng suy luận thao tác hợp lệ.",
+                  "Điều chỉnh trình tự và số lượng thao tác để giảm độ khó không cần thiết mà vẫn giữ tính logic của quy trình nấu ăn."
+                ]
               }
             ],
             "results": [
-              "Góp phần rút ngắn thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần."
+              "Góp phần rút ngắn thời gian triển khai mỗi level từ khoảng 2 tuần xuống 1 tuần.",
+              "Hoàn thiện các Level với tương tác đơn giản, dễ suy luận và phù hợp với trải nghiệm Casual Cooking. Độ khó được điều chỉnh theo mục tiêu thiết kế, đồng thời duy trì tính logic của từng công đoạn nấu ăn."
             ]
           },
           {

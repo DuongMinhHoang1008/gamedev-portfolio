@@ -46,6 +46,12 @@ function flatten(node) {
 function nodeText(node) {
   return (node.text || '') + (node.children || []).map(nodeText).join('');
 }
+function nestedStrings(value) {
+  if (typeof value === 'string') return [value];
+  if (Array.isArray(value)) return value.flatMap(nestedStrings);
+  if (value && typeof value === 'object') return Object.values(value).flatMap(nestedStrings);
+  return [];
+}
 for (const language of ['vi', 'en']) {
   instance.$setLanguage(language);
   const translate = value => language === 'vi' ? value : context.window.portfolioEnglish[value];
@@ -147,6 +153,16 @@ for (const language of ['vi', 'en']) {
         node.data?.attrs?.href === '/gamedev-portfolio/gamedesigner/#/game-projects/' + project.id + '/case-study' &&
         nodeText(node).includes(language === 'vi' ? 'Xem Case Study' : 'View Case Study')
       ), project.id + ': Case Study subpage link');
+      if (project.id === 'cookingdom') {
+        assert(designerNodes.some(node =>
+          node.tag === 'a' &&
+          node.data?.staticClass?.includes('level-sheet-link') &&
+          node.data?.attrs?.href === project.levelSheetUrl &&
+          node.data?.attrs?.target === '_blank' &&
+          node.data?.attrs?.rel === 'noopener noreferrer' &&
+          nodeText(node).includes(language === 'vi' ? 'Xem Level Sheet' : 'View Level Sheet')
+        ), 'cookingdom: Level Sheet link');
+      }
       assert.equal(nodes.filter(node => node.data?.staticClass === 'contributions').length, 1, project.id + ': main page inline contributions');
       assert.equal(nodes.filter(node => node.data?.staticClass === 'technical-challenge').length, project.challenges.length, project.id + ': main page inline challenges');
       assert.equal(nodes.filter(node => node.data?.staticClass === 'research-results').length, 1, project.id + ': main page inline results');
@@ -177,6 +193,13 @@ for (const language of ['vi', 'en']) {
         assert(expected, 'Missing translation: ' + value);
         assert(nodeText(caseStudyTree).includes(expected), project.id + ': missing Case Study value ' + expected);
       }
+      if (project.id === 'cookingdom') {
+        const cookingdomChallenges = caseStudyNodes.filter(node => node.data?.staticClass === 'technical-challenge');
+        assert(nodeText(cookingdomChallenges[1]).includes('2. ' + translate(project.challenges[1].title)), 'cookingdom: numbered second challenge');
+        assert(nodeText(cookingdomChallenges[1]).includes(translate(project.challenges[1].solutionHeading)), 'cookingdom: solution heading');
+        assert(!nodeText(cookingdomChallenges[1]).includes('Interaction Simplification'), 'cookingdom: no design-decision labels');
+        assert(nodeText(caseStudyNodes.find(node => node.data?.staticClass === 'research-results')).includes(translate(project.results[1])), 'cookingdom: outcome moved to results');
+      }
     } else {
       assert(!designerNodes.some(node => node.data?.staticClass?.includes('case-study-link')), project.id + ': unexpected Case Study link');
       assert.equal(nodes.filter(node => node.data?.staticClass === 'contributions').length, 1, project.id + ': inline contributions');
@@ -184,7 +207,7 @@ for (const language of ['vi', 'en']) {
     const articles = nodes.filter(node => node.data?.staticClass === 'technical-challenge');
     assert.equal(articles.length, (project.challenges || []).length, project.id);
     for (const [index, challenge] of (project.challenges || []).entries()) {
-      for (const value of Object.values(challenge)) {
+      for (const value of nestedStrings(challenge)) {
         const expected = language === 'vi' ? value : context.window.portfolioEnglish[value];
         assert(expected, 'Missing translation: ' + value);
         assert(nodeText(articles[index]).includes(expected), project.id + ': missing ' + expected);
