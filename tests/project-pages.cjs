@@ -27,7 +27,8 @@ requireModule.r = () => {};
 const exportsObject = {};
 context.window.webpackJsonp[0][1]['4d97']({}, exportsObject, requireModule);
 const instance = new Vue(exportsObject.default);
-assert.equal(instance.projects[0].id, 'shikaku-cats');
+assert.equal(instance.projects[0].id, 'cookingdom');
+assert.equal(instance.projects[1].id, 'shikaku-cats');
 const miniGddProjectIds = new Set(['shikaku-cats', 'cookingdom', 'shuriken-rush']);
 const caseStudyProjectIds = new Set(['shikaku-cats', 'cookingdom', 'shuriken-rush']);
 const miniGddSectionTitles = [

@@ -887,7 +887,17 @@
           },
         ],
         s = i("2b0e"),
-        c = [
+        swapProjectPositions = function (projects, firstId, secondId) {
+          var ordered = projects.slice(),
+            firstIndex = ordered.findIndex(function (project) { return project.id === firstId; }),
+            secondIndex = ordered.findIndex(function (project) { return project.id === secondId; });
+          if (firstIndex < 0 || secondIndex < 0) return ordered;
+          var firstProject = ordered[firstIndex];
+          ordered[firstIndex] = ordered[secondIndex];
+          ordered[secondIndex] = firstProject;
+          return ordered;
+        },
+        c = swapProjectPositions([
           {
             "id": "shikaku-cats",
             "caseStudy": true,
@@ -1359,7 +1369,7 @@
             ],
             "status": "Bản game tham gia Hackathon MIRO Game Contest."
           }
-        ],
+        ], "shikaku-cats", "cookingdom"),
         o = s["a"].extend({
           name: "GameProjects",
           props: {
