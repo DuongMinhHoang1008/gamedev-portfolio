@@ -364,6 +364,14 @@
           props: true,
         },
         {
+          path: "/game-projects/:projectId/gdd",
+          name: "Game GDD",
+          component: loadGameProjects,
+          props: function (route) {
+            return { projectId: route.params.projectId, gddOnly: true };
+          },
+        },
+        {
           path: "/contact",
           name: "Contact",
           component: function () {
@@ -382,7 +390,12 @@
       P = new x["a"]({
         routes: k,
         scrollBehavior: function (to, from, savedPosition) {
-          if (to.name === "Game Project" || from.name === "Game Project") {
+          if (
+            to.name === "Game Project" ||
+            from.name === "Game Project" ||
+            to.name === "Game GDD" ||
+            from.name === "Game GDD"
+          ) {
             return savedPosition || { x: 0, y: 0 };
           }
         },

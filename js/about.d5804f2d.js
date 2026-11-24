@@ -341,15 +341,17 @@
               project.gallerySourceUrl === undefined ? project.url : project.gallerySourceUrl
             );
           return n("div", { staticClass: "game-projects" }, [
-            n("router-link", { staticClass: "project-back-link", attrs: { to: "/game-projects" } }, [
-              t.$text("← Về danh sách game"),
+            n("router-link", { staticClass: "project-back-link", attrs: {
+              to: t.gddOnly && project ? "/game-projects/" + project.id : "/game-projects",
+            } }, [
+              t.$text(t.gddOnly && project ? "← Về trang game" : "← Về danh sách game"),
             ]),
             project
               ? n("article", { staticClass: "project-detail" }, [
                   n("header", { staticClass: "project-detail-header", class: project.id }, [
                     n("h1", [t.$text(project.name)]),
                   ]),
-                  project.miniGdd
+                  t.gddOnly && project.miniGdd
                     ? n(
                         "section",
                         {
@@ -467,7 +469,7 @@
                         ]
                       )
                     : t._e(),
-                  project.youtubeVideoId
+                  !t.gddOnly && project.youtubeVideoId
                     ? n("iframe", {
                         key: project.id,
                         staticClass: "project-video",
@@ -480,7 +482,7 @@
                         },
                       })
                     : t._e(),
-                  n("div", { staticClass: "project-detail-content" }, [
+                  t.gddOnly ? t._e() : n("div", { staticClass: "project-detail-content" }, [
                     n("p", { staticClass: "category" }, [
                       t.$text(t._s(project.category)),
                     ]),
@@ -488,6 +490,14 @@
                       t.$text(t._s(project.highlight)),
                     ]),
                     project.role ? n("p", { staticClass: "project-role" }, [t.$text(project.role)]) : t._e(),
+                    project.miniGdd
+                      ? n("a", {
+                          staticClass: "game-link gdd-link",
+                          attrs: {
+                            href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/gdd",
+                          },
+                        }, [t.$text("Xem GDD")])
+                      : t._e(),
                     n("h2", [t.$text("Tổng quan")]),
                     n("p", [t.$text(t._s(project.summary))]),
                     project.team
@@ -1224,7 +1234,7 @@
         ],
         o = s["a"].extend({
           name: "GameProjects",
-          props: { projectId: String },
+          props: { projectId: String, gddOnly: Boolean },
           data: function () {
             return { projects: c };
           },

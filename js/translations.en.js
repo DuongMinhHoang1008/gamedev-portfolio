@@ -30,6 +30,8 @@ window.portfolioEnglish = {
   "Chứng chỉ Lập trình game nâng cao": "Advanced Game Programming Certificate",
   "Những dự án mình đã tham gia phát triển, từ game di động, Game Jam và cuộc thi làm game đến nghiên cứu kỹ thuật trong khóa luận tốt nghiệp.": "Projects I have contributed to, from mobile games, game jams, and game development contests to technical research for my graduation thesis.",
   "← Về danh sách game": "← Back to game projects",
+  "← Về trang game": "← Back to game page",
+  "Xem GDD": "View GDD",
   "Video YouTube": "YouTube video",
   "Không tìm thấy dự án game": "Game project not found",
   "Tò He": "Tò He",

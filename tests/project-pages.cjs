@@ -67,8 +67,21 @@ for (const language of ['vi', 'en']) {
     if (project.role) assert(rendered.includes(language === 'vi' ? project.role : context.window.portfolioEnglish[project.role]));
     assert(!rendered.includes('undefined'), project.id + ': undefined text');
     const miniGddSections = nodes.filter(node => node.data?.staticClass === 'mini-gdd');
-    assert.equal(miniGddSections.length, miniGddProjectIds.has(project.id) ? 1 : 0, project.id + ': Mini GDD visibility');
+    assert.equal(miniGddSections.length, 0, project.id + ': Mini GDD must not render inline');
     if (miniGddProjectIds.has(project.id)) {
+      assert(nodes.some(node =>
+        node.tag === 'a' &&
+        node.data?.attrs?.href === '/gamedev-portfolio/gamedesigner/#/game-projects/' + project.id + '/gdd' &&
+        nodeText(node).includes(language === 'vi' ? 'Xem GDD' : 'View GDD')
+      ), project.id + ': GDD subpage link');
+      const gddDetail = new Vue({
+        ...exportsObject.default,
+        propsData: { projectId: project.id, gddOnly: true },
+      });
+      const gddTree = gddDetail._render();
+      const gddNodes = flatten(gddTree);
+      const miniGddSections = gddNodes.filter(node => node.data?.staticClass === 'mini-gdd');
+      assert.equal(miniGddSections.length, 1, project.id + ': GDD subpage visibility');
       const miniGdd = miniGddSections[0];
       const miniGddNodes = flatten(miniGdd);
       const customMiniGdd = typeof project.miniGdd === 'object' ? project.miniGdd : null;
@@ -108,8 +121,16 @@ for (const language of ['vi', 'en']) {
           assert(nodeText(miniGdd).includes(translate(value)), project.id + ': missing translated Mini GDD value ' + value);
         }
       }
-      const detailChildren = tree.children.find(node => node.data?.staticClass === 'project-detail').children;
+      const detailChildren = gddTree.children.find(node => node.data?.staticClass === 'project-detail').children;
       assert.equal(detailChildren[1].data.staticClass, 'mini-gdd', project.id + ': Mini GDD must be first after the title');
+      assert(gddNodes.some(node =>
+        node.tag === 'router-link' &&
+        node.data?.attrs?.to === '/game-projects/' + project.id &&
+        nodeText(node).includes(language === 'vi' ? '← Về trang game' : '← Back to game page')
+      ), project.id + ': back link from GDD subpage');
+      assert(!gddNodes.some(node => node.data?.staticClass === 'project-detail-content'), project.id + ': GDD subpage must not duplicate case study');
+    } else {
+      assert(!nodes.some(node => node.data?.staticClass?.includes('gdd-link')), project.id + ': unexpected GDD link');
     }
     const articles = nodes.filter(node => node.data?.staticClass === 'technical-challenge');
     assert.equal(articles.length, (project.challenges || []).length, project.id);
