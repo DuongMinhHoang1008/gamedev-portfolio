@@ -303,6 +303,78 @@
             t.$static(0),
           ]);
         },
+        renderCaseStudy = function (t, n, project) {
+          return n("div", { staticClass: "project-detail-content case-study-content" }, [
+            n("h2", { staticClass: "case-study-title" }, [t.$text("Case Study")]),
+            n(
+              "section",
+              {
+                staticClass: "contributions",
+                attrs: { "aria-labelledby": "case-study-contributions-title" },
+              },
+              [
+                n("h2", { attrs: { id: "case-study-contributions-title" } }, [
+                  t.$text("Đóng góp của tôi"),
+                ]),
+                n(
+                  "ul",
+                  t._l(project.contributions, function (item) {
+                    return n("li", { key: item }, [t.$text(item)]);
+                  }),
+                  0
+                ),
+              ]
+            ),
+            project.challenges
+              ? n("section", {
+                  staticClass: "technical-challenges",
+                  attrs: { "aria-labelledby": "case-study-challenges-title" },
+                }, [
+                  n("h2", { attrs: { id: "case-study-challenges-title" } }, [
+                    t.$text("Thách thức kỹ thuật & giải pháp"),
+                  ]),
+                  t._l(project.challenges, function (item, index) {
+                    return n("article", { key: item.title, staticClass: "technical-challenge" }, [
+                      n("h3", [
+                        t.$text(project.challenges.length > 1 ? (index + 1) + ". " : ""),
+                        t.$text(item.title),
+                      ]),
+                      item.challenge
+                        ? n("p", [
+                            n("strong", [t.$text("Thách thức:")]),
+                            t.$text(" " + item.challenge),
+                          ])
+                        : t._e(),
+                      item.solution
+                        ? n("p", [
+                            n("strong", [t.$text("Giải pháp:")]),
+                            t.$text(" " + item.solution),
+                          ])
+                        : t._e(),
+                      item.description ? n("p", [t.$text(item.description)]) : t._e(),
+                    ]);
+                  }),
+                ], 2)
+              : t._e(),
+            project.results
+              ? n("section", {
+                  staticClass: "research-results",
+                  attrs: { "aria-labelledby": "case-study-results-title" },
+                }, [
+                  n("h2", { attrs: { id: "case-study-results-title" } }, [t.$text("Kết quả")]),
+                  project.resultsIntro ? n("p", [t.$text(project.resultsIntro)]) : t._e(),
+                  n(
+                    "ul",
+                    t._l(project.results, function (item) {
+                      return n("li", { key: item }, [t.$text(item)]);
+                    }),
+                    0
+                  ),
+                  project.resultsNote ? n("p", [t.$text(project.resultsNote)]) : t._e(),
+                ])
+              : t._e(),
+          ]);
+        },
         renderProjectPage = function (t, n, project) {
           var defaultMiniGddSections = [
               {
@@ -342,9 +414,9 @@
             );
           return n("div", { staticClass: "game-projects" }, [
             n("router-link", { staticClass: "project-back-link", attrs: {
-              to: t.gddOnly && project ? "/game-projects/" + project.id : "/game-projects",
+              to: (t.gddOnly || t.caseStudyOnly) && project ? "/game-projects/" + project.id : "/game-projects",
             } }, [
-              t.$text(t.gddOnly && project ? "← Về trang game" : "← Về danh sách game"),
+              t.$text((t.gddOnly || t.caseStudyOnly) && project ? "← Về trang game" : "← Về danh sách game"),
             ]),
             project
               ? n("article", { staticClass: "project-detail" }, [
@@ -469,7 +541,10 @@
                         ]
                       )
                     : t._e(),
-                  !t.gddOnly && project.youtubeVideoId
+                  t.caseStudyOnly && project.caseStudy
+                    ? renderCaseStudy(t, n, project)
+                    : t._e(),
+                  !t.gddOnly && !t.caseStudyOnly && project.youtubeVideoId
                     ? n("iframe", {
                         key: project.id,
                         staticClass: "project-video",
@@ -482,7 +557,7 @@
                         },
                       })
                     : t._e(),
-                  t.gddOnly ? t._e() : n("div", { staticClass: "project-detail-content" }, [
+                  t.gddOnly || t.caseStudyOnly ? t._e() : n("div", { staticClass: "project-detail-content" }, [
                     n("p", { staticClass: "category" }, [
                       t.$text(t._s(project.category)),
                     ]),
@@ -497,6 +572,14 @@
                             href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/gdd",
                           },
                         }, [t.$text("Xem GDD")])
+                      : t._e(),
+                    project.caseStudy
+                      ? n("a", {
+                          staticClass: "game-link case-study-link",
+                          attrs: {
+                            href: "/gamedev-portfolio/gamedesigner/#/game-projects/" + project.id + "/case-study",
+                          },
+                        }, [t.$text("Xem Case Study")])
                       : t._e(),
                     n("h2", [t.$text("Tổng quan")]),
                     n("p", [t.$text(t._s(project.summary))]),
@@ -570,7 +653,7 @@
                       }),
                       0
                     ),
-                    n(
+                    !project.caseStudy ? n(
                       "section",
                       {
                         staticClass: "contributions",
@@ -599,8 +682,8 @@
                               [t.$text("Nội dung sẽ được bổ sung.")]
                             ),
                       ]
-                    ),
-                    project.challenges
+                    ) : t._e(),
+                    !project.caseStudy && project.challenges
                       ? n("section", { staticClass: "technical-challenges", attrs: { "aria-labelledby": "challenges-title" } }, [
                           n("h2", { attrs: { id: "challenges-title" } }, [t.$text("Thách thức kỹ thuật & giải pháp")]),
                           t._l(project.challenges, function (item, index) {
@@ -613,7 +696,7 @@
                           }),
                         ], 2)
                       : t._e(),
-                    project.results
+                    !project.caseStudy && project.results
                       ? n(
                           "section",
                           {
@@ -777,6 +860,7 @@
         c = [
           {
             "id": "shikaku-cats",
+            "caseStudy": true,
             "miniGdd": {
               "title": "GDD",
               "sections": [
@@ -900,6 +984,7 @@
           },
           {
             "id": "cookingdom",
+            "caseStudy": true,
             "miniGdd": {
               "title": "GDD",
               "sections": [
@@ -1012,6 +1097,7 @@
           },
           {
             "id": "shuriken-rush",
+            "caseStudy": true,
             "miniGdd": true,
             "youtubeVideoId": "PDFpkacKMn0",
             "name": "Shuriken Rush",
@@ -1234,7 +1320,7 @@
         ],
         o = s["a"].extend({
           name: "GameProjects",
-          props: { projectId: String, gddOnly: Boolean },
+          props: { projectId: String, gddOnly: Boolean, caseStudyOnly: Boolean },
           data: function () {
             return { projects: c };
           },

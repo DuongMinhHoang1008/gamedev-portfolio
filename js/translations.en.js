@@ -32,6 +32,8 @@ window.portfolioEnglish = {
   "← Về danh sách game": "← Back to game projects",
   "← Về trang game": "← Back to game page",
   "Xem GDD": "View GDD",
+  "Xem Case Study": "View Case Study",
+  "Case Study": "Case Study",
   "Video YouTube": "YouTube video",
   "Không tìm thấy dự án game": "Game project not found",
   "Tò He": "Tò He",

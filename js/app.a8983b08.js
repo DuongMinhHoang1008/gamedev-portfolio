@@ -372,6 +372,14 @@
           },
         },
         {
+          path: "/game-projects/:projectId/case-study",
+          name: "Game Case Study",
+          component: loadGameProjects,
+          props: function (route) {
+            return { projectId: route.params.projectId, caseStudyOnly: true };
+          },
+        },
+        {
           path: "/contact",
           name: "Contact",
           component: function () {
@@ -394,7 +402,9 @@
             to.name === "Game Project" ||
             from.name === "Game Project" ||
             to.name === "Game GDD" ||
-            from.name === "Game GDD"
+            from.name === "Game GDD" ||
+            to.name === "Game Case Study" ||
+            from.name === "Game Case Study"
           ) {
             return savedPosition || { x: 0, y: 0 };
           }

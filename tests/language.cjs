@@ -58,7 +58,17 @@ for (const [id, expected] of [['f820', 'I am'], ['1ba2', 'Work experience'], ['b
     for (const project of instance.projects) {
       const detail = new Vue({ ...exports.default, propsData: { projectId: project.id } });
       const rendered = detail._render();
-      assert(text(rendered).includes('My contributions'), project.id);
+      if (project.caseStudy) {
+        assert(text(rendered).includes('View Case Study'), project.id + ': Case Study link');
+        assert(!text(rendered).includes('My contributions'), project.id + ': contributions moved from game page');
+        const caseStudy = new Vue({
+          ...exports.default,
+          propsData: { projectId: project.id, caseStudyOnly: true },
+        });
+        assert(text(caseStudy._render()).includes('My contributions'), project.id + ': Case Study translation');
+      } else {
+        assert(text(rendered).includes('My contributions'), project.id);
+      }
       assert(text(rendered).includes('Back to game projects'), project.id);
       assert(!text(rendered).includes(project.summary), project.id + ' summary untranslated');
     }

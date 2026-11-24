@@ -29,6 +29,7 @@ context.window.webpackJsonp[0][1]['4d97']({}, exportsObject, requireModule);
 const instance = new Vue(exportsObject.default);
 assert.equal(instance.projects[0].id, 'shikaku-cats');
 const miniGddProjectIds = new Set(['shikaku-cats', 'cookingdom', 'shuriken-rush']);
+const caseStudyProjectIds = new Set(['shikaku-cats', 'cookingdom', 'shuriken-rush']);
 const miniGddSectionTitles = [
   'Tổng quan game',
   'Vòng lặp gameplay cốt lõi',
@@ -132,7 +133,46 @@ for (const language of ['vi', 'en']) {
     } else {
       assert(!nodes.some(node => node.data?.staticClass?.includes('gdd-link')), project.id + ': unexpected GDD link');
     }
-    const articles = nodes.filter(node => node.data?.staticClass === 'technical-challenge');
+    let caseStudyNodes = nodes;
+    if (caseStudyProjectIds.has(project.id)) {
+      assert.equal(project.caseStudy, true, project.id + ': case study data flag');
+      assert(nodes.some(node =>
+        node.tag === 'a' &&
+        node.data?.attrs?.href === '/gamedev-portfolio/gamedesigner/#/game-projects/' + project.id + '/case-study' &&
+        nodeText(node).includes(language === 'vi' ? 'Xem Case Study' : 'View Case Study')
+      ), project.id + ': Case Study subpage link');
+      assert.equal(nodes.filter(node => node.data?.staticClass === 'contributions').length, 0, project.id + ': contributions must not render inline');
+      assert.equal(nodes.filter(node => node.data?.staticClass === 'technical-challenge').length, 0, project.id + ': challenges must not render inline');
+      assert.equal(nodes.filter(node => node.data?.staticClass === 'research-results').length, 0, project.id + ': results must not render inline');
+
+      const caseStudyDetail = new Vue({
+        ...exportsObject.default,
+        propsData: { projectId: project.id, caseStudyOnly: true },
+      });
+      const caseStudyTree = caseStudyDetail._render();
+      caseStudyNodes = flatten(caseStudyTree);
+      assert(caseStudyNodes.some(node => node.data?.staticClass?.includes('case-study-content')), project.id + ': Case Study content');
+      assert.equal(nodeText(caseStudyNodes.find(node => node.data?.staticClass === 'case-study-title')), 'Case Study');
+      assert.equal(caseStudyNodes.filter(node => node.data?.staticClass === 'contributions').length, 1, project.id + ': Case Study contributions');
+      assert.equal(caseStudyNodes.filter(node => node.data?.staticClass === 'technical-challenge').length, project.challenges.length, project.id + ': Case Study challenges');
+      assert.equal(caseStudyNodes.filter(node => node.data?.staticClass === 'research-results').length, 1, project.id + ': Case Study results');
+      assert(!caseStudyNodes.some(node => node.data?.staticClass === 'mini-gdd'), project.id + ': Case Study must not duplicate GDD');
+      assert(!caseStudyNodes.some(node => node.data?.staticClass === 'project-video'), project.id + ': Case Study must not duplicate video');
+      assert(caseStudyNodes.some(node =>
+        node.tag === 'router-link' &&
+        node.data?.attrs?.to === '/game-projects/' + project.id &&
+        nodeText(node).includes(language === 'vi' ? '← Về trang game' : '← Back to game page')
+      ), project.id + ': back link from Case Study subpage');
+      for (const value of [...project.contributions, ...project.results]) {
+        const expected = language === 'vi' ? value : context.window.portfolioEnglish[value];
+        assert(expected, 'Missing translation: ' + value);
+        assert(nodeText(caseStudyTree).includes(expected), project.id + ': missing Case Study value ' + expected);
+      }
+    } else {
+      assert(!nodes.some(node => node.data?.staticClass?.includes('case-study-link')), project.id + ': unexpected Case Study link');
+      assert.equal(nodes.filter(node => node.data?.staticClass === 'contributions').length, 1, project.id + ': inline contributions');
+    }
+    const articles = caseStudyNodes.filter(node => node.data?.staticClass === 'technical-challenge');
     assert.equal(articles.length, (project.challenges || []).length, project.id);
     for (const [index, challenge] of (project.challenges || []).entries()) {
       for (const value of Object.values(challenge)) {
