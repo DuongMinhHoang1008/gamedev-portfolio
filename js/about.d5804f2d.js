@@ -330,7 +330,7 @@
             n(
               "div",
               { staticClass: "projects-list" },
-              t._l(t.projects, function (i) {
+              t._l(t.visibleProjects, function (i) {
                 return n(
                   "router-link",
                   {
@@ -1452,6 +1452,12 @@
             return { projects: c };
           },
           computed: {
+            visibleProjects: function () {
+              if (!this.gameDesignerMode) return this.projects;
+              return this.projects.filter(function (project) {
+                return project.id !== "dog-simulator";
+              });
+            },
             selectedProject: function () {
               return this.projects.find(project => project.id === this.projectId);
             },
