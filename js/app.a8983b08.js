@@ -34,7 +34,7 @@
       ({ about: "about" }[t] || t) +
       "." +
       { about: "d5804f2d" }[t] +
-      ".js"
+      ".js" + (window.__portfolioAssetVersion ? "?v=" + window.__portfolioAssetVersion : "")
     );
   }
   function c(e) {
