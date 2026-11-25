@@ -43,20 +43,15 @@ const ready = new Promise((resolve, reject) => {
       originalResponse.text(),
       gameDesignerResponse.text(),
     ]);
-    assert(gameDesigner.includes('<title>Dương Minh Hoàng - Unity Game Developer</title>'));
+    assert(gameDesigner.includes('<title>Dương Minh Hoàng - Game Designer Intern</title>'));
     assert(gameDesigner.includes('<base href="/gamedev-portfolio/">'));
     assert(!original.includes('<base href="/gamedev-portfolio/">'));
     assert(gameDesigner.includes('/gamedev-portfolio/js/app.a8983b08.js'));
     assert(gameDesigner.includes('https://DuongMinhHoang1008.github.io/gamedev-portfolio/gamedesigner/'));
-    assert.equal(
-      gameDesigner
-        .replace('  <base href="/gamedev-portfolio/">\n', '')
-        .replace('/gamedev-portfolio/gamedesigner/', '/gamedev-portfolio')
-        .trimEnd(),
-      original.trimEnd(),
-      'The gamedesigner page should mirror the original except for its social URL'
-    );
-    console.log('PASS: original and gamedesigner entry points serve the same portfolio content.');
+    assert(gameDesigner.includes('window.__gameDesignerPortfolio = true'));
+    assert(gameDesigner.includes('Level Design, Game Balance, Playtesting'));
+    assert(!original.includes('window.__gameDesignerPortfolio = true'));
+    console.log('PASS: the game designer entry point enables its dedicated CV content.');
   } finally {
     if (child.pid && child.exitCode === null && child.signalCode === null) {
       const stopped = once(child, 'exit');

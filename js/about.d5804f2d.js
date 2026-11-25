@@ -10,9 +10,77 @@
       "use strict";
       i.r(n);
       var a = function () {
-          var t = this;
-          t._self._c;
+          var t = this,
+            n = t._self._c;
+          if (window.__gameDesignerPortfolio) return renderDesignerResume(t, n);
           return t.$static(0);
+        },
+        renderDesignerResume = function (t, n) {
+          return n("div", { staticClass: "resume" }, [
+            n("h1", [t.$text("Hồ sơ")]),
+            n("div", { staticClass: "intro" }, [
+              n("div", { staticClass: "paragraph" }, [
+                n("h2", { staticClass: "name" }, [t.$text("Dương Minh Hoàng")]),
+                n("p", { staticClass: "role" }, [t.$text("Game Designer Intern · Hà Nội, Việt Nam")]),
+                n("p", { staticClass: "contact-details" }, [
+                  n("a", { attrs: { href: "mailto:hoangls1008@gmail.com" } }, [t.$text("hoangls1008@gmail.com")]),
+                  n("br"),
+                  n("a", { attrs: { href: "tel:+84394270156" } }, [t.$text("0394 270 156")]),
+                  t.$text(" · Hà Nội "),
+                ]),
+                n("a", {
+                  staticClass: "download-link",
+                  attrs: { href: "d/DuongMinhHoang_GameDesignerIntern_CV.pdf", target: "_blank", rel: "noopener noreferrer" },
+                }, [
+                  n("i", { staticClass: "fa fa-download fa-lg fa-fw", attrs: { "aria-hidden": "true" } }),
+                  t.$text(" Tải CV (PDF) "),
+                ]),
+              ]),
+              n("div", { staticClass: "photo" }, [
+                n("img", { attrs: { src: "img/resume-photo.jpg", alt: "Dương Minh Hoàng" } }),
+              ]),
+            ]),
+            n("div", { staticClass: "full-content" }, [
+              n("p", [t.$text("Tôi có 1,5 năm kinh nghiệm phát triển game mobile bằng Unity, tập trung vào Puzzle, Casual và Action. Tôi trực tiếp thiết kế và cân bằng level, xây dựng Difficulty Curve dựa trên các tiêu chí độ phức tạp Puzzle, kết hợp Internal Playtesting và phân tích dữ liệu người chơi. Tôi có khả năng xây dựng prototype, triển khai và kiểm thử gameplay, level bằng Unity.")]),
+              n("section", { attrs: { "aria-labelledby": "designer-experience-heading" } }, [
+                n("h2", { attrs: { id: "designer-experience-heading" } }, [t.$text("Kinh nghiệm làm việc")]),
+                n("h3", [t.$text("Unity Game Developer "), n("span", { staticClass: "company-name" }, [t.$text("· RiseOn Game Studio")])]),
+                n("p", { staticClass: "meta" }, [t.$text("05/2025 - 11/2026 · Trước đây là HB Academy")]),
+                n("h3", [t.$text("Cookingdom (ABI Games)")]),
+                n("ul", [
+                  n("li", [t.$text("Triển khai và cân bằng hơn 10 level trên hệ thống gameplay có sẵn. Phối hợp với Artist và Tester để điều chỉnh độ khó, hoàn thiện tương tác, kiểm thử và sửa lỗi gameplay.")]),
+                  n("li", [t.$text("Tái sử dụng logic level, góp phần giảm thời gian phát triển mỗi level từ khoảng 2 tuần xuống 1 tuần.")]),
+                ]),
+                n("h3", [t.$text("Shikaku Cats: Number Puzzle")]),
+                n("ul", [
+                  n("li", [t.$text("Triển khai level, xây dựng Difficulty Curve, theo dõi các chỉ số gameplay và điều chỉnh độ khó nhằm cải thiện trải nghiệm người chơi.")]),
+                  n("li", [t.$text("Kết hợp hệ thống đánh giá độ khó tự động với phản hồi từ nhóm chơi thử nội bộ để đánh giá và cân bằng level.")]),
+                  n("li", [t.$text("Theo dõi Retention, Retry Rate, Drop-off và phản hồi người chơi để đề xuất, triển khai cải tiến gameplay và tính năng.")]),
+                  n("li", [t.$text("Mở rộng hệ thống sinh level từ DLL có sẵn, bổ sung cấu hình độ khó để tạo hàng trăm level. Triển khai Daily Reward, Daily Quest và phối hợp đưa game lên Google Play Public Testing với gần 3.000 người chơi.")]),
+                ]),
+                n("h3", [t.$text("Shuriken Rush")]),
+                n("ul", [
+                  n("li", [t.$text("Xây dựng prototype trong 3 ngày và hoàn thiện bản Android trong 3 tuần. Triển khai gameplay chiến đấu, hệ thống vũ khí và tiến trình màn chơi.")]),
+                  n("li", [t.$text("Xây dựng công cụ tạo level nhanh bằng kéo thả cùng công cụ Cheat và Ingame Debug để hỗ trợ kiểm thử.")]),
+                  n("li", [t.$text("Cấu hình AppLovin, IAP, Firebase Remote Config và AppsFlyer. Thực hiện Android build và xử lý lỗi trong quá trình thử nghiệm sản phẩm.")]),
+                ]),
+              ]),
+              n("section", { attrs: { "aria-labelledby": "designer-skills-heading" } }, [
+                n("h2", { attrs: { id: "designer-skills-heading" } }, [t.$text("Kỹ năng")]),
+                n("div", { staticClass: "skills-grid" }, [
+                  n("div", { staticClass: "skill-set" }, [n("h3", [t.$text("Game Design & Level Design")]), n("p", [t.$text("Puzzle/Casual Level Design, Game Balance, Difficulty Curve, Level Progression, Pacing, Gameplay Loop, GDD, Level Sheet")])]),
+                  n("div", { staticClass: "skill-set" }, [n("h3", [t.$text("Phân tích & Playtesting")]), n("p", [t.$text("Internal Playtesting, Difficulty Evaluation, Retention, Retry Rate, Drop-off, phân tích phản hồi người chơi")])]),
+                  n("div", { staticClass: "skill-set" }, [n("h3", [t.$text("Công cụ triển khai & kiểm thử")]), n("p", [t.$text("Unity Editor, Level Editor, Gameplay Prototyping, C#, Git, Cheat và Debug Tools")])]),
+                ]),
+              ]),
+              n("section", { attrs: { "aria-labelledby": "designer-education-heading" } }, [
+                n("h2", { attrs: { id: "designer-education-heading" } }, [t.$text("Học vấn")]),
+                n("h3", [t.$text("Đại học Công nghệ - ĐHQGHN")]),
+                n("p", { staticClass: "meta" }, [t.$text("2022 - 2026 · Công nghệ thông tin · GPA 3.53/4.00 · Xếp loại Giỏi · IELTS 7.5")]),
+                n("p", [t.$text("Giải ba MIRO Game Contest 2023 (GDG Hanoi / Apero) · Top 4 Pixel Sunflower Game Jam 2024")]),
+              ]),
+            ]),
+          ]);
         },
         e = [
           function () {
@@ -251,10 +319,12 @@
           t._self._setupProxy;
           if (t.projectId !== undefined) return renderProjectPage(t, n, t.selectedProject);
           return n("div", { staticClass: "game-projects" }, [
-            n("h1", [t.$text("Dự án game")]),
+            n("h1", [t.$text(t.gameDesignerMode ? "Games" : "Dự án game")]),
             n("p", { staticClass: "page-intro" }, [
               t.$text(
-                "Những dự án mình đã tham gia phát triển, từ game di động, Game Jam và cuộc thi làm game đến nghiên cứu kỹ thuật trong khóa luận tốt nghiệp."
+                t.gameDesignerMode
+                  ? "Các dự án tiêu biểu về Level Design, Game Balance, Playtesting, cải tiến gameplay và xây dựng công cụ level trong quá trình phát triển game mobile."
+                  : "Những dự án mình đã tham gia phát triển, từ game di động, Game Jam và cuộc thi làm game đến nghiên cứu kỹ thuật trong khóa luận tốt nghiệp."
               ),
             ]),
             n(
@@ -996,7 +1066,7 @@
             "contributions": [
               "Tiếp nhận bản thử nghiệm và hoàn thiện gameplay bằng Unity/C#, gồm logic giải đố, tương tác bảng, khởi tạo bảng từ dữ liệu cấu hình và quản lý trạng thái level.",
               "Triển khai công cụ kiểm thử và Daily Reward. Dùng DOTween và Unity Animation cho hiệu ứng hoàn thành block và level, đồng thời phối hợp với thành viên phụ trách UI.",
-              "Tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP; triển khai bản Android và sửa lỗi trong giai đoạn public testing với gần 3.000 người chơi."
+              "Tích hợp và cấu hình Firebase Remote Config, AppLovin, AppsFlyer và IAP. Triển khai bản Android và sửa lỗi trong giai đoạn public testing với gần 3.000 người chơi."
             ],
             "status": "Public testing · Android qua Google Play Console · gần 3.000 người chơi.",
             "challenges": [
@@ -1008,7 +1078,7 @@
               {
                 "title": "Tái cấu trúc hệ thống dữ liệu",
                 "challenge": "DataManager tập trung quá nhiều trách nhiệm, khiến code khó quản lý và mở rộng.",
-                "solution": "Tách các chức năng từ DataManager thành các Service. DataManager tập trung load/save và cung cấp hoặc điều phối các Service; mỗi Service đảm nhận chức năng riêng."
+                "solution": "Tách các chức năng từ DataManager thành các Service. DataManager tập trung load/save và cung cấp hoặc điều phối các Service. Mỗi Service đảm nhận chức năng riêng."
               },
               {
                 "title": "Hoàn thiện phản hồi thị giác",
@@ -1171,7 +1241,7 @@
             ],
             "category": "Hành động · 3D",
             "highlight": "Khoảng 20 → 57 FPS với 1.000 kẻ địch (Unity Editor)",
-            "summary": "Game hành động 3D lấy cảm hứng từ Slow Mo Strike: Knives in Time. Người chơi di chuyển tay trên màn hình để tạo vũ khí bay vào kẻ địch; tiêu diệt hết địch để qua màn và mở khóa vũ khí mới. Trò chơi tập trung vào nhịp hành động liên tục, số lượng kẻ địch đông và cảm giác kết liễu thỏa mãn.",
+            "summary": "Game hành động 3D lấy cảm hứng từ Slow Mo Strike: Knives in Time. Người chơi di chuyển tay trên màn hình để tạo vũ khí bay vào kẻ địch. Tiêu diệt hết địch để qua màn và mở khóa vũ khí mới. Trò chơi tập trung vào nhịp hành động liên tục, số lượng kẻ địch đông và cảm giác kết liễu thỏa mãn.",
             "features": [
               "Di chuyển tay trên màn hình để spawn vũ khí bay về phía kẻ địch.",
               "Tiêu diệt toàn bộ kẻ địch để hoàn thành màn và tiếp tục qua các màn mới.",
@@ -1183,7 +1253,7 @@
             "linkLabel": "Xem trên Google Play",
             "contributions": [
               "Phát triển hệ thống combat, sinh các đợt kẻ địch, điều khiển vũ khí bằng thao tác cảm ứng và xử lý điều kiện qua màn.",
-              "Xây dựng tiến trình mở khóa vũ khí và thanh Combo; khi kích hoạt Frenzy, tăng nhịp độ game và số lượng vũ khí được ném ra.",
+              "Xây dựng tiến trình mở khóa vũ khí và thanh Combo. Khi kích hoạt Frenzy, tăng nhịp độ game và số lượng vũ khí được ném ra.",
               "Tập trung thiết kế cảm giác hành động liên tục và kết liễu, với lượng kẻ địch dày đặc hơn và ít phụ thuộc vào bẫy môi trường.",
               "Hoàn thiện sản phẩm, build Android và xử lý lỗi trong giai đoạn public testing."
             ],
@@ -1229,16 +1299,16 @@
               "Đua xe nhiều người chơi qua Host/Join, phòng chờ, chọn màu xe, Ready, bắn làm choáng đối thủ và Respawn.",
               "Cải tiến Dead Reckoning bằng dự đoán bậc hai, Time Stamping, Adaptive Threshold và SmoothDamp.",
               "Quản lý tick với NetworkTimer và lưu input, trạng thái trong CircularBuffer.",
-              "Tích hợp Client-side Prediction và Server Reconciliation cho xe người chơi; Lag Compensation để kiểm tra tương tác trong quá khứ.",
-              "Giao diện chuyển đổi thuật toán, tùy chỉnh Ping/Jitter và tham số; theo dõi Accuracy, Jerk và số lần bắn trúng."
+              "Tích hợp Client-side Prediction và Server Reconciliation cho xe người chơi. Lag Compensation để kiểm tra tương tác trong quá khứ.",
+              "Giao diện chuyển đổi thuật toán, tùy chỉnh Ping/Jitter và tham số. Theo dõi Accuracy, Jerk và số lần bắn trúng."
             ],
             "platform": "PC (Windows)",
             "url": "https://github.com/DuongMinhHoang1008/Improve_DeadReckoning_Unity",
             "linkLabel": "Xem mã nguồn & hướng dẫn chạy",
             "contributions": [
-              "Mở rộng game đua xe multiplayer có sẵn bằng Unity/Netcode for GameObjects thành môi trường thực nghiệm; cải tiến Dead Reckoning bằng dự đoán bậc hai, Time Stamping, SmoothDamp và Adaptive Threshold.",
+              "Mở rộng game đua xe multiplayer có sẵn bằng Unity/Netcode for GameObjects thành môi trường thực nghiệm. Cải tiến Dead Reckoning bằng dự đoán bậc hai, Time Stamping, SmoothDamp và Adaptive Threshold.",
               "Xây dựng bot chạy theo waypoint, tự điều chỉnh tốc độ khi vào cua và tự động bắn laser để duy trì tính nhất quán của các kịch bản thử nghiệm.",
-              "Thiết kế thực nghiệm với nhiều mức ping/jitter; đo độ chính xác dự đoán, độ giật chuyển động và chi phí CPU/RAM.",
+              "Thiết kế thực nghiệm với nhiều mức ping/jitter. Đo độ chính xác dự đoán, độ giật chuyển động và chi phí CPU/RAM.",
               "Phân tích sự đánh đổi giữa độ chính xác, độ mượt và tài nguyên để đề xuất cấu hình phù hợp theo từng trường hợp sử dụng."
             ],
             "documentUrl": "d/22021218_Duong_Minh_Hoang.pdf",
@@ -1255,7 +1325,7 @@
             "challenges": [
               {
                 "title": "Cải thiện độ chính xác dự đoán",
-                "challenge": "Dead Reckoning sử dụng mô hình dự đoán bậc một có thể kém chính xác khi xe tăng tốc, giảm tốc hoặc đổi hướng; sai lệch thời gian cũng ảnh hưởng đến dự đoán.",
+                "challenge": "Dead Reckoning sử dụng mô hình dự đoán bậc một có thể kém chính xác khi xe tăng tốc, giảm tốc hoặc đổi hướng. Sai lệch thời gian cũng ảnh hưởng đến dự đoán.",
                 "solution": "Bổ sung thành phần gia tốc trong mô hình dự đoán bậc hai và sử dụng Time Stamping để tính khoảng thời gian dự đoán chính xác hơn."
               },
               {
@@ -1265,7 +1335,7 @@
               },
               {
                 "title": "Kiểm chứng các cơ chế hỗ trợ",
-                "description": "Sử dụng Client-side Prediction và Server Reconciliation cho đối tượng người chơi; thử nghiệm Lag Compensation cho các tương tác phụ thuộc thời điểm như bắn laser."
+                "description": "Sử dụng Client-side Prediction và Server Reconciliation cho đối tượng người chơi. Thử nghiệm Lag Compensation cho các tương tác phụ thuộc thời điểm như bắn laser."
               }
             ]
           },
@@ -1419,9 +1489,25 @@
       "use strict";
       i.r(n);
       var a = function () {
-          var t = this;
-          t._self._c;
+          var t = this,
+            n = t._self._c;
+          if (window.__gameDesignerPortfolio) return renderDesignerContact(t, n);
           return t.$static(0);
+        },
+        renderDesignerContact = function (t, n) {
+          return n("div", [
+            n("h1", [t.$text("Liên hệ")]),
+            n("div", { staticStyle: { "margin-bottom": "40px" } }, [
+              t.$text("Bạn có thể liên hệ với tôi để trao đổi về cơ hội Game Designer Intern, Level Design, hợp tác phát triển game hoặc playtesting."),
+            ]),
+            n("ul", [
+              n("li", [n("i", { staticClass: "fa fa-phone fa-lg fa-fw" }), n("a", { attrs: { href: "tel:+84394270156" } }, [t.$text("0394 270 156")])]),
+              n("li", [n("i", { staticClass: "fa fa-envelope-o fa-lg fa-fw" }), n("a", { attrs: { href: "mailto:hoangls1008@gmail.com" } }, [t.$text("hoangls1008@gmail.com")])]),
+              n("li", [n("i", { staticClass: "fa fa-github fa-lg fa-fw" }), n("a", { attrs: { href: "https://github.com/DuongMinhHoang1008", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("github.com/DuongMinhHoang1008")])]),
+              n("li", [n("i", { staticClass: "fa fa-gamepad fa-lg fa-fw" }), n("a", { attrs: { href: "https://dmhoang.itch.io", target: "_blank", rel: "noopener noreferrer" } }, [t.$text("dmhoang.itch.io")])]),
+              n("li", [n("i", { staticClass: "fa fa-map-marker fa-lg fa-fw" }), t.$text("Hà Nội")]),
+            ]),
+          ]);
         },
         e = [
           function () {
@@ -1503,8 +1589,25 @@
       "use strict";
       i.r(n);
       var a = function () {
-          var t = this;
+          var t = this,
+            n = t._self._c;
+          if (window.__gameDesignerPortfolio) return renderDesignerAbout(t, n);
           return t.$static(0);
+        },
+        renderDesignerAbout = function (t, n) {
+          return n("div", { staticClass: "about" }, [
+            n("div", { staticClass: "intro" }, [
+              n("div", { staticClass: "paragraph" }, [
+                n("p", [t.$text("Tôi là Dương Minh Hoàng, Game Designer Intern tại Hà Nội với 1,5 năm kinh nghiệm phát triển game mobile bằng Unity, tập trung vào Puzzle, Casual và Action.")]),
+                n("p", [t.$text("Tôi trực tiếp thiết kế và cân bằng level, xây dựng Difficulty Curve dựa trên độ phức tạp của puzzle, kết hợp Internal Playtesting với phân tích Retention, Retry Rate, Drop-off và phản hồi người chơi.")]),
+                n("p", [t.$text("Tại RiseOn Game Studio, tôi đã triển khai hơn 10 level Cookingdom, thiết kế và cân bằng level cho Shikaku Cats, đồng thời xây dựng prototype, gameplay và công cụ tạo level cho Shuriken Rush.")]),
+                n("p", [t.$text("Tôi có thể xây dựng prototype, triển khai và kiểm thử gameplay, level bằng Unity. Đồng thời phối hợp với Artist và Tester để đưa level đến trạng thái hoàn thiện.")]),
+              ]),
+              n("div", { staticClass: "photo" }, [
+                n("img", { attrs: { src: "img/hurray.gif", alt: "Dương Minh Hoàng", width: 224, height: 224 } }),
+              ]),
+            ]),
+          ]);
         },
         e = [
           function () {

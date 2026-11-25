@@ -252,7 +252,7 @@
             [
               e("router-link", { attrs: { to: "/" } }, [t.$text("Giới thiệu")]),
               e("router-link", { attrs: { to: "/game-projects" } }, [
-                t.$text("Dự án game"),
+                t.$text(window.__gameDesignerPortfolio ? "Games" : "Dự án game"),
               ]),
               e("router-link", { attrs: { to: "/resume" } }, [t.$text("Hồ sơ")]),
               e("router-link", { attrs: { to: "/contact" } }, [
@@ -356,6 +356,9 @@
           path: "/game-projects",
           name: "Game Projects",
           component: loadGameProjects,
+          props: function () {
+            return { gameDesignerMode: Boolean(window.__gameDesignerPortfolio) };
+          },
         },
         {
           path: "/game-projects/:projectId",
@@ -405,6 +408,7 @@
       );
     }
     var P = new x["a"]({
+        base: window.__gameDesignerPortfolio ? "/gamedev-portfolio/gamedesigner/" : undefined,
         routes: k,
         scrollBehavior: function (to, from, savedPosition) {
           if (
